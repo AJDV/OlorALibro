@@ -1,0 +1,17 @@
+﻿[
+  {
+    "usuario": "user1",
+    "password": "user1",
+    "puntos": 0,
+  },
+  {
+    "usuario": "user2",
+    "password": "user2",
+    "puntos": 0,
+  },
+  {
+    "usuario": "user3",
+    "password": "user3",
+    "puntos": 0,
+  }
+]
