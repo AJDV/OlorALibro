@@ -42,7 +42,7 @@ namespace OlorALibro
             int contador = 0;
             while (!login && (usuarios.Count() - 1) >= contador)
             {
-                if (textBoxLoginUserText.Text == usuarios[contador].usuario && textBoxLoginPasswordText.Text == usuarios[contador].password)
+                if (textBoxLoginUserText.Text.ToLower() == usuarios[contador].usuario && textBoxLoginPasswordText.Text == usuarios[contador].password)
                 {
                     login = true;
                 }
@@ -62,6 +62,11 @@ namespace OlorALibro
             {
                 labelIncorrecta.Visible = true;
             }
+        }
+
+        private void FormLogin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            formPanel.setUser(textBoxLoginUserText.Text.ToUpper());
         }
     }
 }
