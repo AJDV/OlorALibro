@@ -1,0 +1,22 @@
+﻿[
+  {
+    "NumeroActividad": 1,
+    "NombreLibreriaActividad": "Act_LibreriaJose",
+    "TituloActividad": "Lectura de 'Les Miserables'",
+    "Descripcion": "En esta actividad vendra el famoso Escritor Victor Hugo a leernos una pequeña parte de su obra, sed puntales",
+    "Fecha": "03/09/2018",
+    "Hora": "13:30",
+    "Usuarios" : "..\\UsersActs\\Users_Act_LibreriaJose\\Act_1"
+  },
+  {
+    "NumeroActividad": 2,
+    "NombreLibreriaActividad": "Act_LibreriaJose",
+    "TituloActividad": "Firma de Libro 'PATRIA'",
+    "Descripcion": "Fernando Aramburu vendra a firmar durante 3 horas su Libro Patria , exito del año ",
+    "Fecha": "17/12/2018",
+    "Hora": "11:00"
+      "Usuarios" : "..\\UsersActs\\Users_Act_LibreriaJose\\Act_2"
+  }
+]
+
+

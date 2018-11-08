@@ -1,0 +1,20 @@
+﻿[
+  {
+    "NumeroActividad": 1,
+    "NombreLibreriaActividad": "Act_LibreriaPepito",
+    "NombreActividad": "Lectura de 'Sherlock Holmes'",
+    "Descripcion": "Club de lectores abierto para todo aquel interesado",
+    "Fecha": "05/05/2019",
+    "Hora": "17:30",
+    "Usuarios" : "..\\UsersActs\\Users_Act_LibreriaPepito\\Act_1"
+  },
+  {
+    "NumeroActividad": 2,
+    "NombreLibreriaActividad": "Act_LibreriaJose",
+    "NombreActividad": "Firma de Libro 'Muerte en la Fenice'",
+    "Descripcion": "Dona Leon vendra a firmar durante 3 horas su 'Muerte en la Fenice', exito del año ",
+    "Fecha": "01/02/2019",
+    "Hora": "12:00",
+     "Usuarios" : "..\\UsersActs\\Users_Act_LibreriaPepito\\Act_2"
+  }
+]
