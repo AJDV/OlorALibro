@@ -26,3 +26,18 @@ D:\ABP\OlorALibro\OlorALibro\obj\Debug\OlorALibro.exe
 D:\ABP\OlorALibro\OlorALibro\obj\Debug\OlorALibro.pdb
 D:\ABP\OlorALibro\OlorALibro\obj\Debug\OlorALibro.FormUsers.resources
 E:\ABP\OlorALibro\OlorALibro\obj\Debug\OlorALibro.FormUsers.resources
+F:\aaaVictor Para\OlorBueno\OlorALibro\OlorALibro\bin\Debug\OlorALibro.exe.config
+F:\aaaVictor Para\OlorBueno\OlorALibro\OlorALibro\obj\Debug\OlorALibro.exe
+F:\aaaVictor Para\OlorBueno\OlorALibro\OlorALibro\obj\Debug\OlorALibro.pdb
+F:\aaaVictor Para\OlorBueno\OlorALibro\OlorALibro\obj\Debug\OlorALibro.csprojResolveAssemblyReference.cache
+F:\aaaVictor Para\OlorBueno\OlorALibro\OlorALibro\obj\Debug\OlorALibro.FormAñadirLibreria.resources
+F:\aaaVictor Para\OlorBueno\OlorALibro\OlorALibro\obj\Debug\OlorALibro.CRUD_users.formPanel.resources
+F:\aaaVictor Para\OlorBueno\OlorALibro\OlorALibro\obj\Debug\OlorALibro.FormLogin.resources
+F:\aaaVictor Para\OlorBueno\OlorALibro\OlorALibro\obj\Debug\OlorALibro.FormUsers.resources
+F:\aaaVictor Para\OlorBueno\OlorALibro\OlorALibro\obj\Debug\OlorALibro.Librerias.resources
+F:\aaaVictor Para\OlorBueno\OlorALibro\OlorALibro\obj\Debug\OlorALibro.Properties.Resources.resources
+F:\aaaVictor Para\OlorBueno\OlorALibro\OlorALibro\obj\Debug\OlorALibro.csproj.GenerateResource.Cache
+F:\aaaVictor Para\OlorBueno\OlorALibro\OlorALibro\bin\Debug\OlorALibro.exe
+F:\aaaVictor Para\OlorBueno\OlorALibro\OlorALibro\bin\Debug\OlorALibro.pdb
+F:\aaaVictor Para\OlorBueno\OlorALibro\OlorALibro\bin\Debug\Newtonsoft.Json.dll
+F:\aaaVictor Para\OlorBueno\OlorALibro\OlorALibro\bin\Debug\Newtonsoft.Json.xml

@@ -50,6 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormAñadirLibreria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAñadirLibreria.Designer.cs">
+      <DependentUpon>FormAñadirLibreria.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPanel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +68,13 @@
     <Compile Include="FormUsers.Designer.cs">
       <DependentUpon>FormUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Libreria.cs" />
+    <Compile Include="FormLibrerias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLibrerias.Designer.cs">
+      <DependentUpon>FormLibrerias.cs</DependentUpon>
+    </Compile>
     <Compile Include="Usuario.cs" />
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
@@ -71,6 +84,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormAñadirLibreria.resx">
+      <DependentUpon>FormAñadirLibreria.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormPanel.resx">
       <DependentUpon>FormPanel.cs</DependentUpon>
     </EmbeddedResource>
@@ -79,6 +95,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormUsers.resx">
       <DependentUpon>FormUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLibrerias.resx">
+      <DependentUpon>FormLibrerias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -106,7 +125,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\001-plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\002-rubbish-bin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\003-edit.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
