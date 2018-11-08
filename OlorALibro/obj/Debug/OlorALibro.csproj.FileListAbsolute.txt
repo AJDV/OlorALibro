@@ -26,3 +26,6 @@ D:\ABP\OlorALibro\OlorALibro\obj\Debug\OlorALibro.exe
 D:\ABP\OlorALibro\OlorALibro\obj\Debug\OlorALibro.pdb
 D:\ABP\OlorALibro\OlorALibro\obj\Debug\OlorALibro.FormUsers.resources
 E:\ABP\OlorALibro\OlorALibro\obj\Debug\OlorALibro.FormUsers.resources
+C:\Users\cep.CEPNET0\Source\Repos\AJDV\OlorALibro\OlorALibro\bin\Debug\OlorALibro.exe.config
+C:\Users\cep.CEPNET0\Source\Repos\AJDV\OlorALibro\OlorALibro\obj\Debug\OlorALibro.exe
+C:\Users\cep.CEPNET0\Source\Repos\AJDV\OlorALibro\OlorALibro\obj\Debug\OlorALibro.pdb

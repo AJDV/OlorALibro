@@ -1,0 +1,20 @@
+﻿[
+  {
+    "User": "Jonathan94", //este Usuario sera unico, como un Id
+    "Contraseña": "..."   //contraseña encriptada
+  },
+  {
+    "User": "Alfredo94", //este Usuario sera unico, como un Id
+    "Contraseña": "..."  //contraseña encriptada
+  },
+  {
+    "User": "David94",   //este Usuario sera unico, como un Id
+    "Contraseña": "..."  //contraseña encriptada
+  },
+  {
+    "User": "Victor94", //este Usuario sera unico, como un Id
+    "Contraseña": "..." //contraseña encriptada
+  }  
+]
+
+
