@@ -108,8 +108,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="CRUD users\loginAdmin.json" />
-    <None Include="CRUD users\users.json" />
+    <None Include="Json\ListaDeLibrerías\ActivDeLibrerias\Act_LibreriaPepito.json" />
+    <None Include="Json\ListaDeLibrerías\ActivDeLibrerias\Act_LibreriaJose.json" />
+    <None Include="Json\ListaDeLibrerías\Librerias.json" />
+    <None Include="Json\AdminUsers\loginAdmin.json" />
+    <None Include="Json\AdminUsers\users.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

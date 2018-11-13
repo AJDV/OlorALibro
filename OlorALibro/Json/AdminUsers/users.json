@@ -1,17 +1,18 @@
 ﻿[
   {
-    "usuario": "user1",
-    "password": "user1",
-    "puntos": 0,
+    "User" :"jonathan94", //este Usuario sera unico --> como un Id
+    "Contrasenia" : "...", 
+    "Nombre": "Jonathan",
+    "Apellido": "Negredo",
+    "Telefono": "622458963",
+    "Correo": "jonathanegredo3@gmail.com"
   },
   {
-    "usuario": "user2",
-    "password": "user2",
-    "puntos": 0,
-  },
-  {
-    "usuario": "user3",
-    "password": "user3",
-    "puntos": 0,
+    "User" :"Victor94", //este Usuario sera unico --> como un Id
+    "Contrasenia" : "...",
+    "Nombre": "Jonathan",
+    "Apellido": "Negredo",
+    "Telefono": "622458963",
+    "Correo": "jonathanegredo3@gmail.com"
   }
 ]
