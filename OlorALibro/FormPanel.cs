@@ -28,5 +28,11 @@ namespace OlorALibro.CRUD_users
         {
             labelUser.Text = usuario;
         }
+
+        private void buttonUsers_Click(object sender, EventArgs e)
+        {
+            FormUsers a = new FormUsers();
+            a.ShowDialog();
+        }
     }
 }

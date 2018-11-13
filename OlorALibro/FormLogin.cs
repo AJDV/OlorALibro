@@ -42,7 +42,7 @@ namespace OlorALibro
             int contador = 0;
             while (!login && (usuarios.Count() - 1) >= contador)
             {
-                if (textBoxLoginUserText.Text.ToLower() == usuarios[contador].usuario && textBoxLoginPasswordText.Text == usuarios[contador].password)
+                if (textBoxLoginUserText.Text.ToLower() == usuarios[contador].User && textBoxLoginPasswordText.Text == usuarios[contador].Contrasenia)
                 {
                     login = true;
                 }
@@ -54,7 +54,7 @@ namespace OlorALibro
             if (login)
             {
                 labelIncorrecta.Visible = false;
-                MessageBox.Show("Bienvenido, " + usuarios[contador].usuario + "!", "Login Correcto!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Bienvenido, " + usuarios[contador].User + "!", "Login Correcto!", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 this.DialogResult = System.Windows.Forms.DialogResult.OK;
             }
