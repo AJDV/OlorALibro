@@ -1,17 +1,18 @@
 ﻿[
   {
-    "usuario": "user1",
-    "password": "user1",
-    "puntos": 0,
+    "User" :"jonathan94",
+    "Contrasenia" : "asd", 
+    "Nombre": "Jonathan",
+    "Apellido": "Negredo",
+    "Correo": "jonathanegredo3@gmail.com",
+    "Puntos": 10
   },
   {
-    "usuario": "user2",
-    "password": "user2",
-    "puntos": 0,
-  },
-  {
-    "usuario": "user3",
-    "password": "user3",
-    "puntos": 0,
+    "User" :"Victor94",
+    "Contrasenia" : "dasd",
+    "Nombre": "Jonathan",
+    "Apellido": "Negredo",
+    "Correo": "jonathanegredo3@gmail.com",
+    "Puntos":  10
   }
 ]

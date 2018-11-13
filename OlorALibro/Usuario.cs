@@ -8,8 +8,11 @@ namespace OlorALibro.CRUD_users
 {
     class Usuario
     {
-        public string usuario { get; set; }
-        public string password { get; set; }
-        public int puntos { get; set; }
+        public string User { get; set; }
+        public string Contrasenia { get; set; }
+        public string Nombre { get; set; }
+        public string Apellido { get; set; }
+        public string Correo { get; set; }
+        public int Puntos { get; set; }
     }
 }

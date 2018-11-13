@@ -1,10 +1,10 @@
 ﻿[
   {
-    "usuario": "admin1",
-    "password": "admin1"
+    "User" :"admin1",
+    "Contrasenia" : "admin1"
   },
   {
-    "usuario": "admin2",
-    "password": "admin2"
+    "User" :"admin2",
+    "Contrasenia" : "admin2"
   }
 ]
