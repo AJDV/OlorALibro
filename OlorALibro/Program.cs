@@ -17,12 +17,13 @@ namespace OlorALibro
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new FormLogin());
 
-            using (FormLogin login = new FormLogin()) //if data ok, form will close it self!
+            using (FormLogin login = new FormLogin())
             {
                 if (login.ShowDialog() == DialogResult.OK)
-                    Application.Run(new formPanel("xd"));
+                {
+                    Application.Run(new formPanel());
+                }
             }
         }
     }
