@@ -41,3 +41,21 @@ F:\aaaVictor Para\OlorBueno\OlorALibro\OlorALibro\bin\Debug\OlorALibro.exe
 F:\aaaVictor Para\OlorBueno\OlorALibro\OlorALibro\bin\Debug\OlorALibro.pdb
 F:\aaaVictor Para\OlorBueno\OlorALibro\OlorALibro\bin\Debug\Newtonsoft.Json.dll
 F:\aaaVictor Para\OlorBueno\OlorALibro\OlorALibro\bin\Debug\Newtonsoft.Json.xml
+D:\OlorALibro\OlorALibro\bin\Debug\OlorALibro.exe.config
+D:\OlorALibro\OlorALibro\bin\Debug\OlorALibro.exe
+D:\OlorALibro\OlorALibro\bin\Debug\OlorALibro.pdb
+D:\OlorALibro\OlorALibro\bin\Debug\Newtonsoft.Json.dll
+D:\OlorALibro\OlorALibro\bin\Debug\Newtonsoft.Json.xml
+D:\OlorALibro\OlorALibro\obj\Debug\OlorALibro.csprojAssemblyReference.cache
+D:\OlorALibro\OlorALibro\obj\Debug\OlorALibro.FormAñadirLibreria.resources
+D:\OlorALibro\OlorALibro\obj\Debug\OlorALibro.CRUD_users.formPanel.resources
+D:\OlorALibro\OlorALibro\obj\Debug\OlorALibro.FormLogin.resources
+D:\OlorALibro\OlorALibro\obj\Debug\OlorALibro.FormUsers.resources
+D:\OlorALibro\OlorALibro\obj\Debug\OlorALibro.FormLibrerias.resources
+D:\OlorALibro\OlorALibro\obj\Debug\OlorALibro.Properties.Resources.resources
+D:\OlorALibro\OlorALibro\obj\Debug\OlorALibro.csproj.GenerateResource.cache
+D:\OlorALibro\OlorALibro\obj\Debug\OlorALibro.csproj.CoreCompileInputs.cache
+D:\OlorALibro\OlorALibro\obj\Debug\OlorALibro.csproj.CopyComplete
+D:\OlorALibro\OlorALibro\obj\Debug\OlorALibro.exe
+D:\OlorALibro\OlorALibro\obj\Debug\OlorALibro.pdb
+D:\OlorALibro\OlorALibro\obj\Debug\OlorALibro.FormEditarLibreria.resources

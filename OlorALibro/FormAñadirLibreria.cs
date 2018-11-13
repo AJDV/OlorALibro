@@ -12,12 +12,12 @@ namespace OlorALibro
 {
     public partial class FormAñadirLibreria : Form
     {
-        List<Libreria> l = new List<Libreria>();
-        Libreria libreria = new Libreria();
-        public FormAñadirLibreria(List<Libreria> list)
+        BindingList<Libreria> l = new BindingList<Libreria>();
+        
+        public FormAñadirLibreria(BindingList<Libreria> BindingList)
         {
             InitializeComponent();
-            this.l = list;
+            this.l = BindingList;
         }
 
         private void FormAñadirLibreria_Load(object sender, EventArgs e)
@@ -26,6 +26,7 @@ namespace OlorALibro
 
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
+            Libreria libreria = new Libreria();
             libreria.nom = textBoxNom.Text;
             libreria.telefon = int.Parse(textBoxTelefon.Text);
             libreria.direccio = textBoxDir.Text;

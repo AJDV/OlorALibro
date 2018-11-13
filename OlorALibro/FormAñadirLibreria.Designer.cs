@@ -120,16 +120,17 @@
             // 
             this.labelNuevaLibreria.AutoSize = true;
             this.labelNuevaLibreria.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNuevaLibreria.Location = new System.Drawing.Point(19, 23);
+            this.labelNuevaLibreria.Location = new System.Drawing.Point(19, 18);
             this.labelNuevaLibreria.Name = "labelNuevaLibreria";
             this.labelNuevaLibreria.Size = new System.Drawing.Size(242, 39);
             this.labelNuevaLibreria.TabIndex = 9;
-            this.labelNuevaLibreria.Text = "Nueva Libreria";
+            this.labelNuevaLibreria.Text = "Añadir Libreria";
             // 
             // FormAñadirLibreria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(284, 203);
             this.Controls.Add(this.labelNuevaLibreria);
             this.Controls.Add(this.buttonCancelar);

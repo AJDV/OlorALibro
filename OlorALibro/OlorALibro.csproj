@@ -50,6 +50,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Activitat.cs" />
+    <Compile Include="FormEditarLibreria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditarLibreria.Designer.cs">
+      <DependentUpon>FormEditarLibreria.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormAñadirLibreria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +91,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormEditarLibreria.resx">
+      <DependentUpon>FormEditarLibreria.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAñadirLibreria.resx">
       <DependentUpon>FormAñadirLibreria.cs</DependentUpon>
     </EmbeddedResource>

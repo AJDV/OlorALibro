@@ -19,5 +19,11 @@ namespace OlorALibro.CRUD_users
             InitializeComponent();
             this.usuario = usuario;
         }
+
+        private void buttonLibreria_Click(object sender, EventArgs e)
+        {
+            FormLibrerias f = new FormLibrerias();
+            f.ShowDialog();
+        }
     }
 }

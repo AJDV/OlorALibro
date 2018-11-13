@@ -15,7 +15,7 @@ namespace OlorALibro
 {
     public partial class FormLogin : Form
     {
-        List<Usuario> usuarios = new List<Usuario>();
+        BindingList<Usuario> usuarios = new BindingList<Usuario>();
 
         public FormLogin()
         {
@@ -25,20 +25,20 @@ namespace OlorALibro
         private void FormLogin_Load(object sender, EventArgs e)
         {
             String path =  "..\\..\\CRUD users\\loginAdmin.json";
-            MessageBox.Show(path);
+            //MessageBox.Show(path);
 
             //path = path.Remove(path.Length - 11);
             //path = path + "..\\..\\CRUD users\\loginAdmin.json";
-            MessageBox.Show(path);
+            //MessageBox.Show(path);
 
             if (File.Exists(path))
             {
                 JArray jArrayPelis = JArray.Parse(File.ReadAllText(path));
-                usuarios = jArrayPelis.ToObject<List<Usuario>>();
+                usuarios = jArrayPelis.ToObject<BindingList<Usuario>>();
             }
             else
             {
-                MessageBox.Show("List de usuarios no encontrada!", "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("BindingList de usuarios no encontrada!", "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.Close();
             }
         }

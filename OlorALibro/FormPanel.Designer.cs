@@ -53,6 +53,7 @@
             this.buttonLibreria.TabIndex = 0;
             this.buttonLibreria.Text = "LIBRERIAS";
             this.buttonLibreria.UseVisualStyleBackColor = true;
+            this.buttonLibreria.Click += new System.EventHandler(this.buttonLibreria_Click);
             // 
             // toolStrip1
             // 
