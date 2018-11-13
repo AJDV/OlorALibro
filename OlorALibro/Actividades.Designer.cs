@@ -76,9 +76,11 @@
             // 
             // dateTimePickerFecha
             // 
+            this.dateTimePickerFecha.CustomFormat = "MM/dd/yyyy hh:mm";
+            this.dateTimePickerFecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePickerFecha.Location = new System.Drawing.Point(80, 58);
             this.dateTimePickerFecha.Name = "dateTimePickerFecha";
-            this.dateTimePickerFecha.Size = new System.Drawing.Size(231, 20);
+            this.dateTimePickerFecha.Size = new System.Drawing.Size(233, 20);
             this.dateTimePickerFecha.TabIndex = 4;
             // 
             // textBoxDescripcion
@@ -101,7 +103,7 @@
             this.groupBoxActividad.Controls.Add(this.textBoxNombre);
             this.groupBoxActividad.Location = new System.Drawing.Point(12, 12);
             this.groupBoxActividad.Name = "groupBoxActividad";
-            this.groupBoxActividad.Size = new System.Drawing.Size(322, 222);
+            this.groupBoxActividad.Size = new System.Drawing.Size(321, 222);
             this.groupBoxActividad.TabIndex = 6;
             this.groupBoxActividad.TabStop = false;
             this.groupBoxActividad.Text = "Actividad";
@@ -130,11 +132,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(341, 240);
+            this.ClientSize = new System.Drawing.Size(342, 240);
             this.Controls.Add(this.groupBoxActividad);
             this.Name = "Actividades";
             this.Text = "Actividad";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Actividades_FormClosing);
             this.Load += new System.EventHandler(this.Actividades_Load);
             this.groupBoxActividad.ResumeLayout(false);
             this.groupBoxActividad.PerformLayout();

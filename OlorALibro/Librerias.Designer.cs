@@ -32,15 +32,15 @@
             this.labelActividades = new System.Windows.Forms.Label();
             this.textBoxLibreria = new System.Windows.Forms.TextBox();
             this.dataGridViewActividades = new System.Windows.Forms.DataGridView();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripción = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBoxLibreria = new System.Windows.Forms.GroupBox();
+            this.buttonEditar = new System.Windows.Forms.Button();
             this.buttonEliminar = new System.Windows.Forms.Button();
             this.buttonAnadir = new System.Windows.Forms.Button();
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.buttonAceptar = new System.Windows.Forms.Button();
-            this.buttonEditar = new System.Windows.Forms.Button();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripción = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewActividades)).BeginInit();
             this.groupBoxLibreria.SuspendLayout();
             this.SuspendLayout();
@@ -85,6 +85,28 @@
             this.dataGridViewActividades.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewActividades.Size = new System.Drawing.Size(457, 199);
             this.dataGridViewActividades.TabIndex = 3;
+            this.dataGridViewActividades.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewActividades_CellDoubleClick);
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "Nombre";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // Fecha
+            // 
+            this.Fecha.DataPropertyName = "Fecha";
+            this.Fecha.HeaderText = "Fecha";
+            this.Fecha.Name = "Fecha";
+            this.Fecha.ReadOnly = true;
+            // 
+            // Descripción
+            // 
+            this.Descripción.DataPropertyName = "Descripcion";
+            this.Descripción.HeaderText = "Descripción";
+            this.Descripción.Name = "Descripción";
+            this.Descripción.ReadOnly = true;
             // 
             // groupBoxLibreria
             // 
@@ -103,6 +125,16 @@
             this.groupBoxLibreria.TabIndex = 4;
             this.groupBoxLibreria.TabStop = false;
             this.groupBoxLibreria.Text = "Libreria";
+            // 
+            // buttonEditar
+            // 
+            this.buttonEditar.Location = new System.Drawing.Point(558, 118);
+            this.buttonEditar.Name = "buttonEditar";
+            this.buttonEditar.Size = new System.Drawing.Size(36, 23);
+            this.buttonEditar.TabIndex = 8;
+            this.buttonEditar.Text = "Edit";
+            this.buttonEditar.UseVisualStyleBackColor = true;
+            this.buttonEditar.Click += new System.EventHandler(this.buttonEditar_Click);
             // 
             // buttonEliminar
             // 
@@ -141,37 +173,6 @@
             this.buttonAceptar.TabIndex = 4;
             this.buttonAceptar.Text = "Aceptar";
             this.buttonAceptar.UseVisualStyleBackColor = true;
-            // 
-            // buttonEditar
-            // 
-            this.buttonEditar.Location = new System.Drawing.Point(558, 118);
-            this.buttonEditar.Name = "buttonEditar";
-            this.buttonEditar.Size = new System.Drawing.Size(36, 23);
-            this.buttonEditar.TabIndex = 8;
-            this.buttonEditar.Text = "Edit";
-            this.buttonEditar.UseVisualStyleBackColor = true;
-            this.buttonEditar.Click += new System.EventHandler(this.buttonEditar_Click);
-            // 
-            // Nombre
-            // 
-            this.Nombre.DataPropertyName = "Nombre";
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            // 
-            // Fecha
-            // 
-            this.Fecha.DataPropertyName = "Fecha";
-            this.Fecha.HeaderText = "Fecha";
-            this.Fecha.Name = "Fecha";
-            this.Fecha.ReadOnly = true;
-            // 
-            // Descripción
-            // 
-            this.Descripción.DataPropertyName = "Descripcion";
-            this.Descripción.HeaderText = "Descripción";
-            this.Descripción.Name = "Descripción";
-            this.Descripción.ReadOnly = true;
             // 
             // Librerias
             // 

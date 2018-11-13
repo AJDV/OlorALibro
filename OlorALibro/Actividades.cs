@@ -12,68 +12,66 @@ namespace OlorALibro
 {
     public partial class Actividades : Form
     {
-        List<Actividad> acts;
-        Actividad a = new Actividad();
-        bool cambios = false;
+        BindingList<Actividad> acts;
+        Actividad a;
+        bool editar = false;
 
         public Actividades()
         {
             InitializeComponent();
         }
 
-        public Actividades(List<Actividad> acts)
+        public Actividades(BindingList<Actividad> acts)
         {
             InitializeComponent();
             this.acts = acts;
         }
 
-        //public Actividades(Actividad a)
-        //{
-        //    InitializeComponent();
-        //    this.a = a;
-        //}
+        public Actividades(Actividad a)
+        {
+            InitializeComponent();
+            this.editar = true;
+            this.a = a;
+        }
 
         private void Actividades_Load(object sender, EventArgs e)
         {
-            //if (a != null)
-            //{
-            //    textBoxNombre.Text = a.Nombre;
-            //    dateTimePickerFecha.Value = a.Fecha;
-            //    textBoxDescripcion.Text = a.Descripción;
-            //}
+            if (a != null)
+            {
+                textBoxNombre.Text = a.Nombre;
+                dateTimePickerFecha.Value = a.Fecha;
+                textBoxDescripcion.Text = a.Descripcion;
+            }
+            else
+            {
+                this.a = new Actividad();
+            }
         }
 
         private void buttonAceptar_Click(object sender, EventArgs e)
         {
             anadirActividad();
-            guardarActividad();
-            this.Close();
-        }
-
-        private void Actividades_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (!cambios)
+            if (!editar)
             {
-                anadirActividad();
                 guardarActividad();
             }
+            this.Close();
         }
 
         private void anadirActividad()
         {
             a.Nombre = textBoxNombre.Text;
             a.Fecha = dateTimePickerFecha.Value;
-            a.Descripción = textBoxDescripcion.Text;
+            a.Descripcion = textBoxDescripcion.Text;
         }
 
         private void guardarActividad()
         {
             DialogResult dr = MessageBox.Show("Está apunto de añadir una actividad, está seguro?", "Atención", MessageBoxButtons.OKCancel);
 
-            if (dr == DialogResult.OK)
+            if (dr == DialogResult.OK && !editar)
             {
                 acts.Add(a);
-                cambios = true;
             }
             else
             {

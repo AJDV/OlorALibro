@@ -13,7 +13,6 @@ namespace OlorALibro
     public partial class Librerias : Form
     {
         Libreria lib = new Libreria();
-        List<Actividad> acts;
 
         public Librerias()
         {
@@ -22,8 +21,8 @@ namespace OlorALibro
 
         private void Librerias_Load(object sender, EventArgs e)
         {
-            acts = lib.Activs;
-            dataGridViewActividades.DataSource = acts;
+            lib.Activs = new BindingList<Actividad>();
+            dataGridViewActividades.DataSource = lib.Activs;
         }
 
         private void Librerias_Activated(object sender, EventArgs e)
@@ -33,26 +32,39 @@ namespace OlorALibro
 
         private void buttonAnadir_Click(object sender, EventArgs e)
         {
-            Actividades f = new Actividades(acts);
+            Actividades f = new Actividades(lib.Activs);
             f.ShowDialog();
         }
 
         private void buttonEditar_Click(object sender, EventArgs e)
         {
-            //Actividad a = (Actividad) dataGridViewActividades.CurrentRow.DataBoundItem;
-            //Actividades f = new Actividades(a);
+            Actividad a = (Actividad)dataGridViewActividades.CurrentRow.DataBoundItem;
+            Actividades f = new Actividades(a);
+            f.ShowDialog();
         }
 
         private void buttonEliminar_Click(object sender, EventArgs e)
         {
-            acts.RemoveAt(dataGridViewActividades.SelectedRows[0].Index);
-            refrescarGrid();
+            DialogResult dr = MessageBox.Show("Está seguro que desa eliminar esta atividad", "Eliminar", MessageBoxButtons.YesNo);
+            if (dr == DialogResult.Yes)
+            {
+                lib.Activs.RemoveAt(dataGridViewActividades.SelectedRows[0].Index);
+                refrescarGrid();
+            }
+
         }
 
         private void refrescarGrid()
         {
             dataGridViewActividades.DataSource = null;
-            dataGridViewActividades.DataSource = acts;
+            dataGridViewActividades.DataSource = lib.Activs;
+        }
+
+        private void dataGridViewActividades_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Actividad a = (Actividad)dataGridViewActividades.CurrentRow.DataBoundItem;
+            Actividades f = new Actividades(a);
+            f.ShowDialog();
         }
     }
 }
