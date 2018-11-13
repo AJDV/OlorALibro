@@ -92,14 +92,9 @@
     </Compile>
     <None Include="Json\ListaDeLibrerías\ActivDeLibrerias\Act_LibreriaPepito.json" />
     <None Include="Json\ListaDeLibrerías\ActivDeLibrerias\Act_LibreriaJose.json" />
-    <None Include="Json\ListaDeLibrerías\ActivDeLibrerias\UsersActs\Users_Act_LibreriaJose\Act_2.json" />
-    <None Include="Json\ListaDeLibrerías\ActivDeLibrerias\UsersActs\Users_Act_LibreriaJose\Act_1.json" />
-    <None Include="Json\ListaDeLibrerías\ActivDeLibrerias\UsersActs\Users_Act_LibreriaPepito\Act_1.json" />
-    <None Include="Json\ListaDeLibrerías\ActivDeLibrerias\UsersActs\Users_Act_LibreriaPepito\Act_2.json" />
     <None Include="Json\ListaDeLibrerías\Librerias.json" />
     <None Include="Json\AdminUsers\loginAdmin.json" />
     <None Include="Json\AdminUsers\users.json" />
-    <None Include="Json\UsuariosPlataforma\AutenticacionUsuarios.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

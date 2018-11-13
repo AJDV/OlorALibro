@@ -4,13 +4,13 @@
     "Direccion": "Calle Gran de Sant Andreu 382",
     "Telefono": "622598345",
     "Correo": "libreriaJose1@gmail.com",
-    "actividades": "..\\ActivDeLibrerias\\Act_LibreriaJose.json"
+    "actividades": "Json\\ListaDeLibrerías\\ActivDeLibrerias\\Act_LibreriaJose.json"
   },
   {
     "Nombre": "Libreria Jose",
     "Direccion": "Calle Compte d'Urgell 171",
     "Telefono": "659874256",
     "Correo": "libreriaPepito1@gmail.com",
-    "actividades": "..\\ActivDeLibrerias\\Act_LibreriaPepito.json"
+    "actividades": "Json\\ListaDeLibrerías\\ActivDeLibrerias\\Act_LibreriaJose.json"
   }
 ]

@@ -6,7 +6,10 @@
     "Descripcion": "Club de lectores abierto para todo aquel interesado",
     "Fecha": "05/05/2019",
     "Hora": "17:30",
-    "Usuarios" : "..\\UsersActs\\Users_Act_LibreriaPepito\\Act_1"
+    "Usuarios": [
+      "Jonathan94",
+      "Victor94"
+    ]
   },
   {
     "NumeroActividad": 2,
@@ -15,6 +18,9 @@
     "Descripcion": "Dona Leon vendra a firmar durante 3 horas su 'Muerte en la Fenice', exito del año ",
     "Fecha": "01/02/2019",
     "Hora": "12:00",
-     "Usuarios" : "..\\UsersActs\\Users_Act_LibreriaPepito\\Act_2"
+    "Usuarios": [
+      "Jonathan94",
+      "Victor94"
+    ]
   }
 ]
