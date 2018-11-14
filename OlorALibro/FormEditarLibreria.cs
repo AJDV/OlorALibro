@@ -43,7 +43,7 @@ namespace OlorALibro
             LibList.ElementAt<Libreria>(pos).telefon = int.Parse(textBoxTelefon.Text);
             LibList.ElementAt<Libreria>(pos).direccio = textBoxDir.Text;
             this.Close();
-            //Solo me guarda el pto nombre dafuq?
+            //Se recargan la cosas cuando clico dafuq?
         }
 
         private void buttonEliminar_Click(object sender, EventArgs e)

@@ -28,25 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dataGridViewLibrerias = new System.Windows.Forms.DataGridView();
-            this.Nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Telefon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Direccio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelLibrerias = new System.Windows.Forms.Label();
             this.buttonAñadir = new System.Windows.Forms.Button();
+            this.nomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.direccioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.libreriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLibrerias)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.libreriaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewLibrerias
             // 
             this.dataGridViewLibrerias.AllowUserToAddRows = false;
             this.dataGridViewLibrerias.AllowUserToDeleteRows = false;
+            this.dataGridViewLibrerias.AutoGenerateColumns = false;
             this.dataGridViewLibrerias.BackgroundColor = System.Drawing.SystemColors.ButtonShadow;
             this.dataGridViewLibrerias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewLibrerias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Nom,
-            this.Telefon,
-            this.Direccio});
+            this.nomDataGridViewTextBoxColumn,
+            this.telefonDataGridViewTextBoxColumn,
+            this.direccioDataGridViewTextBoxColumn});
+            this.dataGridViewLibrerias.DataSource = this.libreriaBindingSource;
             this.dataGridViewLibrerias.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataGridViewLibrerias.Location = new System.Drawing.Point(0, 91);
             this.dataGridViewLibrerias.Name = "dataGridViewLibrerias";
@@ -54,28 +59,6 @@
             this.dataGridViewLibrerias.Size = new System.Drawing.Size(609, 268);
             this.dataGridViewLibrerias.TabIndex = 0;
             this.dataGridViewLibrerias.Click += new System.EventHandler(this.dataGridViewLibrerias_Click);
-            // 
-            // Nom
-            // 
-            this.Nom.DataPropertyName = "nom";
-            this.Nom.HeaderText = "Nom";
-            this.Nom.Name = "Nom";
-            this.Nom.ReadOnly = true;
-            this.Nom.Width = 200;
-            // 
-            // Telefon
-            // 
-            this.Telefon.DataPropertyName = "telefon";
-            this.Telefon.HeaderText = "Telefon";
-            this.Telefon.Name = "Telefon";
-            this.Telefon.ReadOnly = true;
-            // 
-            // Direccio
-            // 
-            this.Direccio.DataPropertyName = "direccio";
-            this.Direccio.HeaderText = "Direccio";
-            this.Direccio.Name = "Direccio";
-            this.Direccio.ReadOnly = true;
             // 
             // labelLibrerias
             // 
@@ -98,6 +81,31 @@
             this.buttonAñadir.UseVisualStyleBackColor = true;
             this.buttonAñadir.Click += new System.EventHandler(this.buttonAñadir_Click);
             // 
+            // nomDataGridViewTextBoxColumn
+            // 
+            this.nomDataGridViewTextBoxColumn.DataPropertyName = "nom";
+            this.nomDataGridViewTextBoxColumn.HeaderText = "Nom";
+            this.nomDataGridViewTextBoxColumn.Name = "nomDataGridViewTextBoxColumn";
+            this.nomDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // telefonDataGridViewTextBoxColumn
+            // 
+            this.telefonDataGridViewTextBoxColumn.DataPropertyName = "telefon";
+            this.telefonDataGridViewTextBoxColumn.HeaderText = "Telefon";
+            this.telefonDataGridViewTextBoxColumn.Name = "telefonDataGridViewTextBoxColumn";
+            this.telefonDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // direccioDataGridViewTextBoxColumn
+            // 
+            this.direccioDataGridViewTextBoxColumn.DataPropertyName = "direccio";
+            this.direccioDataGridViewTextBoxColumn.HeaderText = "Direccio";
+            this.direccioDataGridViewTextBoxColumn.Name = "direccioDataGridViewTextBoxColumn";
+            this.direccioDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // libreriaBindingSource
+            // 
+            this.libreriaBindingSource.DataSource = typeof(OlorALibro.Libreria);
+            // 
             // FormLibrerias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -111,6 +119,7 @@
             this.Text = "Librerias";
             this.Load += new System.EventHandler(this.FormLibrerias_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLibrerias)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.libreriaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -121,8 +130,9 @@
         private System.Windows.Forms.DataGridView dataGridViewLibrerias;
         private System.Windows.Forms.Label labelLibrerias;
         private System.Windows.Forms.Button buttonAñadir;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nom;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Telefon;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Direccio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefonDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn direccioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource libreriaBindingSource;
     }
 }

@@ -122,6 +122,7 @@
     <None Include="CRUD users\loginAdmin.json" />
     <None Include="CRUD users\users.json" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Libreria.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

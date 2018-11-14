@@ -82,7 +82,11 @@ namespace OlorALibro
                     a.ShowDialog();
                 }
                 else p++;
-            } 
+            }
+
+            dataGridViewLibrerias.Update();
         }
+        
+        
     }
 }
