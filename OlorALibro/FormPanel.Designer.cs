@@ -37,7 +37,7 @@
             // buttonUsers
             // 
             this.buttonUsers.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonUsers.Location = new System.Drawing.Point(12, 29);
+            this.buttonUsers.Location = new System.Drawing.Point(12, 54);
             this.buttonUsers.Name = "buttonUsers";
             this.buttonUsers.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.buttonUsers.Size = new System.Drawing.Size(262, 99);
@@ -49,7 +49,7 @@
             // buttonLibreria
             // 
             this.buttonLibreria.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold);
-            this.buttonLibreria.Location = new System.Drawing.Point(280, 29);
+            this.buttonLibreria.Location = new System.Drawing.Point(280, 54);
             this.buttonLibreria.Name = "buttonLibreria";
             this.buttonLibreria.Size = new System.Drawing.Size(262, 99);
             this.buttonLibreria.TabIndex = 0;
@@ -77,7 +77,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(554, 137);
+            this.ClientSize = new System.Drawing.Size(554, 165);
             this.Controls.Add(this.labelUser);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.buttonLibreria);

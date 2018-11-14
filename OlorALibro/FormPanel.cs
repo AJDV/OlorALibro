@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -31,8 +32,17 @@ namespace OlorALibro.CRUD_users
 
         private void buttonUsers_Click(object sender, EventArgs e)
         {
-            FormUsers a = new FormUsers();
-            a.ShowDialog();
+            if (File.Exists(@"../../Json/AdminUsers/users.json"))
+            {
+                FormUsers a = new FormUsers();
+                a.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("No se ha encontrado el archivo de usuarios", "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+                
+            
         }
     }
 }

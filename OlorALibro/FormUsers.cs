@@ -10,12 +10,28 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
 
 namespace OlorALibro
 {
     public partial class FormUsers : Form
     {
         BindingList<Usuario> usuarios = new BindingList<Usuario>();
+
+        private void updateGridJson()
+        {
+            JArray jArrayUsuarios = (JArray)JToken.FromObject(usuarios);
+
+            StreamWriter fichero = File.CreateText(@"../../Json/AdminUsers/users.json");
+
+            JsonTextWriter jsonWriter = new JsonTextWriter(fichero);
+
+            jArrayUsuarios.WriteTo(jsonWriter);
+
+            jsonWriter.Close();
+
+            dataGridViewUsuarios.DataSource = usuarios;
+        }
 
         public FormUsers()
         {
@@ -24,25 +40,50 @@ namespace OlorALibro
 
         private void FormUsers_Load(object sender, EventArgs e)
         {
-            if (File.Exists(@"E:\ABP\OlorALibro\OlorALibro\CRUD users\users.json"))
-            {
-                JArray jArrayUsuarios = JArray.Parse(File.ReadAllText(@"E:\ABP\OlorALibro\OlorALibro\CRUD users\users.json"));
+                JArray jArrayUsuarios = JArray.Parse(File.ReadAllText(@"../../Json/AdminUsers/users.json"));
                 usuarios = jArrayUsuarios.ToObject<BindingList<Usuario>>();
-            }
-            else
-            {
-                MessageBox.Show("El archivo no existe", "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
 
-
-            if (usuarios.Count > 0)
-            {
                 dataGridViewUsuarios.DataSource = usuarios;
-            }
-            else
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            tabControlEdicion.SelectedIndex = 0;
+        }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            tabControlEdicion.SelectedIndex = 1;
+        }
+
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+            try
             {
-                MessageBox.Show("ERROR!", "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                Usuario user = new Usuario(textBoxAddNombre.Text, textBoxAddContrasenia.Text, textBoxAddNombre.Text, textBoxAddApellido.Text, textBoxAddCorreo.Text, Int32.Parse(textBoxAddPuntos.Text));
+                usuarios.Add(user);
+                updateGridJson();
             }
+            catch (Exception)
+            {
+                MessageBox.Show("Todos los campos son obligatorios!", "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            DialogResult confirm = MessageBox.Show("Confirmar", "Borrar usuario", MessageBoxButtons.OKCancel);
+            if (confirm == DialogResult.OK)
+            {
+                usuarios.RemoveAt(dataGridViewUsuarios.CurrentRow.Index);
+                updateGridJson();
+            }            
+        }
+
+        private void dataGridViewUsuarios_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            tabControlEdicion.SelectedIndex = 1;
+            //TESTEANDO Console.WriteLine(usuarios.Select());
         }
     }
 }

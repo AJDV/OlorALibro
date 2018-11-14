@@ -24,9 +24,9 @@ namespace OlorALibro
 
         private void FormLogin_Load(object sender, EventArgs e)
         {
-            if (File.Exists(@"E:\ABP\OlorALibro\OlorALibro\CRUD users\loginAdmin.json"))
+            if (File.Exists(@"../../Json/AdminUsers/loginAdmin.json"))
             {
-                JArray jArrayPelis = JArray.Parse(File.ReadAllText(@"E:\ABP\OlorALibro\OlorALibro\CRUD users\loginAdmin.json"));
+                JArray jArrayPelis = JArray.Parse(File.ReadAllText(@"../../Json/AdminUsers/loginAdmin.json"));
                 usuarios = jArrayPelis.ToObject<List<Usuario>>();
             }
             else
