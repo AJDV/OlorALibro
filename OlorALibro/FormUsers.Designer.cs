@@ -363,7 +363,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(116, 14);
+            this.label8.Location = new System.Drawing.Point(115, 14);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(90, 16);
             this.label8.TabIndex = 22;
@@ -371,7 +371,7 @@
             // 
             // textBoxEditCorreo
             // 
-            this.textBoxEditCorreo.Location = new System.Drawing.Point(119, 145);
+            this.textBoxEditCorreo.Location = new System.Drawing.Point(118, 145);
             this.textBoxEditCorreo.Name = "textBoxEditCorreo";
             this.textBoxEditCorreo.Size = new System.Drawing.Size(178, 20);
             this.textBoxEditCorreo.TabIndex = 5;
@@ -379,7 +379,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 148);
+            this.label1.Location = new System.Drawing.Point(21, 148);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(41, 13);
             this.label1.TabIndex = 20;
@@ -387,44 +387,45 @@
             // 
             // buttonEdit
             // 
-            this.buttonEdit.Location = new System.Drawing.Point(222, 197);
+            this.buttonEdit.Location = new System.Drawing.Point(221, 197);
             this.buttonEdit.Name = "buttonEdit";
             this.buttonEdit.Size = new System.Drawing.Size(75, 23);
             this.buttonEdit.TabIndex = 7;
             this.buttonEdit.Text = "Editar";
             this.buttonEdit.UseVisualStyleBackColor = true;
+            this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
             // 
             // textBoxEditPuntos
             // 
-            this.textBoxEditPuntos.Location = new System.Drawing.Point(119, 171);
+            this.textBoxEditPuntos.Location = new System.Drawing.Point(118, 171);
             this.textBoxEditPuntos.Name = "textBoxEditPuntos";
             this.textBoxEditPuntos.Size = new System.Drawing.Size(178, 20);
             this.textBoxEditPuntos.TabIndex = 6;
             // 
             // textBoxEditApellido
             // 
-            this.textBoxEditApellido.Location = new System.Drawing.Point(119, 119);
+            this.textBoxEditApellido.Location = new System.Drawing.Point(118, 119);
             this.textBoxEditApellido.Name = "textBoxEditApellido";
             this.textBoxEditApellido.Size = new System.Drawing.Size(178, 20);
             this.textBoxEditApellido.TabIndex = 4;
             // 
             // textBoxEditNombre
             // 
-            this.textBoxEditNombre.Location = new System.Drawing.Point(119, 93);
+            this.textBoxEditNombre.Location = new System.Drawing.Point(118, 93);
             this.textBoxEditNombre.Name = "textBoxEditNombre";
             this.textBoxEditNombre.Size = new System.Drawing.Size(178, 20);
             this.textBoxEditNombre.TabIndex = 3;
             // 
             // textBoxEditContrasenia
             // 
-            this.textBoxEditContrasenia.Location = new System.Drawing.Point(119, 67);
+            this.textBoxEditContrasenia.Location = new System.Drawing.Point(118, 67);
             this.textBoxEditContrasenia.Name = "textBoxEditContrasenia";
             this.textBoxEditContrasenia.Size = new System.Drawing.Size(178, 20);
             this.textBoxEditContrasenia.TabIndex = 2;
             // 
             // textBoxEditUser
             // 
-            this.textBoxEditUser.Location = new System.Drawing.Point(119, 41);
+            this.textBoxEditUser.Location = new System.Drawing.Point(118, 41);
             this.textBoxEditUser.Name = "textBoxEditUser";
             this.textBoxEditUser.Size = new System.Drawing.Size(178, 20);
             this.textBoxEditUser.TabIndex = 1;
@@ -432,7 +433,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(22, 174);
+            this.label2.Location = new System.Drawing.Point(21, 174);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(43, 13);
             this.label2.TabIndex = 13;
@@ -441,7 +442,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(22, 122);
+            this.label3.Location = new System.Drawing.Point(21, 122);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 13);
             this.label3.TabIndex = 12;
@@ -450,7 +451,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(22, 96);
+            this.label4.Location = new System.Drawing.Point(21, 96);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(47, 13);
             this.label4.TabIndex = 11;
@@ -459,7 +460,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(22, 70);
+            this.label5.Location = new System.Drawing.Point(21, 70);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(64, 13);
             this.label5.TabIndex = 10;
@@ -468,7 +469,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(22, 44);
+            this.label6.Location = new System.Drawing.Point(21, 44);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(32, 13);
             this.label6.TabIndex = 9;

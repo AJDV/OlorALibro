@@ -83,7 +83,17 @@ namespace OlorALibro
         private void dataGridViewUsuarios_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             tabControlEdicion.SelectedIndex = 1;
-            //TESTEANDO Console.WriteLine(usuarios.Select());
+            textBoxEditUser.Text = dataGridViewUsuarios.Rows[dataGridViewUsuarios.CurrentRow.Index].Cells[0].Value.ToString();
+            textBoxEditContrasenia.Text = dataGridViewUsuarios.Rows[dataGridViewUsuarios.CurrentRow.Index].Cells[1].Value.ToString();
+            textBoxEditNombre.Text = dataGridViewUsuarios.Rows[dataGridViewUsuarios.CurrentRow.Index].Cells[2].Value.ToString();
+            textBoxEditApellido.Text = dataGridViewUsuarios.Rows[dataGridViewUsuarios.CurrentRow.Index].Cells[3].Value.ToString();
+            textBoxEditCorreo.Text = dataGridViewUsuarios.Rows[dataGridViewUsuarios.CurrentRow.Index].Cells[4].Value.ToString();
+            textBoxEditPuntos.Text = dataGridViewUsuarios.Rows[dataGridViewUsuarios.CurrentRow.Index].Cells[5].Value.ToString();
+        }
+
+        private void buttonEdit_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
