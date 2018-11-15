@@ -51,11 +51,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Actividad.cs" />
-    <Compile Include="Actividades.cs">
+    <Compile Include="FormActividades.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Actividades.Designer.cs">
-      <DependentUpon>Actividades.cs</DependentUpon>
+    <Compile Include="FormActividades.Designer.cs">
+      <DependentUpon>FormActividades.cs</DependentUpon>
     </Compile>
     <Compile Include="FormPanel.cs">
       <SubType>Form</SubType>
@@ -70,17 +70,22 @@
       <DependentUpon>FormUsers.cs</DependentUpon>
     </Compile>
     <Compile Include="Libreria.cs" />
-    <Compile Include="Librerias.cs">
+    <Compile Include="FormLibrerias.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Librerias.Designer.cs">
-      <DependentUpon>Librerias.cs</DependentUpon>
+    <Compile Include="FormLibrerias.Designer.cs">
+      <DependentUpon>FormLibrerias.cs</DependentUpon>
     </Compile>
-    <Compile Include="Menu.cs">
+    <Compile Include="FormMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Menu.Designer.cs">
-      <DependentUpon>Menu.cs</DependentUpon>
+    <Compile Include="FormMenu.Designer.cs">
+      <DependentUpon>FormMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Usuario.cs" />
     <Compile Include="FormLogin.cs">
@@ -91,8 +96,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Actividades.resx">
-      <DependentUpon>Actividades.cs</DependentUpon>
+    <EmbeddedResource Include="FormActividades.resx">
+      <DependentUpon>FormActividades.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPanel.resx">
       <DependentUpon>FormPanel.cs</DependentUpon>
@@ -103,22 +108,17 @@
     <EmbeddedResource Include="FormUsers.resx">
       <DependentUpon>FormUsers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Librerias.resx">
-      <DependentUpon>Librerias.cs</DependentUpon>
+    <EmbeddedResource Include="FormLibrerias.resx">
+      <DependentUpon>FormLibrerias.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Menu.resx">
-      <DependentUpon>Menu.cs</DependentUpon>
+    <EmbeddedResource Include="FormMenu.resx">
+      <DependentUpon>FormMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="CRUD users\loginAdmin.json" />
     <None Include="CRUD users\users.json" />
     <None Include="packages.config" />
@@ -136,7 +136,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\calendario_actividades.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

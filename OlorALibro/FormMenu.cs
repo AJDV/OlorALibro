@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace OlorALibro
 {
-    public partial class Menu : Form
+    public partial class FormMenu : Form
     {
-        public Menu()
+        public FormMenu()
         {
             InitializeComponent();
         }
 
         private void actividadToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Librerias l = new Librerias();
+            FormLibrerias l = new FormLibrerias();
             l.ShowDialog();
         }
     }

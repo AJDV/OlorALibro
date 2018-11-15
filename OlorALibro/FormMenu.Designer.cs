@@ -1,6 +1,6 @@
 ﻿namespace OlorALibro
 {
-    partial class Menu
+    partial class FormMenu
     {
         /// <summary>
         /// Required designer variable.

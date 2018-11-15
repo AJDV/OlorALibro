@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace OlorALibro
 {
-    public partial class Librerias : Form
+    public partial class FormLibrerias : Form
     {
         Libreria lib = new Libreria();
 
-        public Librerias()
+        public FormLibrerias()
         {
             InitializeComponent();
         }
@@ -32,14 +32,14 @@ namespace OlorALibro
 
         private void buttonAnadir_Click(object sender, EventArgs e)
         {
-            Actividades f = new Actividades(lib.Activs);
+            FormActividades f = new FormActividades(lib.Activs);
             f.ShowDialog();
         }
 
         private void buttonEditar_Click(object sender, EventArgs e)
         {
             Actividad a = (Actividad)dataGridViewActividades.CurrentRow.DataBoundItem;
-            Actividades f = new Actividades(a);
+            FormActividades f = new FormActividades(a);
             f.ShowDialog();
         }
 
@@ -63,7 +63,7 @@ namespace OlorALibro
         private void dataGridViewActividades_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             Actividad a = (Actividad)dataGridViewActividades.CurrentRow.DataBoundItem;
-            Actividades f = new Actividades(a);
+            FormActividades f = new FormActividades(a);
             f.ShowDialog();
         }
     }

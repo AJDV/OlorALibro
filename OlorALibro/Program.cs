@@ -17,7 +17,7 @@ namespace OlorALibro
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Menu());
+            Application.Run(new FormMenu());
 
             //using (FormLogin login = new FormLogin()) //if data ok, form will close it self!
             //{

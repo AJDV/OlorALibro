@@ -10,24 +10,24 @@ using System.Windows.Forms;
 
 namespace OlorALibro
 {
-    public partial class Actividades : Form
+    public partial class FormActividades : Form
     {
         BindingList<Actividad> acts;
         Actividad a;
         bool editar = false;
 
-        public Actividades()
+        public FormActividades()
         {
             InitializeComponent();
         }
 
-        public Actividades(BindingList<Actividad> acts)
+        public FormActividades(BindingList<Actividad> acts)
         {
             InitializeComponent();
             this.acts = acts;
         }
 
-        public Actividades(Actividad a)
+        public FormActividades(Actividad a)
         {
             InitializeComponent();
             this.editar = true;
@@ -72,10 +72,6 @@ namespace OlorALibro
             if (dr == DialogResult.OK && !editar)
             {
                 acts.Add(a);
-            }
-            else
-            {
-                MessageBox.Show("No se ha añadido ninguna actividad", "Cambios no guardados", MessageBoxButtons.OK);
             }
             
         }
