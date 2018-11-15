@@ -18,7 +18,12 @@ namespace OlorALibro
     {
         BindingList<Usuario> usuarios = new BindingList<Usuario>();
 
-        private void updateGridJson()
+        public FormUsers()
+        {
+            InitializeComponent();
+        }
+
+        private void updateGridJsonUsuarios()
         {
             JArray jArrayUsuarios = (JArray)JToken.FromObject(usuarios);
 
@@ -33,27 +38,49 @@ namespace OlorALibro
             dataGridViewUsuarios.DataSource = usuarios;
         }
 
-        public FormUsers()
+        private void editarUsuario()
         {
-            InitializeComponent();
+            try
+            {
+                Usuario u = (Usuario)dataGridViewUsuarios.CurrentRow.DataBoundItem;
+
+                Console.WriteLine();
+
+                textBoxEditUser.Text = u.User;
+                textBoxEditContrasenia.Text = u.Contrasenia;
+                textBoxEditNombre.Text = u.Nombre;
+                textBoxEditApellido.Text = u.Apellido;
+                textBoxEditCorreo.Text = u.Correo;
+                textBoxEditPuntos.Text = u.Puntos.ToString();
+
+                tabControlEdicion.SelectedIndex = 1;
+            }
+            catch(Exception entry)
+            {
+                MessageBox.Show("No se ha seleccionado nigun usuario para editar!", "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
+
+
 
         private void FormUsers_Load(object sender, EventArgs e)
         {
-                JArray jArrayUsuarios = JArray.Parse(File.ReadAllText(@"../../Json/AdminUsers/users.json"));
-                usuarios = jArrayUsuarios.ToObject<BindingList<Usuario>>();
+            JArray jArrayUsuarios = JArray.Parse(File.ReadAllText(@"../../Json/AdminUsers/users.json"));
+            usuarios = jArrayUsuarios.ToObject<BindingList<Usuario>>();
 
-                dataGridViewUsuarios.DataSource = usuarios;
+            dataGridViewUsuarios.DataSource = usuarios;
         }
 
-        private void toolStripButton1_Click(object sender, EventArgs e)
+        private void toolStripAniadir_Click(object sender, EventArgs e)
         {
             tabControlEdicion.SelectedIndex = 0;
+            textBoxAddUser.Focus();
         }
 
-        private void toolStripButton3_Click(object sender, EventArgs e)
+        private void toolStripEditar_Click(object sender, EventArgs e)
         {
-            tabControlEdicion.SelectedIndex = 1;
+            editarUsuario();
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
@@ -62,7 +89,7 @@ namespace OlorALibro
             {
                 Usuario user = new Usuario(textBoxAddNombre.Text, textBoxAddContrasenia.Text, textBoxAddNombre.Text, textBoxAddApellido.Text, textBoxAddCorreo.Text, Int32.Parse(textBoxAddPuntos.Text));
                 usuarios.Add(user);
-                updateGridJson();
+                updateGridJsonUsuarios();
             }
             catch (Exception)
             {
@@ -70,30 +97,50 @@ namespace OlorALibro
             }
         }
 
-        private void toolStripButton2_Click(object sender, EventArgs e)
+        private void toolStripBorrar_Click(object sender, EventArgs e)
         {
-            DialogResult confirm = MessageBox.Show("Confirmar", "Borrar usuario", MessageBoxButtons.OKCancel);
-            if (confirm == DialogResult.OK)
+            
+            if(dataGridViewUsuarios.CurrentRow != null)
             {
-                usuarios.RemoveAt(dataGridViewUsuarios.CurrentRow.Index);
-                updateGridJson();
-            }            
+                DialogResult confirm = MessageBox.Show("Confirmar", "Borrar usuario", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                if (confirm == DialogResult.OK)
+                {
+                    usuarios.RemoveAt(dataGridViewUsuarios.CurrentRow.Index);
+                    updateGridJsonUsuarios();
+                }
+            }
+            else
+            {
+                MessageBox.Show("No se ha seleccionado ningun usuario para borrar", "Borrar usuario", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+            }
         }
 
         private void dataGridViewUsuarios_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            tabControlEdicion.SelectedIndex = 1;
-            textBoxEditUser.Text = dataGridViewUsuarios.Rows[dataGridViewUsuarios.CurrentRow.Index].Cells[0].Value.ToString();
-            textBoxEditContrasenia.Text = dataGridViewUsuarios.Rows[dataGridViewUsuarios.CurrentRow.Index].Cells[1].Value.ToString();
-            textBoxEditNombre.Text = dataGridViewUsuarios.Rows[dataGridViewUsuarios.CurrentRow.Index].Cells[2].Value.ToString();
-            textBoxEditApellido.Text = dataGridViewUsuarios.Rows[dataGridViewUsuarios.CurrentRow.Index].Cells[3].Value.ToString();
-            textBoxEditCorreo.Text = dataGridViewUsuarios.Rows[dataGridViewUsuarios.CurrentRow.Index].Cells[4].Value.ToString();
-            textBoxEditPuntos.Text = dataGridViewUsuarios.Rows[dataGridViewUsuarios.CurrentRow.Index].Cells[5].Value.ToString();
+            editarUsuario();
         }
 
         private void buttonEdit_Click(object sender, EventArgs e)
         {
+            try
+            {
+                Usuario u = (Usuario)dataGridViewUsuarios.CurrentRow.DataBoundItem;
 
+                u.User = textBoxEditUser.Text;
+                u.Contrasenia = textBoxEditContrasenia.Text;
+                u.Nombre = textBoxEditNombre.Text;
+                u.Apellido = textBoxEditApellido.Text;
+                u.Correo = textBoxEditCorreo.Text;
+                u.Puntos = Int32.Parse(textBoxEditPuntos.Text);
+
+                updateGridJsonUsuarios();
+
+                dataGridViewUsuarios.Refresh();
+            }
+            catch(Exception entry)
+            {
+                Console.WriteLine(entry.ToString());
+            }
         }
     }
 }

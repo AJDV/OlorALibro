@@ -30,13 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridViewUsuarios = new System.Windows.Forms.DataGridView();
-            this.userDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contraseniaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.correoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.puntosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBoxGridViewUsuarios = new System.Windows.Forms.GroupBox();
             this.labelTituloUsers = new System.Windows.Forms.Label();
             this.groupBoxEdicion = new System.Windows.Forms.GroupBox();
@@ -72,18 +65,25 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripAniadir = new System.Windows.Forms.ToolStripButton();
+            this.toolStripEditar = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripBorrar = new System.Windows.Forms.ToolStripButton();
+            this.userDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contraseniaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.correoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.puntosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsuarios)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
             this.groupBoxGridViewUsuarios.SuspendLayout();
             this.groupBoxEdicion.SuspendLayout();
             this.tabControlEdicion.SuspendLayout();
             this.tabPageAdd.SuspendLayout();
             this.tabPageEditar.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewUsuarios
@@ -104,62 +104,16 @@
             this.dataGridViewUsuarios.Location = new System.Drawing.Point(3, 16);
             this.dataGridViewUsuarios.Name = "dataGridViewUsuarios";
             this.dataGridViewUsuarios.ReadOnly = true;
-            this.dataGridViewUsuarios.Size = new System.Drawing.Size(324, 213);
+            this.dataGridViewUsuarios.Size = new System.Drawing.Size(550, 213);
             this.dataGridViewUsuarios.TabIndex = 3;
             this.dataGridViewUsuarios.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewUsuarios_CellDoubleClick);
-            // 
-            // userDataGridViewTextBoxColumn
-            // 
-            this.userDataGridViewTextBoxColumn.DataPropertyName = "User";
-            this.userDataGridViewTextBoxColumn.HeaderText = "User";
-            this.userDataGridViewTextBoxColumn.Name = "userDataGridViewTextBoxColumn";
-            this.userDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // contraseniaDataGridViewTextBoxColumn
-            // 
-            this.contraseniaDataGridViewTextBoxColumn.DataPropertyName = "Contrasenia";
-            this.contraseniaDataGridViewTextBoxColumn.HeaderText = "Contrasenia";
-            this.contraseniaDataGridViewTextBoxColumn.Name = "contraseniaDataGridViewTextBoxColumn";
-            this.contraseniaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // apellidoDataGridViewTextBoxColumn
-            // 
-            this.apellidoDataGridViewTextBoxColumn.DataPropertyName = "Apellido";
-            this.apellidoDataGridViewTextBoxColumn.HeaderText = "Apellido";
-            this.apellidoDataGridViewTextBoxColumn.Name = "apellidoDataGridViewTextBoxColumn";
-            this.apellidoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // correoDataGridViewTextBoxColumn
-            // 
-            this.correoDataGridViewTextBoxColumn.DataPropertyName = "Correo";
-            this.correoDataGridViewTextBoxColumn.HeaderText = "Correo";
-            this.correoDataGridViewTextBoxColumn.Name = "correoDataGridViewTextBoxColumn";
-            this.correoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // puntosDataGridViewTextBoxColumn
-            // 
-            this.puntosDataGridViewTextBoxColumn.DataPropertyName = "Puntos";
-            this.puntosDataGridViewTextBoxColumn.HeaderText = "Puntos";
-            this.puntosDataGridViewTextBoxColumn.Name = "puntosDataGridViewTextBoxColumn";
-            this.puntosDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // usuarioBindingSource
-            // 
-            this.usuarioBindingSource.DataSource = typeof(OlorALibro.Usuario);
             // 
             // groupBoxGridViewUsuarios
             // 
             this.groupBoxGridViewUsuarios.Controls.Add(this.dataGridViewUsuarios);
             this.groupBoxGridViewUsuarios.Location = new System.Drawing.Point(15, 72);
             this.groupBoxGridViewUsuarios.Name = "groupBoxGridViewUsuarios";
-            this.groupBoxGridViewUsuarios.Size = new System.Drawing.Size(330, 232);
+            this.groupBoxGridViewUsuarios.Size = new System.Drawing.Size(556, 232);
             this.groupBoxGridViewUsuarios.TabIndex = 3;
             this.groupBoxGridViewUsuarios.TabStop = false;
             this.groupBoxGridViewUsuarios.Text = "Usuarios";
@@ -167,19 +121,19 @@
             // labelTituloUsers
             // 
             this.labelTituloUsers.AutoSize = true;
-            this.labelTituloUsers.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTituloUsers.Location = new System.Drawing.Point(36, 33);
+            this.labelTituloUsers.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTituloUsers.Location = new System.Drawing.Point(45, 30);
             this.labelTituloUsers.Name = "labelTituloUsers";
-            this.labelTituloUsers.Size = new System.Drawing.Size(297, 25);
+            this.labelTituloUsers.Size = new System.Drawing.Size(461, 39);
             this.labelTituloUsers.TabIndex = 7;
             this.labelTituloUsers.Text = "Administración de usuarios";
             // 
             // groupBoxEdicion
             // 
             this.groupBoxEdicion.Controls.Add(this.tabControlEdicion);
-            this.groupBoxEdicion.Location = new System.Drawing.Point(354, 33);
+            this.groupBoxEdicion.Location = new System.Drawing.Point(577, 28);
             this.groupBoxEdicion.Name = "groupBoxEdicion";
-            this.groupBoxEdicion.Size = new System.Drawing.Size(333, 271);
+            this.groupBoxEdicion.Size = new System.Drawing.Size(328, 276);
             this.groupBoxEdicion.TabIndex = 8;
             this.groupBoxEdicion.TabStop = false;
             this.groupBoxEdicion.Text = "Edicion";
@@ -192,7 +146,7 @@
             this.tabControlEdicion.Location = new System.Drawing.Point(3, 16);
             this.tabControlEdicion.Name = "tabControlEdicion";
             this.tabControlEdicion.SelectedIndex = 0;
-            this.tabControlEdicion.Size = new System.Drawing.Size(327, 252);
+            this.tabControlEdicion.Size = new System.Drawing.Size(322, 257);
             this.tabControlEdicion.TabIndex = 0;
             // 
             // tabPageAdd
@@ -214,7 +168,7 @@
             this.tabPageAdd.Location = new System.Drawing.Point(4, 22);
             this.tabPageAdd.Name = "tabPageAdd";
             this.tabPageAdd.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageAdd.Size = new System.Drawing.Size(319, 226);
+            this.tabPageAdd.Size = new System.Drawing.Size(314, 231);
             this.tabPageAdd.TabIndex = 0;
             this.tabPageAdd.Text = "Añadir Usuario";
             this.tabPageAdd.UseVisualStyleBackColor = true;
@@ -222,10 +176,10 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(115, 14);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(83, 7);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(94, 16);
+            this.label7.Size = new System.Drawing.Size(188, 31);
             this.label7.TabIndex = 9;
             this.label7.Text = "Añadir usuario";
             // 
@@ -362,10 +316,10 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(115, 14);
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(80, 7);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(90, 16);
+            this.label8.Size = new System.Drawing.Size(181, 31);
             this.label8.TabIndex = 22;
             this.label8.Text = "Editar usuario";
             // 
@@ -478,56 +432,102 @@
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
-            this.toolStripButton3,
+            this.toolStripAniadir,
+            this.toolStripEditar,
             this.toolStripSeparator1,
-            this.toolStripButton2});
+            this.toolStripBorrar});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(699, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(917, 25);
             this.toolStrip1.TabIndex = 9;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // toolStripButton1
+            // toolStripAniadir
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = global::OlorALibro.Properties.Resources.add;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton1.Text = "Añadir usuario";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            this.toolStripAniadir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripAniadir.Image = global::OlorALibro.Properties.Resources.add;
+            this.toolStripAniadir.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripAniadir.Name = "toolStripAniadir";
+            this.toolStripAniadir.Size = new System.Drawing.Size(23, 22);
+            this.toolStripAniadir.Text = "Añadir usuario";
+            this.toolStripAniadir.Click += new System.EventHandler(this.toolStripAniadir_Click);
             // 
-            // toolStripButton3
+            // toolStripEditar
             // 
-            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton3.Image = global::OlorALibro.Properties.Resources.edit;
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton3.Text = "Editar usuario";
-            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
+            this.toolStripEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripEditar.Image = global::OlorALibro.Properties.Resources.edit;
+            this.toolStripEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripEditar.Name = "toolStripEditar";
+            this.toolStripEditar.Size = new System.Drawing.Size(23, 22);
+            this.toolStripEditar.Text = "Editar usuario";
+            this.toolStripEditar.Click += new System.EventHandler(this.toolStripEditar_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
-            // toolStripButton2
+            // toolStripBorrar
             // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = global::OlorALibro.Properties.Resources.rubbish_bin;
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton2.Text = "Borrar usuario";
-            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            this.toolStripBorrar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripBorrar.Image = global::OlorALibro.Properties.Resources.rubbish_bin;
+            this.toolStripBorrar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripBorrar.Name = "toolStripBorrar";
+            this.toolStripBorrar.Size = new System.Drawing.Size(23, 22);
+            this.toolStripBorrar.Text = "Borrar usuario";
+            this.toolStripBorrar.Click += new System.EventHandler(this.toolStripBorrar_Click);
+            // 
+            // userDataGridViewTextBoxColumn
+            // 
+            this.userDataGridViewTextBoxColumn.DataPropertyName = "User";
+            this.userDataGridViewTextBoxColumn.HeaderText = "User";
+            this.userDataGridViewTextBoxColumn.Name = "userDataGridViewTextBoxColumn";
+            this.userDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // contraseniaDataGridViewTextBoxColumn
+            // 
+            this.contraseniaDataGridViewTextBoxColumn.DataPropertyName = "Contrasenia";
+            this.contraseniaDataGridViewTextBoxColumn.HeaderText = "Contrasenia";
+            this.contraseniaDataGridViewTextBoxColumn.Name = "contraseniaDataGridViewTextBoxColumn";
+            this.contraseniaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // apellidoDataGridViewTextBoxColumn
+            // 
+            this.apellidoDataGridViewTextBoxColumn.DataPropertyName = "Apellido";
+            this.apellidoDataGridViewTextBoxColumn.HeaderText = "Apellido";
+            this.apellidoDataGridViewTextBoxColumn.Name = "apellidoDataGridViewTextBoxColumn";
+            this.apellidoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // correoDataGridViewTextBoxColumn
+            // 
+            this.correoDataGridViewTextBoxColumn.DataPropertyName = "Correo";
+            this.correoDataGridViewTextBoxColumn.HeaderText = "Correo";
+            this.correoDataGridViewTextBoxColumn.Name = "correoDataGridViewTextBoxColumn";
+            this.correoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // puntosDataGridViewTextBoxColumn
+            // 
+            this.puntosDataGridViewTextBoxColumn.DataPropertyName = "Puntos";
+            this.puntosDataGridViewTextBoxColumn.HeaderText = "Puntos";
+            this.puntosDataGridViewTextBoxColumn.Name = "puntosDataGridViewTextBoxColumn";
+            this.puntosDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // usuarioBindingSource
+            // 
+            this.usuarioBindingSource.DataSource = typeof(OlorALibro.Usuario);
             // 
             // FormUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(699, 316);
+            this.ClientSize = new System.Drawing.Size(917, 316);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.groupBoxEdicion);
             this.Controls.Add(this.labelTituloUsers);
@@ -536,7 +536,6 @@
             this.Text = "FormUsers";
             this.Load += new System.EventHandler(this.FormUsers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsuarios)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
             this.groupBoxGridViewUsuarios.ResumeLayout(false);
             this.groupBoxEdicion.ResumeLayout(false);
             this.tabControlEdicion.ResumeLayout(false);
@@ -546,6 +545,7 @@
             this.tabPageEditar.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -560,10 +560,10 @@
         private System.Windows.Forms.TabPage tabPageAdd;
         private System.Windows.Forms.TabPage tabPageEditar;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripButton toolStripAniadir;
+        private System.Windows.Forms.ToolStripButton toolStripBorrar;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripButton toolStripButton3;
+        private System.Windows.Forms.ToolStripButton toolStripEditar;
         private System.Windows.Forms.Label labelPuntos;
         private System.Windows.Forms.Label labelApellido;
         private System.Windows.Forms.Label labelNombre;
