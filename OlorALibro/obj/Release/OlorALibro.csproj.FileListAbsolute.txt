@@ -12,3 +12,18 @@ E:\OlorALibro\OlorALibro\obj\Release\OlorALibro.Properties.Resources.resources
 E:\OlorALibro\OlorALibro\obj\Release\OlorALibro.csproj.GenerateResource.Cache
 E:\OlorALibro\OlorALibro\obj\Release\OlorALibro.exe
 E:\OlorALibro\OlorALibro\obj\Release\OlorALibro.pdb
+F:\aaaVictor Para\victorgit\OlorALibro\OlorALibro\bin\Release\OlorALibro.exe.config
+F:\aaaVictor Para\victorgit\OlorALibro\OlorALibro\obj\Release\OlorALibro.exe
+F:\aaaVictor Para\victorgit\OlorALibro\OlorALibro\obj\Release\OlorALibro.pdb
+F:\aaaVictor Para\victorgit\OlorALibro\OlorALibro\obj\Release\OlorALibro.csprojResolveAssemblyReference.cache
+F:\aaaVictor Para\victorgit\OlorALibro\OlorALibro\obj\Release\OlorALibro.FormEditar.resources
+F:\aaaVictor Para\victorgit\OlorALibro\OlorALibro\obj\Release\OlorALibro.CRUD_users.formPanel.resources
+F:\aaaVictor Para\victorgit\OlorALibro\OlorALibro\obj\Release\OlorALibro.FormLogin.resources
+F:\aaaVictor Para\victorgit\OlorALibro\OlorALibro\obj\Release\OlorALibro.FormUsers.resources
+F:\aaaVictor Para\victorgit\OlorALibro\OlorALibro\obj\Release\OlorALibro.FormLibrerias.resources
+F:\aaaVictor Para\victorgit\OlorALibro\OlorALibro\obj\Release\OlorALibro.Properties.Resources.resources
+F:\aaaVictor Para\victorgit\OlorALibro\OlorALibro\obj\Release\OlorALibro.csproj.GenerateResource.Cache
+F:\aaaVictor Para\victorgit\OlorALibro\OlorALibro\bin\Release\OlorALibro.exe
+F:\aaaVictor Para\victorgit\OlorALibro\OlorALibro\bin\Release\OlorALibro.pdb
+F:\aaaVictor Para\victorgit\OlorALibro\OlorALibro\bin\Release\Newtonsoft.Json.dll
+F:\aaaVictor Para\victorgit\OlorALibro\OlorALibro\bin\Release\Newtonsoft.Json.xml
