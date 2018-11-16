@@ -12,12 +12,27 @@ namespace OlorALibro.CRUD_users
 {
     public partial class formPanel : Form
     {
-        string usuario;
+        static string usuario;
 
-        public formPanel(string usuario)
+        public formPanel()
         {
             InitializeComponent();
-            this.usuario = usuario;
+        }
+
+        public static void setUser(string user)
+        {
+            usuario = user;
+        }
+
+        private void formPanel_Load(object sender, EventArgs e)
+        {
+            labelUser.Text = usuario;
+        }
+
+        private void buttonUsers_Click(object sender, EventArgs e)
+        {
+            FormUsers a = new FormUsers();
+            a.ShowDialog();
         }
     }
 }

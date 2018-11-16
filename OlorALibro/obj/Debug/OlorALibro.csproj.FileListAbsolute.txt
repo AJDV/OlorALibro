@@ -78,3 +78,6 @@ C:\Users\David\Desktop\Repos\OlorALibro\obj\Debug\OlorALibro.csproj.CoreCompileI
 C:\Users\David\Desktop\Repos\OlorALibro\obj\Debug\OlorALibro.csproj.CopyComplete
 C:\Users\David\Desktop\Repos\OlorALibro\obj\Debug\OlorALibro.exe
 C:\Users\David\Desktop\Repos\OlorALibro\obj\Debug\OlorALibro.pdb
+C:\Users\cep.CEPNET0\Source\Repos\AJDV\OlorALibro\OlorALibro\bin\Debug\OlorALibro.exe.config
+C:\Users\cep.CEPNET0\Source\Repos\AJDV\OlorALibro\OlorALibro\obj\Debug\OlorALibro.exe
+C:\Users\cep.CEPNET0\Source\Repos\AJDV\OlorALibro\OlorALibro\obj\Debug\OlorALibro.pdb

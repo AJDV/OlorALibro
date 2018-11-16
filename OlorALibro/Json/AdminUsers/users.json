@@ -1,0 +1,18 @@
+﻿[
+  {
+    "User" :"jonathan94", //este Usuario sera unico --> como un Id
+    "Contrasenia" : "...", 
+    "Nombre": "Jonathan",
+    "Apellido": "Negredo",
+    "Correo": "jonathanegredo3@gmail.com",
+    "Puntos": 10
+  },
+  {
+    "User" :"Victor94", //este Usuario sera unico --> como un Id
+    "Contrasenia" : "...",
+    "Nombre": "Jonathan",
+    "Apellido": "Negredo",
+    "Correo": "jonathanegredo3@gmail.com",
+    "Puntos": 10
+  }
+]
