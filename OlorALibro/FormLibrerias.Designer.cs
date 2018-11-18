@@ -30,17 +30,19 @@
         {
             this.labelLibreria = new System.Windows.Forms.Label();
             this.labelActividades = new System.Windows.Forms.Label();
-            this.textBoxLibreria = new System.Windows.Forms.TextBox();
+            this.textBoxNombreLibreria = new System.Windows.Forms.TextBox();
             this.dataGridViewActividades = new System.Windows.Forms.DataGridView();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripción = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBoxLibreria = new System.Windows.Forms.GroupBox();
             this.buttonEditar = new System.Windows.Forms.Button();
             this.buttonEliminar = new System.Windows.Forms.Button();
             this.buttonAnadir = new System.Windows.Forms.Button();
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.buttonAceptar = new System.Windows.Forms.Button();
+            this.id_actividad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripción = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewActividades)).BeginInit();
             this.groupBoxLibreria.SuspendLayout();
             this.SuspendLayout();
@@ -63,12 +65,12 @@
             this.labelActividades.TabIndex = 1;
             this.labelActividades.Text = "Actividades";
             // 
-            // textBoxLibreria
+            // textBoxNombreLibreria
             // 
-            this.textBoxLibreria.Location = new System.Drawing.Point(94, 21);
-            this.textBoxLibreria.Name = "textBoxLibreria";
-            this.textBoxLibreria.Size = new System.Drawing.Size(457, 20);
-            this.textBoxLibreria.TabIndex = 2;
+            this.textBoxNombreLibreria.Location = new System.Drawing.Point(94, 21);
+            this.textBoxNombreLibreria.Name = "textBoxNombreLibreria";
+            this.textBoxNombreLibreria.Size = new System.Drawing.Size(457, 20);
+            this.textBoxNombreLibreria.TabIndex = 2;
             // 
             // dataGridViewActividades
             // 
@@ -76,8 +78,10 @@
             this.dataGridViewActividades.AllowUserToDeleteRows = false;
             this.dataGridViewActividades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewActividades.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id_actividad,
             this.Nombre,
             this.Fecha,
+            this.hora,
             this.Descripción});
             this.dataGridViewActividades.Location = new System.Drawing.Point(94, 59);
             this.dataGridViewActividades.Name = "dataGridViewActividades";
@@ -86,27 +90,6 @@
             this.dataGridViewActividades.Size = new System.Drawing.Size(457, 199);
             this.dataGridViewActividades.TabIndex = 3;
             this.dataGridViewActividades.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewActividades_CellDoubleClick);
-            // 
-            // Nombre
-            // 
-            this.Nombre.DataPropertyName = "Nombre";
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            // 
-            // Fecha
-            // 
-            this.Fecha.DataPropertyName = "Fecha";
-            this.Fecha.HeaderText = "Fecha";
-            this.Fecha.Name = "Fecha";
-            this.Fecha.ReadOnly = true;
-            // 
-            // Descripción
-            // 
-            this.Descripción.DataPropertyName = "Descripcion";
-            this.Descripción.HeaderText = "Descripción";
-            this.Descripción.Name = "Descripción";
-            this.Descripción.ReadOnly = true;
             // 
             // groupBoxLibreria
             // 
@@ -117,7 +100,7 @@
             this.groupBoxLibreria.Controls.Add(this.buttonAceptar);
             this.groupBoxLibreria.Controls.Add(this.dataGridViewActividades);
             this.groupBoxLibreria.Controls.Add(this.labelLibreria);
-            this.groupBoxLibreria.Controls.Add(this.textBoxLibreria);
+            this.groupBoxLibreria.Controls.Add(this.textBoxNombreLibreria);
             this.groupBoxLibreria.Controls.Add(this.labelActividades);
             this.groupBoxLibreria.Location = new System.Drawing.Point(12, 12);
             this.groupBoxLibreria.Name = "groupBoxLibreria";
@@ -173,14 +156,51 @@
             this.buttonAceptar.TabIndex = 4;
             this.buttonAceptar.Text = "Aceptar";
             this.buttonAceptar.UseVisualStyleBackColor = true;
+            this.buttonAceptar.Click += new System.EventHandler(this.buttonAceptar_Click);
             // 
-            // Librerias
+            // id_actividad
+            // 
+            this.id_actividad.DataPropertyName = "id_act";
+            this.id_actividad.HeaderText = "ID Actividad";
+            this.id_actividad.Name = "id_actividad";
+            this.id_actividad.ReadOnly = true;
+            this.id_actividad.Visible = false;
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "Nombre";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // Fecha
+            // 
+            this.Fecha.DataPropertyName = "Fecha";
+            this.Fecha.HeaderText = "Fecha";
+            this.Fecha.Name = "Fecha";
+            this.Fecha.ReadOnly = true;
+            // 
+            // hora
+            // 
+            this.hora.DataPropertyName = "Hora";
+            this.hora.HeaderText = "Hora";
+            this.hora.Name = "hora";
+            this.hora.ReadOnly = true;
+            // 
+            // Descripción
+            // 
+            this.Descripción.DataPropertyName = "Descripcion";
+            this.Descripción.HeaderText = "Descripción";
+            this.Descripción.Name = "Descripción";
+            this.Descripción.ReadOnly = true;
+            // 
+            // FormLibrerias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(624, 319);
             this.Controls.Add(this.groupBoxLibreria);
-            this.Name = "Librerias";
+            this.Name = "FormLibrerias";
             this.Text = "Libreria";
             this.Activated += new System.EventHandler(this.Librerias_Activated);
             this.Load += new System.EventHandler(this.Librerias_Load);
@@ -195,7 +215,7 @@
 
         private System.Windows.Forms.Label labelLibreria;
         private System.Windows.Forms.Label labelActividades;
-        private System.Windows.Forms.TextBox textBoxLibreria;
+        private System.Windows.Forms.TextBox textBoxNombreLibreria;
         private System.Windows.Forms.DataGridView dataGridViewActividades;
         private System.Windows.Forms.GroupBox groupBoxLibreria;
         private System.Windows.Forms.Button buttonCancelar;
@@ -203,8 +223,10 @@
         private System.Windows.Forms.Button buttonEliminar;
         private System.Windows.Forms.Button buttonAnadir;
         private System.Windows.Forms.Button buttonEditar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_actividad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hora;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripción;
     }
 }

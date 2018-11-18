@@ -27,11 +27,9 @@ D:\ABP\OlorALibro\OlorALibro\obj\Debug\OlorALibro.pdb
 D:\ABP\OlorALibro\OlorALibro\obj\Debug\OlorALibro.FormUsers.resources
 E:\ABP\OlorALibro\OlorALibro\obj\Debug\OlorALibro.FormUsers.resources
 C:\Users\David\Source\Repos\OlorALibro\OlorALibro\obj\Debug\OlorALibro.csprojAssemblyReference.cache
-C:\Users\David\Source\Repos\OlorALibro\OlorALibro\obj\Debug\OlorALibro.Actividades.resources
 C:\Users\David\Source\Repos\OlorALibro\OlorALibro\obj\Debug\OlorALibro.CRUD_users.formPanel.resources
 C:\Users\David\Source\Repos\OlorALibro\OlorALibro\obj\Debug\OlorALibro.FormLogin.resources
 C:\Users\David\Source\Repos\OlorALibro\OlorALibro\obj\Debug\OlorALibro.FormUsers.resources
-C:\Users\David\Source\Repos\OlorALibro\OlorALibro\obj\Debug\OlorALibro.Librerias.resources
 C:\Users\David\Source\Repos\OlorALibro\OlorALibro\obj\Debug\OlorALibro.Properties.Resources.resources
 C:\Users\David\Source\Repos\OlorALibro\OlorALibro\obj\Debug\OlorALibro.csproj.GenerateResource.cache
 C:\Users\David\Source\Repos\OlorALibro\OlorALibro\obj\Debug\OlorALibro.csproj.CoreCompileInputs.cache
@@ -43,7 +41,6 @@ C:\Users\David\Source\Repos\OlorALibro\OlorALibro\bin\Debug\OlorALibro.pdb
 C:\Users\David\Source\Repos\OlorALibro\OlorALibro\bin\Debug\Newtonsoft.Json.dll
 C:\Users\David\Source\Repos\OlorALibro\OlorALibro\bin\Debug\Newtonsoft.Json.xml
 C:\Users\David\Source\Repos\OlorALibro\OlorALibro\obj\Debug\OlorALibro.csproj.CopyComplete
-C:\Users\David\Source\Repos\OlorALibro\OlorALibro\obj\Debug\OlorALibro.Menu.resources
 C:\Users\cep.CEPNET0\Source\Repos\OlorALibro\OlorALibro\bin\Debug\OlorALibro.exe.config
 C:\Users\cep.CEPNET0\Source\Repos\OlorALibro\OlorALibro\obj\Debug\OlorALibro.exe
 C:\Users\cep.CEPNET0\Source\Repos\OlorALibro\OlorALibro\obj\Debug\OlorALibro.pdb
@@ -81,3 +78,6 @@ C:\Users\David\Desktop\Repos\OlorALibro\obj\Debug\OlorALibro.pdb
 C:\Users\cep.CEPNET0\Source\Repos\AJDV\OlorALibro\OlorALibro\bin\Debug\OlorALibro.exe.config
 C:\Users\cep.CEPNET0\Source\Repos\AJDV\OlorALibro\OlorALibro\obj\Debug\OlorALibro.exe
 C:\Users\cep.CEPNET0\Source\Repos\AJDV\OlorALibro\OlorALibro\obj\Debug\OlorALibro.pdb
+C:\Users\David\Source\Repos\OlorALibro\OlorALibro\obj\Debug\OlorALibro.FormActividades.resources
+C:\Users\David\Source\Repos\OlorALibro\OlorALibro\obj\Debug\OlorALibro.FormLibrerias.resources
+C:\Users\David\Source\Repos\OlorALibro\OlorALibro\obj\Debug\OlorALibro.FormMenu.resources
