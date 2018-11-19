@@ -52,7 +52,7 @@ namespace OlorALibro
             if (a != null)
             {
                 textBoxNombre.Text = a.Nombre;
-                dateTimePickerFecha.Value = a.Fecha;
+                dateTimePickerFecha.Value = DateTime.Parse(a.Fecha);
                 dateTimePickerHora.Value = DateTime.Parse(a.Hora);
                 textBoxDescripcion.Text = a.Descripcion;
             }
@@ -77,7 +77,7 @@ namespace OlorALibro
         private void anadirActividad()
         {
             a.Nombre = textBoxNombre.Text;
-            a.Fecha = dateTimePickerFecha.Value.Date;
+            a.Fecha = dateTimePickerFecha.Value.ToString("yyyy-MM-dd");
             a.Hora = dateTimePickerHora.Value.ToString("HH:mm");
             a.Descripcion = textBoxDescripcion.Text;
         }

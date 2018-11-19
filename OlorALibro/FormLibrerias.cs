@@ -15,7 +15,7 @@ namespace OlorALibro
 {
     public partial class FormLibrerias : Form
     {
-        //Creo una libreria auxiliar, debería pasarle una
+        //Creo una libreria auxiliar, debería pasarle una de la lista de Librerias
         Libreria lib = new Libreria();
 
         //Deberemos pasarle el nombre de la Libreria para realizar el id de la actividad
@@ -36,8 +36,9 @@ namespace OlorALibro
                 JArray ja = JArray.Parse(File.ReadAllText(@"..\..\act_lib.json"));
                 lib.Activs = ja.ToObject<BindingList<Actividad>>();
             }
- 
+
             dataGridViewActividades.DataSource = lib.Activs;
+            dataGridViewActividades.ClearSelection();
         }
 
         //GRABAMOS EL JSON
@@ -92,8 +93,11 @@ namespace OlorALibro
         //Método para refrescar la dataGridView
         private void refrescarGrid()
         {
-            //dataGridViewActividades.DataSource = null;
+            dataGridViewActividades.DataSource = null;
             dataGridViewActividades.DataSource = lib.Activs;
+
+            dataGridViewActividades.Columns[0].Visible = false;
+            dataGridViewActividades.ClearSelection();
         }
 
         //Editar una actividad al hacer doble click sobre la row
