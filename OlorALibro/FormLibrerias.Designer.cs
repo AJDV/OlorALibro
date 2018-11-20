@@ -40,22 +40,24 @@
             this.buttonGuardar = new System.Windows.Forms.Button();
             this.buttonEditar = new System.Windows.Forms.Button();
             this.buttonEliminar = new System.Windows.Forms.Button();
-            this.buttonAñadirActividad = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBoxActividades = new System.Windows.Forms.GroupBox();
             this.dataGridViewActividades = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.buttonAnadir = new System.Windows.Forms.Button();
+            this.nombreDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.actividadBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.direccionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefonoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.libreriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.actividadBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.nombreDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLibrerias)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.groupBoxActividades.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewActividades)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.libreriaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.actividadBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.libreriaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewLibrerias
@@ -164,25 +166,18 @@
             this.buttonEliminar.UseVisualStyleBackColor = true;
             this.buttonEliminar.Click += new System.EventHandler(this.buttonEliminar_Click);
             // 
-            // buttonAñadirActividad
+            // groupBoxActividades
             // 
-            this.buttonAñadirActividad.Location = new System.Drawing.Point(288, 326);
-            this.buttonAñadirActividad.Name = "buttonAñadirActividad";
-            this.buttonAñadirActividad.Size = new System.Drawing.Size(106, 31);
-            this.buttonAñadirActividad.TabIndex = 11;
-            this.buttonAñadirActividad.Text = "Editar Actividades";
-            this.buttonAñadirActividad.UseVisualStyleBackColor = true;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.dataGridViewActividades);
-            this.groupBox1.Controls.Add(this.buttonAñadirActividad);
-            this.groupBox1.Location = new System.Drawing.Point(480, 13);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(400, 363);
-            this.groupBox1.TabIndex = 12;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.groupBoxActividades.Controls.Add(this.button1);
+            this.groupBoxActividades.Controls.Add(this.button2);
+            this.groupBoxActividades.Controls.Add(this.buttonAnadir);
+            this.groupBoxActividades.Controls.Add(this.dataGridViewActividades);
+            this.groupBoxActividades.Location = new System.Drawing.Point(480, 13);
+            this.groupBoxActividades.Name = "groupBoxActividades";
+            this.groupBoxActividades.Size = new System.Drawing.Size(400, 363);
+            this.groupBoxActividades.TabIndex = 12;
+            this.groupBoxActividades.TabStop = false;
+            this.groupBoxActividades.Text = "Actividades";
             // 
             // dataGridViewActividades
             // 
@@ -199,8 +194,61 @@
             this.dataGridViewActividades.Name = "dataGridViewActividades";
             this.dataGridViewActividades.ReadOnly = true;
             this.dataGridViewActividades.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewActividades.Size = new System.Drawing.Size(388, 199);
+            this.dataGridViewActividades.Size = new System.Drawing.Size(388, 307);
             this.dataGridViewActividades.TabIndex = 13;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(293, 332);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(101, 23);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Editar Actividad";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(182, 332);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(105, 23);
+            this.button2.TabIndex = 15;
+            this.button2.Text = "Eliminar Actividad";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // buttonAnadir
+            // 
+            this.buttonAnadir.Location = new System.Drawing.Point(77, 332);
+            this.buttonAnadir.Name = "buttonAnadir";
+            this.buttonAnadir.Size = new System.Drawing.Size(99, 23);
+            this.buttonAnadir.TabIndex = 14;
+            this.buttonAnadir.Text = "Añadir Actividad";
+            this.buttonAnadir.UseVisualStyleBackColor = true;
+            this.buttonAnadir.Click += new System.EventHandler(this.buttonAnadir_Click);
+            // 
+            // nombreDataGridViewTextBoxColumn1
+            // 
+            this.nombreDataGridViewTextBoxColumn1.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn1.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn1.Name = "nombreDataGridViewTextBoxColumn1";
+            this.nombreDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // fechaDataGridViewTextBoxColumn
+            // 
+            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
+            this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
+            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
+            this.fechaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // descripcionDataGridViewTextBoxColumn
+            // 
+            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
+            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // actividadBindingSource
+            // 
+            this.actividadBindingSource.DataSource = typeof(OlorALibro.Actividad);
             // 
             // nombreDataGridViewTextBoxColumn
             // 
@@ -228,37 +276,12 @@
             // 
             this.libreriaBindingSource.DataSource = typeof(OlorALibro.Libreria);
             // 
-            // actividadBindingSource
-            // 
-            this.actividadBindingSource.DataSource = typeof(OlorALibro.Actividad);
-            // 
-            // nombreDataGridViewTextBoxColumn1
-            // 
-            this.nombreDataGridViewTextBoxColumn1.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn1.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn1.Name = "nombreDataGridViewTextBoxColumn1";
-            this.nombreDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // fechaDataGridViewTextBoxColumn
-            // 
-            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
-            this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
-            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
-            this.fechaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // descripcionDataGridViewTextBoxColumn
-            // 
-            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
-            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // FormLibrerias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(892, 397);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(887, 397);
+            this.Controls.Add(this.groupBoxActividades);
             this.Controls.Add(this.buttonEliminar);
             this.Controls.Add(this.buttonEditar);
             this.Controls.Add(this.buttonGuardar);
@@ -274,10 +297,10 @@
             this.Text = "Librerias";
             this.Load += new System.EventHandler(this.Librerias_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLibrerias)).EndInit();
-            this.groupBox1.ResumeLayout(false);
+            this.groupBoxActividades.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewActividades)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.libreriaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.actividadBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.libreriaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -300,12 +323,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn direccionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn telefonoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button buttonAñadirActividad;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBoxActividades;
         private System.Windows.Forms.DataGridView dataGridViewActividades;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource actividadBindingSource;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonAnadir;
     }
 }
