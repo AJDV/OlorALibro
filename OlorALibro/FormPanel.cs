@@ -34,5 +34,11 @@ namespace OlorALibro.CRUD_users
             FormUsers a = new FormUsers();
             a.ShowDialog();
         }
+
+        private void buttonLibreria_Click(object sender, EventArgs e)
+        {
+            FormLibrerias l = new FormLibrerias();
+            l.ShowDialog();
+        }
     }
 }

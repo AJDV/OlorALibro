@@ -1,18 +1,1 @@
-﻿[
-  {
-    "User" :"jonathan94", //este Usuario sera unico --> como un Id
-    "Contrasenia" : "...", 
-    "Nombre": "Jonathan",
-    "Apellido": "Negredo",
-    "Correo": "jonathanegredo3@gmail.com",
-    "Puntos": 10
-  },
-  {
-    "User" :"Victor94", //este Usuario sera unico --> como un Id
-    "Contrasenia" : "...",
-    "Nombre": "Jonathan",
-    "Apellido": "Negredo",
-    "Correo": "jonathanegredo3@gmail.com",
-    "Puntos": 10
-  }
-]
+[{"User":"jonathan94","Contrasenia":"...","Nombre":"Jonathan","Apellido":"Negredo","Correo":"jonathanegredo3@gmail.com","Puntos":10},{"User":"oasihaosdhf","Contrasenia":"asdfkajsdhf","Nombre":"oasihaosdhf","Apellido":"sldkhfaolsdhfi","Correo":"oasd","Puntos":1685},{"User":"David","Contrasenia":"123","Nombre":"David","Apellido":"Gutierrez","Correo":"dguti@mail.com","Puntos":200}]
