@@ -18,7 +18,7 @@ namespace OlorALibro
         public String filePath = @"..\..\Json\ListaDeLibrerías\Librerias.json";
         BindingList<Libreria> libs;
         BindingList<Actividad> acts;
-        Libreria l;
+        Libreria l = new Libreria();
 
         public FormLibrerias()
         {
@@ -43,18 +43,6 @@ namespace OlorALibro
 
             dataGridViewLibrerias.DataSource = libs;
 
-            //DAVID
-            //LEER JSON ACTIVIDADES
-            l.Actividades = new BindingList<Actividad>();
-
-            if (File.Exists(@"..\..\act_lib.json"))
-            {
-                JArray ja = JArray.Parse(File.ReadAllText(@"..\..\act_lib.json"));
-                l.Actividades = ja.ToObject<BindingList<Actividad>>();
-            }
-
-            dataGridViewActividades.DataSource = l.Actividades;
-            dataGridViewActividades.ClearSelection();
         }
 
         public void cargarActividades(Libreria l)
@@ -73,37 +61,45 @@ namespace OlorALibro
             }
             else
             {
-                MessageBox.Show(activPath);
+                //GRABAR JSON ACTIVIDADES
+                JArray ja = (JArray)JToken.FromObject(l.Actividades);
+                StreamWriter jw = File.CreateText(activPath);
+                JsonTextWriter jtw = new JsonTextWriter(jw);
+                ja.WriteTo(jtw);
+                jtw.Close();
+
+                MessageBox.Show("Grabado correctamente!", "GRABADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             dataGridViewActividades.DataSource = l.Actividades;
             dataGridViewActividades.ClearSelection();
         }
 
-        //Contiene el grabar JSON Actividades por DAVID
+        //Grabamos el JSON en el activated
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
-            l = new Libreria();
-            l.Nombre = textBoxNom.Text;
-            l.Direccion = textBoxDireccio.Text;
-            l.Telefono = Int32.Parse(textBoxTelefon.Text);
-            libs.Add(l);
-            MessageBox.Show("Libreria guardada");
-            limpiezaBox();
-            guardarJSON();
-
-
-            //DAVID
-            //GRABAR JSON ACTIVIDADES
-            JArray ja = (JArray)JToken.FromObject(l.Actividades);
-
-            StreamWriter jw = File.CreateText(@"..\..\act_lib.json");
-            JsonTextWriter jtw = new JsonTextWriter(jw);
-
-            ja.WriteTo(jtw);
-
-            jtw.Close();
-
-            MessageBox.Show("Grabado correctamente!", "GRABADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (textBoxNom.Text == "")
+            {
+                MessageBox.Show("Te has dejado el nombre de la libreria");
+            }
+            else if (textBoxTelefon.Text == "")
+            {
+                MessageBox.Show("Te has dejado el telefono de la libreria");
+            }
+            else if (textBoxDireccio.Text == "")
+            {
+                MessageBox.Show("Te has dejado la direccion de la libreria");
+            }
+            else
+            {
+                l.Nombre = textBoxNom.Text;
+                l.Direccion = textBoxDireccio.Text;
+                l.Telefono = Int32.Parse(textBoxTelefon.Text);
+                libs.Add(l);
+                MessageBox.Show("Libreria guardada");
+                limpiezaBox();
+                guardarJSON();
+            }
+         
         }
 
         public void limpiezaBox()
@@ -151,10 +147,7 @@ namespace OlorALibro
         {
             //MessageBox.Show(e.ColumnIndex.ToString());
             //MessageBox.Show(dataGridViewLibrerias.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString());
-            textBoxNom.Text = dataGridViewLibrerias.Rows[e.RowIndex].Cells[0].Value.ToString();
-            textBoxTelefon.Text = dataGridViewLibrerias.Rows[e.RowIndex].Cells[2].Value.ToString();
-            textBoxDireccio.Text = dataGridViewLibrerias.Rows[e.RowIndex].Cells[1].Value.ToString();
-
+           
             l = (Libreria) dataGridViewLibrerias.CurrentRow.DataBoundItem;
             cargarActividades(l);
         }
@@ -187,18 +180,19 @@ namespace OlorALibro
 
 
         //DAVID------------------------
-        //Refrescar actividades
+        //Refrescar actividades y guardar JSON
         private void FormLibrerias_Activated(object sender, EventArgs e)
         {
+            //Refrescar grid
             refrescarGrid();
         }
 
         //Añadir una nueva actividad
         private void buttonAnadir_Click(object sender, EventArgs e)
         {
-            String nombrelib = textBoxNom.Text;
+            
             l = (Libreria)dataGridViewLibrerias.CurrentRow.DataBoundItem;
-
+            String nombrelib = l.Nombre;
             FormActividades f = new FormActividades(l.Actividades, nombrelib);
             f.ShowDialog();
         }

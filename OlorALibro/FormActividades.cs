@@ -1,8 +1,11 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,6 +37,7 @@ namespace OlorALibro
         public FormActividades(BindingList<Actividad> acts, String nombrelib)
         {
             InitializeComponent();
+            acts = new BindingList<Actividad>();
             this.acts = acts;
             this.nombrelib = nombrelib;
         }
@@ -49,6 +53,7 @@ namespace OlorALibro
         //En el load comprobaremos si le pasamos una actividad, en caso de no pasarle crearemos una nueva
         private void Actividades_Load(object sender, EventArgs e)
         {
+
             if (a != null)
             {
                 textBoxNombre.Text = a.Nombre;
@@ -89,8 +94,37 @@ namespace OlorALibro
 
             if (dr == DialogResult.OK && !editar)
             {
-                a.id_act = "act_lib_" + nombrelib;
+                a.id_act = "Act_" + nombrelib;
                 acts.Add(a);
+                //GRABAR JSON ACTIVIDADES
+                JArray ja = (JArray)JToken.FromObject(acts);
+                String nombreLib = nombrelib;
+                nombreLib = nombreLib.Replace(" ", string.Empty);
+                String activPath = @"..\..\Json\ListaDeLibrerías\ActivDeLibrerias\Act_" + nombreLib + ".json";
+                StreamWriter jw = File.CreateText(activPath);
+                JsonTextWriter jtw = new JsonTextWriter(jw);
+
+                ja.WriteTo(jtw);
+                
+                jtw.Close();
+
+                MessageBox.Show("Grabado correctamente!", "GRABADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                //GRABAR JSON ACTIVIDADES
+                JArray ja = (JArray)JToken.FromObject(acts);
+                String nombreLib = nombrelib;
+                nombreLib = nombreLib.Replace(" ", string.Empty);
+                String activPath = @"..\..\Json\ListaDeLibrerías\ActivDeLibrerias\Act_" + nombreLib + ".json";
+                StreamWriter jw = File.CreateText(activPath);
+                JsonTextWriter jtw = new JsonTextWriter(jw);
+
+                ja.WriteTo(jtw);
+
+                jtw.Close();
+
+                MessageBox.Show("Grabado correctamente!", "GRABADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
