@@ -41,10 +41,11 @@
             this.buttonEditar = new System.Windows.Forms.Button();
             this.buttonEliminar = new System.Windows.Forms.Button();
             this.groupBoxActividades = new System.Windows.Forms.GroupBox();
-            this.dataGridViewActividades = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonEditarActividad = new System.Windows.Forms.Button();
+            this.buttonEliminarActividad = new System.Windows.Forms.Button();
             this.buttonAnadir = new System.Windows.Forms.Button();
+            this.dataGridViewActividades = new System.Windows.Forms.DataGridView();
+            this.hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -168,8 +169,8 @@
             // 
             // groupBoxActividades
             // 
-            this.groupBoxActividades.Controls.Add(this.button1);
-            this.groupBoxActividades.Controls.Add(this.button2);
+            this.groupBoxActividades.Controls.Add(this.buttonEditarActividad);
+            this.groupBoxActividades.Controls.Add(this.buttonEliminarActividad);
             this.groupBoxActividades.Controls.Add(this.buttonAnadir);
             this.groupBoxActividades.Controls.Add(this.dataGridViewActividades);
             this.groupBoxActividades.Location = new System.Drawing.Point(480, 13);
@@ -179,41 +180,25 @@
             this.groupBoxActividades.TabStop = false;
             this.groupBoxActividades.Text = "Actividades";
             // 
-            // dataGridViewActividades
+            // buttonEditarActividad
             // 
-            this.dataGridViewActividades.AllowUserToAddRows = false;
-            this.dataGridViewActividades.AllowUserToDeleteRows = false;
-            this.dataGridViewActividades.AutoGenerateColumns = false;
-            this.dataGridViewActividades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewActividades.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nombreDataGridViewTextBoxColumn1,
-            this.fechaDataGridViewTextBoxColumn,
-            this.descripcionDataGridViewTextBoxColumn});
-            this.dataGridViewActividades.DataSource = this.actividadBindingSource;
-            this.dataGridViewActividades.Location = new System.Drawing.Point(6, 19);
-            this.dataGridViewActividades.Name = "dataGridViewActividades";
-            this.dataGridViewActividades.ReadOnly = true;
-            this.dataGridViewActividades.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewActividades.Size = new System.Drawing.Size(388, 307);
-            this.dataGridViewActividades.TabIndex = 13;
+            this.buttonEditarActividad.Location = new System.Drawing.Point(293, 332);
+            this.buttonEditarActividad.Name = "buttonEditarActividad";
+            this.buttonEditarActividad.Size = new System.Drawing.Size(101, 23);
+            this.buttonEditarActividad.TabIndex = 16;
+            this.buttonEditarActividad.Text = "Editar Actividad";
+            this.buttonEditarActividad.UseVisualStyleBackColor = true;
+            this.buttonEditarActividad.Click += new System.EventHandler(this.buttonEditarActividad_Click);
             // 
-            // button1
+            // buttonEliminarActividad
             // 
-            this.button1.Location = new System.Drawing.Point(293, 332);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(101, 23);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Editar Actividad";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(182, 332);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(105, 23);
-            this.button2.TabIndex = 15;
-            this.button2.Text = "Eliminar Actividad";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonEliminarActividad.Location = new System.Drawing.Point(182, 332);
+            this.buttonEliminarActividad.Name = "buttonEliminarActividad";
+            this.buttonEliminarActividad.Size = new System.Drawing.Size(105, 23);
+            this.buttonEliminarActividad.TabIndex = 15;
+            this.buttonEliminarActividad.Text = "Eliminar Actividad";
+            this.buttonEliminarActividad.UseVisualStyleBackColor = true;
+            this.buttonEliminarActividad.Click += new System.EventHandler(this.buttonEliminarActividad_Click);
             // 
             // buttonAnadir
             // 
@@ -224,6 +209,33 @@
             this.buttonAnadir.Text = "Añadir Actividad";
             this.buttonAnadir.UseVisualStyleBackColor = true;
             this.buttonAnadir.Click += new System.EventHandler(this.buttonAnadir_Click);
+            // 
+            // dataGridViewActividades
+            // 
+            this.dataGridViewActividades.AllowUserToAddRows = false;
+            this.dataGridViewActividades.AllowUserToDeleteRows = false;
+            this.dataGridViewActividades.AutoGenerateColumns = false;
+            this.dataGridViewActividades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewActividades.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nombreDataGridViewTextBoxColumn1,
+            this.fechaDataGridViewTextBoxColumn,
+            this.hora,
+            this.descripcionDataGridViewTextBoxColumn});
+            this.dataGridViewActividades.DataSource = this.actividadBindingSource;
+            this.dataGridViewActividades.Location = new System.Drawing.Point(6, 19);
+            this.dataGridViewActividades.Name = "dataGridViewActividades";
+            this.dataGridViewActividades.ReadOnly = true;
+            this.dataGridViewActividades.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewActividades.Size = new System.Drawing.Size(388, 307);
+            this.dataGridViewActividades.TabIndex = 13;
+            this.dataGridViewActividades.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewActividades_CellDoubleClick);
+            // 
+            // hora
+            // 
+            this.hora.DataPropertyName = "Hora";
+            this.hora.HeaderText = "Hora";
+            this.hora.Name = "hora";
+            this.hora.ReadOnly = true;
             // 
             // nombreDataGridViewTextBoxColumn1
             // 
@@ -295,6 +307,7 @@
             this.Controls.Add(this.dataGridViewLibrerias);
             this.Name = "FormLibrerias";
             this.Text = "Librerias";
+            this.Activated += new System.EventHandler(this.FormLibrerias_Activated);
             this.Load += new System.EventHandler(this.Librerias_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLibrerias)).EndInit();
             this.groupBoxActividades.ResumeLayout(false);
@@ -325,12 +338,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn telefonoDataGridViewTextBoxColumn;
         private System.Windows.Forms.GroupBox groupBoxActividades;
         private System.Windows.Forms.DataGridView dataGridViewActividades;
+        private System.Windows.Forms.BindingSource actividadBindingSource;
+        private System.Windows.Forms.Button buttonEditarActividad;
+        private System.Windows.Forms.Button buttonEliminarActividad;
+        private System.Windows.Forms.Button buttonAnadir;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hora;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource actividadBindingSource;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button buttonAnadir;
     }
 }

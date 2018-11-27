@@ -25,6 +25,8 @@ namespace OlorALibro
             InitializeComponent();
         }
 
+        //VICTOR------------------------
+        //Contiene el leer JSON por DAVID
         private void Librerias_Load(object sender, EventArgs e)
         {
             if (File.Exists(filePath))
@@ -39,7 +41,20 @@ namespace OlorALibro
                 JsonTextWriter jsonWriter = new JsonTextWriter(file);
             }
 
-            dataGridViewLibrerias.DataSource = libs; 
+            dataGridViewLibrerias.DataSource = libs;
+
+            //DAVID
+            //LEER JSON ACTIVIDADES
+            l.Actividades = new BindingList<Actividad>();
+
+            if (File.Exists(@"..\..\act_lib.json"))
+            {
+                JArray ja = JArray.Parse(File.ReadAllText(@"..\..\act_lib.json"));
+                l.Actividades = ja.ToObject<BindingList<Actividad>>();
+            }
+
+            dataGridViewActividades.DataSource = l.Actividades;
+            dataGridViewActividades.ClearSelection();
         }
 
         public void cargarActividades(Libreria l)
@@ -64,6 +79,7 @@ namespace OlorALibro
             dataGridViewActividades.ClearSelection();
         }
 
+        //Contiene el grabar JSON Actividades por DAVID
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
             l = new Libreria();
@@ -74,6 +90,20 @@ namespace OlorALibro
             MessageBox.Show("Libreria guardada");
             limpiezaBox();
             guardarJSON();
+
+
+            //DAVID
+            //GRABAR JSON ACTIVIDADES
+            JArray ja = (JArray)JToken.FromObject(l.Actividades);
+
+            StreamWriter jw = File.CreateText(@"..\..\act_lib.json");
+            JsonTextWriter jtw = new JsonTextWriter(jw);
+
+            ja.WriteTo(jtw);
+
+            jtw.Close();
+
+            MessageBox.Show("Grabado correctamente!", "GRABADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         public void limpiezaBox()
@@ -152,6 +182,17 @@ namespace OlorALibro
             jArrayLibs.WriteTo(jsonWriter);
             jsonWriter.Close();
         }
+        //----------------------------
+
+
+
+        //DAVID------------------------
+        //Refrescar actividades
+        private void FormLibrerias_Activated(object sender, EventArgs e)
+        {
+            refrescarGrid();
+        }
+
         //Añadir una nueva actividad
         private void buttonAnadir_Click(object sender, EventArgs e)
         {
@@ -161,5 +202,43 @@ namespace OlorALibro
             FormActividades f = new FormActividades(l.Actividades, nombrelib);
             f.ShowDialog();
         }
+
+        //Editar una actividad
+        private void buttonEditarActividad_Click(object sender, EventArgs e)
+        {
+            Actividad a = (Actividad)dataGridViewActividades.CurrentRow.DataBoundItem;
+            FormActividades f = new FormActividades(a);
+            f.ShowDialog();
+        }
+
+        //Eliminar actividad
+        private void buttonEliminarActividad_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Está seguro que desa eliminar esta atividad", "Eliminar", MessageBoxButtons.YesNo);
+            if (dr == DialogResult.Yes)
+            {
+                l.Actividades.RemoveAt(dataGridViewActividades.SelectedRows[0].Index);
+                refrescarGrid();
+            }
+        }
+
+        //Método para refrescar la dataGridView
+        private void refrescarGrid()
+        {
+            dataGridViewActividades.DataSource = null;
+            dataGridViewActividades.DataSource = l.Actividades;
+
+            dataGridViewActividades.Columns[0].Visible = false;
+            dataGridViewActividades.ClearSelection();
+        }
+
+        //Editar una actividad al hacer doble click sobre la row
+        private void dataGridViewActividades_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Actividad a = (Actividad)dataGridViewActividades.CurrentRow.DataBoundItem;
+            FormActividades f = new FormActividades(a);
+            f.ShowDialog();
+        }
+        //----------------------------
     }
 }
