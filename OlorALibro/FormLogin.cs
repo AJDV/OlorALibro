@@ -15,6 +15,10 @@ namespace OlorALibro
 {
     public partial class FormLogin : Form
     {
+        public bool deleteUserBackgroundText = true;
+
+        public bool deletePasswordBackgroundText = true;
+
         List<Usuario> usuarios = new List<Usuario>();
 
         public FormLogin()
@@ -24,6 +28,7 @@ namespace OlorALibro
 
         private void FormLogin_Load(object sender, EventArgs e)
         {
+            textBoxLoginUserText.Focus();
             if (File.Exists(@"..\..\Json\AdminUsers\loginAdmin.json"))
             {
                 JArray jArrayPelis = JArray.Parse(File.ReadAllText(@"..\..\Json\AdminUsers\loginAdmin.json"));
@@ -36,6 +41,7 @@ namespace OlorALibro
             }
         }
 
+      
         private void buttonLogin_Click(object sender, EventArgs e)
         {
             bool login = false;
@@ -67,6 +73,32 @@ namespace OlorALibro
         private void FormLogin_FormClosing(object sender, FormClosingEventArgs e)
         {
             formPanel.setUser(textBoxLoginUserText.Text.ToUpper());
+        }
+
+        private void textBoxLoginUserText_TextChanged(object sender, EventArgs e)
+        {
+            labelIncorrecta.Visible = false;
+            if (deleteUserBackgroundText)
+            {
+                textBoxLoginUserText.Text = "";
+                deleteUserBackgroundText = false;
+            }
+            textBoxLoginUserText.TextAlign = HorizontalAlignment.Left;
+            textBoxLoginUserText.ForeColor = Color.Black;                    
+        }
+
+        private void textBoxLoginPasswordText_TextChanged(object sender, EventArgs e)
+        {
+            labelIncorrecta.Visible = false;
+            if (deletePasswordBackgroundText)
+            {
+                textBoxLoginPasswordText.Text = "";
+                deletePasswordBackgroundText = false;
+            }
+            textBoxLoginPasswordText.TextAlign = HorizontalAlignment.Left;
+            textBoxLoginPasswordText.ForeColor = Color.Black;
+            textBoxLoginPasswordText.PasswordChar = '•';
+
         }
     }
 }

@@ -69,6 +69,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Actividad.cs" />
+    <Compile Include="FormActividades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormActividades.designer.cs">
+      <DependentUpon>FormActividades.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormEditar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +109,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormActividades.resx">
+      <DependentUpon>FormActividades.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormEditar.resx">
       <DependentUpon>FormEditar.cs</DependentUpon>
     </EmbeddedResource>
@@ -130,6 +139,7 @@
     </Compile>
     <None Include="Json\ListaDeLibrerías\ActivDeLibrerias\Act_LibreriaPepito.json" />
     <None Include="Json\ListaDeLibrerías\ActivDeLibrerias\Act_LibreriaJose.json" />
+    <None Include="Json\ListaDeLibrerías\ActivDeLibrerias\Act_LibreriaVictor.json" />
     <None Include="Json\ListaDeLibrerías\Librerias.json" />
     <None Include="Json\AdminUsers\loginAdmin.json" />
     <None Include="Json\AdminUsers\users.json" />
@@ -162,11 +172,19 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\3853168234_8a2452a929_b1-copy1aa22-copy-2b.jpg" />
     <Content Include="Resources\add.png" />
     <None Include="Resources\rubbish-bin1.png" />
     <None Include="Resources\edit1.png" />
     <None Include="Resources\add1.png" />
+    <Content Include="Resources\calendario_actividades.jpg" />
+    <None Include="Resources\calendario_actividades1.jpg" />
     <Content Include="Resources\edit.png" />
+    <None Include="Resources\output-onlinepngtools.png" />
+    <None Include="Resources\rsz_output-onlinepngtools.png" />
+    <None Include="Resources\rsz_3853168234_8a2452a929_b1-copy1aa22-copy-2b.jpg" />
+    <None Include="Resources\output-onlinepngtools %281%29.png" />
+    <None Include="Resources\rsz_output-onlinepngtools_1.png" />
     <Content Include="Resources\rubbish-bin.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
