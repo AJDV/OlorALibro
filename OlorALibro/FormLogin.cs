@@ -2,19 +2,18 @@
 using System;
 using System.IO;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using OlorALibro.CRUD_users;
 
 namespace OlorALibro
 {
     public partial class FormLogin : Form
     {
+        public string usuario; //esta propiedad sirve para ser enviada al FormPanel e indicar el usuario
+
+        public bool admin; // esta propiedad sirve para saber si el usuario puede tener los permisos para gestionar los usuarios administradores
+
         public bool deleteUserBackgroundText = true;
 
         public bool deletePasswordBackgroundText = true;
@@ -31,8 +30,8 @@ namespace OlorALibro
             textBoxLoginUserText.Focus();
             if (File.Exists(@"..\..\Json\AdminUsers\loginAdmin.json"))
             {
-                JArray jArrayPelis = JArray.Parse(File.ReadAllText(@"..\..\Json\AdminUsers\loginAdmin.json"));
-                usuarios = jArrayPelis.ToObject<List<Usuario>>();
+                JArray jArrayUsers = JArray.Parse(File.ReadAllText(@"..\..\Json\AdminUsers\loginAdmin.json"));
+                usuarios = jArrayUsers.ToObject<List<Usuario>>();
             }
             else
             {
@@ -46,7 +45,7 @@ namespace OlorALibro
         {
             bool login = false;
             int contador = 0;
-            while (!login && (usuarios.Count() - 1) >= contador)
+            while (!login &&   contador <= (usuarios.Count() - 1))
             {
                 if (textBoxLoginUserText.Text.ToLower() == usuarios[contador].User && textBoxLoginPasswordText.Text == usuarios[contador].Contrasenia)
                 {
@@ -61,18 +60,14 @@ namespace OlorALibro
             {
                 labelIncorrecta.Visible = false;
                 MessageBox.Show("Bienvenido, " + usuarios[contador].User + "!", "Login Correcto!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                this.usuario = usuarios[contador].User;
+                this.admin = usuarios[contador].admin;
                 this.DialogResult = System.Windows.Forms.DialogResult.OK;
             }
             else
             {
                 labelIncorrecta.Visible = true;
             }
-        }
-
-        private void FormLogin_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            formPanel.setUser(textBoxLoginUserText.Text.ToUpper());
         }
 
         private void textBoxLoginUserText_TextChanged(object sender, EventArgs e)
