@@ -43,7 +43,7 @@
             this.textBoxLoginUserText.Location = new System.Drawing.Point(268, 91);
             this.textBoxLoginUserText.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxLoginUserText.Name = "textBoxLoginUserText";
-            this.textBoxLoginUserText.Size = new System.Drawing.Size(222, 26);
+            this.textBoxLoginUserText.Size = new System.Drawing.Size(222, 20);
             this.textBoxLoginUserText.TabIndex = 1;
             this.textBoxLoginUserText.Text = "User";
             this.textBoxLoginUserText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -56,7 +56,7 @@
             this.textBoxLoginPasswordText.Location = new System.Drawing.Point(268, 148);
             this.textBoxLoginPasswordText.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxLoginPasswordText.Name = "textBoxLoginPasswordText";
-            this.textBoxLoginPasswordText.Size = new System.Drawing.Size(222, 26);
+            this.textBoxLoginPasswordText.Size = new System.Drawing.Size(222, 20);
             this.textBoxLoginPasswordText.TabIndex = 2;
             this.textBoxLoginPasswordText.Text = "Password";
             this.textBoxLoginPasswordText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -86,7 +86,7 @@
             this.labelIncorrecta.Location = new System.Drawing.Point(282, 273);
             this.labelIncorrecta.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelIncorrecta.Name = "labelIncorrecta";
-            this.labelIncorrecta.Size = new System.Drawing.Size(208, 22);
+            this.labelIncorrecta.Size = new System.Drawing.Size(148, 15);
             this.labelIncorrecta.TabIndex = 4;
             this.labelIncorrecta.Text = "Contraseña Incorrecta";
             this.labelIncorrecta.Visible = false;
@@ -116,9 +116,10 @@
             this.Controls.Add(this.pictureBox1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Olor A Libro";

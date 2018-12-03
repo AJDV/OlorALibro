@@ -1,6 +1,7 @@
 ﻿[
   {
     "admin": true,
+
     "user": "admin1",
     "contrasenia": "admin1"
 
@@ -16,7 +17,7 @@
     "contrasenia": "jonathan"
   },
   {
-    "admin": true,
+    "admin": false,
     "user": "jona",
     "contrasenia": "jona"
   }

@@ -75,6 +75,7 @@ namespace OlorALibro
             labelIncorrecta.Visible = false;
             if (deleteUserBackgroundText)
             {
+                
                 textBoxLoginUserText.Text = "";
                 deleteUserBackgroundText = false;
             }

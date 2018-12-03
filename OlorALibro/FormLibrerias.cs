@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using System;
+using System;   
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -120,7 +120,7 @@ namespace OlorALibro
             //    if ()
             //}
             int p = 0, eliminar = 0; ;
-            System.Windows.Forms.DialogResult msg;
+            DialogResult msg;
             foreach (Libreria item in libs)
             {
                 if (item.Nombre == textBoxNom.Text && item.Telefono == Int32.Parse(textBoxTelefon.Text) && item.Direccion == textBoxDireccio.Text)
@@ -200,9 +200,16 @@ namespace OlorALibro
         //Editar una actividad
         private void buttonEditarActividad_Click(object sender, EventArgs e)
         {
-            Actividad a = (Actividad)dataGridViewActividades.CurrentRow.DataBoundItem;
-            FormActividades f = new FormActividades(a);
-            f.ShowDialog();
+            try
+            {
+                Actividad a = (Actividad)dataGridViewActividades.CurrentRow.DataBoundItem;
+                FormActividades f = new FormActividades(a);
+                f.ShowDialog();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Todos los campos son obligatorios!", "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         //Eliminar actividad
