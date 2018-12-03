@@ -87,7 +87,7 @@ namespace OlorALibro
         {
             try
             {
-                Usuario user = new Usuario(textBoxAddNombre.Text, textBoxAddContrasenia.Text, textBoxAddNombre.Text, textBoxAddApellido.Text, textBoxAddCorreo.Text, Int32.Parse(textBoxAddPuntos.Text));
+                Usuario user = new Usuario(false, textBoxAddNombre.Text, textBoxAddContrasenia.Text, textBoxAddNombre.Text, textBoxAddApellido.Text, textBoxAddCorreo.Text, Int32.Parse(textBoxAddPuntos.Text));
                 usuarios.Add(user);
                 updateGridJsonUsuarios();
             }

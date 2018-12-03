@@ -27,3 +27,21 @@ F:\aaaVictor Para\victorgit\OlorALibro\OlorALibro\bin\Release\OlorALibro.exe
 F:\aaaVictor Para\victorgit\OlorALibro\OlorALibro\bin\Release\OlorALibro.pdb
 F:\aaaVictor Para\victorgit\OlorALibro\OlorALibro\bin\Release\Newtonsoft.Json.dll
 F:\aaaVictor Para\victorgit\OlorALibro\OlorALibro\bin\Release\Newtonsoft.Json.xml
+C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\bin\Release\OlorALibro.exe.config
+C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\bin\Release\OlorALibro.exe
+C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\bin\Release\OlorALibro.pdb
+C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\bin\Release\Newtonsoft.Json.dll
+C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\bin\Release\Newtonsoft.Json.xml
+C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\obj\Release\OlorALibro.csprojAssemblyReference.cache
+C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\obj\Release\OlorALibro.FormActividades.resources
+C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\obj\Release\OlorALibro.FormEditar.resources
+C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\obj\Release\OlorALibro.CRUD_users.formPanel.resources
+C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\obj\Release\OlorALibro.FormLogin.resources
+C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\obj\Release\OlorALibro.FormUsers.resources
+C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\obj\Release\OlorALibro.FormLibrerias.resources
+C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\obj\Release\OlorALibro.Properties.Resources.resources
+C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\obj\Release\OlorALibro.csproj.GenerateResource.cache
+C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\obj\Release\OlorALibro.csproj.CoreCompileInputs.cache
+C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\obj\Release\OlorALibro.csproj.CopyComplete
+C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\obj\Release\OlorALibro.exe
+C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\obj\Release\OlorALibro.pdb

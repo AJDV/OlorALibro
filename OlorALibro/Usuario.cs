@@ -8,6 +8,7 @@ namespace OlorALibro
 {
     class Usuario
     {
+        public bool admin { get; set; }
         public string User { get; set; }
         public string Contrasenia { get; set; }
         public string Nombre { get; set; }
@@ -20,14 +21,15 @@ namespace OlorALibro
 
         }
 
-        public Usuario(string User, string Contrasenia, string Nombre, string Apellido, string Correo, int Puntos)
+        public Usuario(bool admin, string user, string contrasenia, string nombre, string apellido, string correo, int puntos)
         {
-            this.User = User;
-            this.Contrasenia = Contrasenia;
-            this.Nombre = Nombre;
-            this.Apellido = Apellido;
-            this.Correo = Correo;
-            this.Puntos = Puntos;
+            this.admin = admin;
+            this.User = user;
+            this.Contrasenia = contrasenia;
+            this.Nombre = nombre;
+            this.Apellido = apellido;
+            this.Correo = correo;
+            this.Puntos = puntos;
         }
 
     }
