@@ -1,1 +1,8 @@
-[{"Nombre":"Libreria Victor","Direccion":"comte borrell","Telefono":123,"Actividades":null}]
+[  
+  {
+    "Nombre": "Libreria Victor",
+    "Direccion": "comte borrell",
+    "Telefono": 123,
+    "Actividades": null
+  }
+]

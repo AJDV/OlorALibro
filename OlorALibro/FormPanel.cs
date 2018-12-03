@@ -105,5 +105,11 @@ namespace OlorALibro.CRUD_users
         {
             toolTip1.Show("JUEGO", button1);
         }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Mapa m = new Mapa();
+            m.ShowDialog();
+        }
     }
 }

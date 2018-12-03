@@ -106,3 +106,6 @@ C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\obj\Debug\OlorALibro.c
 C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\obj\Debug\OlorALibro.csproj.CopyComplete
 C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\obj\Debug\OlorALibro.exe
 C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\obj\Debug\OlorALibro.pdb
+C:\Users\cep.CEPNET0\Source\Repos\AJDV\OlorALibro\OlorALibro\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\cep.CEPNET0\Source\Repos\AJDV\OlorALibro\OlorALibro\obj\Debug\OlorALibro.Mapa.resources
+C:\Users\cep.CEPNET0\Source\Repos\AJDV\OlorALibro\OlorALibro\obj\Debug\OlorALibro.UsuariosAdmins.resources
