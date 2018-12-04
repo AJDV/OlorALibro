@@ -111,5 +111,11 @@ namespace OlorALibro.CRUD_users
             Mapa m = new Mapa();
             m.ShowDialog();
         }
+
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UsuariosAdmins u = new UsuariosAdmins();
+            u.ShowDialog();
+        }
     }
 }

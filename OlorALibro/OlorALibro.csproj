@@ -107,6 +107,7 @@
     <Compile Include="Mapa.Designer.cs">
       <DependentUpon>Mapa.cs</DependentUpon>
     </Compile>
+    <Compile Include="UsuarioAdm.cs" />
     <Compile Include="Usuario.cs" />
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
@@ -156,8 +157,6 @@
     <EmbeddedResource Include="UsuariosAdmins.resx">
       <DependentUpon>UsuariosAdmins.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Json\ListaDeLibrerías\ActivDeLibrerias\Act_LibreriaPepito.json" />
-    <None Include="Json\ListaDeLibrerías\ActivDeLibrerias\Act_LibreriaJose.json" />
     <None Include="Json\ListaDeLibrerías\ActivDeLibrerias\Act_LibreriaVictor.json" />
     <None Include="Json\ListaDeLibrerías\Librerias.json" />
     <None Include="Json\AdminUsers\loginAdmin.json" />

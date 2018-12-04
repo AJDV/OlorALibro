@@ -47,9 +47,9 @@ namespace OlorALibro
 
         public void cargarActividades(Libreria l)
         {
-            String nombreLib = l.Nombre;
+            string nombreLib = l.Nombre;
             nombreLib = nombreLib.Replace(" ", string.Empty);
-            String activPath = @"..\..\Json\ListaDeLibrerías\ActivDeLibrerias\Act_" + nombreLib + ".json";   
+            string activPath = @"..\..\Json\ListaDeLibrerías\ActivDeLibrerias\Act_" + nombreLib + ".json";   
               
 
             l.Actividades = new BindingList<Actividad>();

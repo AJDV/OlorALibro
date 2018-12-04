@@ -21,6 +21,13 @@ namespace OlorALibro
 
         }
 
+        public Usuario(bool admin, string user, string contrasenia)
+        {
+            this.admin = admin;
+            this.User = user;
+            this.Contrasenia = contrasenia;
+        }
+
         public Usuario(bool admin, string user, string contrasenia, string nombre, string apellido, string correo, int puntos)
         {
             this.admin = admin;
