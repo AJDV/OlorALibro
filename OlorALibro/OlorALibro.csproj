@@ -221,6 +221,7 @@
     <None Include="Resources\remove-user.png" />
     <None Include="Resources\new-user.png" />
     <None Include="Resources\eye.png" />
+    <None Include="Resources\logout.png" />
     <Content Include="Resources\rubbish-bin.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

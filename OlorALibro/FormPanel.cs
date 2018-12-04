@@ -13,9 +13,9 @@ namespace OlorALibro.CRUD_users
     public partial class formPanel : Form
     {
         #region Propiedades
-        public string usuario;
+        public string usuario { get; set; }
 
-        public bool admin;
+        public bool admin {get; set; }
         #endregion
 
         #region Constructor
@@ -96,11 +96,6 @@ namespace OlorALibro.CRUD_users
         }
         #endregion
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_MouseHover(object sender, EventArgs e)
         {
             toolTip1.Show("JUEGO", button1);
@@ -116,6 +111,32 @@ namespace OlorALibro.CRUD_users
         {
             UsuariosAdmins u = new UsuariosAdmins();
             u.ShowDialog();
+        }
+
+        private void buttonLogout_MouseHover(object sender, EventArgs e)
+        {
+            toolTipLogout.Show("LOGOUT", buttonLogout);
+        }
+
+        private void buttonExit_MouseHover(object sender, EventArgs e)
+        {
+            toolTipExit.Show("EXIT", buttonExit);
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("Estas seguro ?", "SALIR", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
+            {                
+                Application.Exit();
+            }
+        }
+
+        private void buttonLogout_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormLogin f = new FormLogin();
+            f.Closed += (s, args) => this.Close();
+            f.Show();
         }
     }
 }

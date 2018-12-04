@@ -163,6 +163,16 @@ namespace OlorALibro.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap logout {
+            get {
+                object obj = ResourceManager.GetObject("logout", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap maps_and_flags {
             get {
                 object obj = ResourceManager.GetObject("maps-and-flags", resourceCulture);
@@ -256,6 +266,16 @@ namespace OlorALibro.Properties {
         internal static System.Drawing.Bitmap power_button_off {
             get {
                 object obj = ResourceManager.GetObject("power-button-off", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap power_button_off1 {
+            get {
+                object obj = ResourceManager.GetObject("power-button-off1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
