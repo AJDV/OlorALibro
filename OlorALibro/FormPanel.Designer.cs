@@ -58,6 +58,10 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.button1 = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.buttonLogout = new System.Windows.Forms.Button();
+            this.buttonExit = new System.Windows.Forms.Button();
+            this.toolTipLogout = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTipExit = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureUsuarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLibrerias)).BeginInit();
             this.menu.SuspendLayout();
@@ -165,20 +169,20 @@
             // 
             this.usuariosToolStripMenuItem.Image = global::OlorALibro.Properties.Resources.user;
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(234, 30);
             this.usuariosToolStripMenuItem.Text = "Usuarios Admins";
             this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(249, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(231, 6);
             // 
             // usuariosLibreríasToolStripMenuItem
             // 
             this.usuariosLibreríasToolStripMenuItem.Image = global::OlorALibro.Properties.Resources.phone_book;
             this.usuariosLibreríasToolStripMenuItem.Name = "usuariosLibreríasToolStripMenuItem";
-            this.usuariosLibreríasToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
+            this.usuariosLibreríasToolStripMenuItem.Size = new System.Drawing.Size(234, 30);
             this.usuariosLibreríasToolStripMenuItem.Text = "Usuarios Librerías";
             // 
             // libreriasToolStripMenuItem
@@ -200,7 +204,7 @@
             this.mapaDeLibreríasToolStripMenuItem});
             this.listaDeLibreriasToolStripMenuItem.Image = global::OlorALibro.Properties.Resources.notebook;
             this.listaDeLibreriasToolStripMenuItem.Name = "listaDeLibreriasToolStripMenuItem";
-            this.listaDeLibreriasToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
+            this.listaDeLibreriasToolStripMenuItem.Size = new System.Drawing.Size(187, 30);
             this.listaDeLibreriasToolStripMenuItem.Text = "Librerías";
             // 
             // listaDeLibreríasToolStripMenuItem
@@ -220,25 +224,25 @@
             // mapaToolStripMenuItem
             // 
             this.mapaToolStripMenuItem.Name = "mapaToolStripMenuItem";
-            this.mapaToolStripMenuItem.Size = new System.Drawing.Size(249, 6);
+            this.mapaToolStripMenuItem.Size = new System.Drawing.Size(184, 6);
             // 
             // actividadesToolStripMenuItem1
             // 
             this.actividadesToolStripMenuItem1.Image = global::OlorALibro.Properties.Resources.calendar_with_a_clock_time_tools;
             this.actividadesToolStripMenuItem1.Name = "actividadesToolStripMenuItem1";
-            this.actividadesToolStripMenuItem1.Size = new System.Drawing.Size(252, 30);
+            this.actividadesToolStripMenuItem1.Size = new System.Drawing.Size(187, 30);
             this.actividadesToolStripMenuItem1.Text = "Actividades";
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(249, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(184, 6);
             // 
             // usuariosToolStripMenuItem1
             // 
             this.usuariosToolStripMenuItem1.Image = global::OlorALibro.Properties.Resources.users;
             this.usuariosToolStripMenuItem1.Name = "usuariosToolStripMenuItem1";
-            this.usuariosToolStripMenuItem1.Size = new System.Drawing.Size(252, 30);
+            this.usuariosToolStripMenuItem1.Size = new System.Drawing.Size(187, 30);
             this.usuariosToolStripMenuItem1.Text = "Usuarios";
             // 
             // opcionesToolStripMenuItem
@@ -320,12 +324,50 @@
             this.button1.Click += new System.EventHandler(this.button1_Click);
             this.button1.MouseHover += new System.EventHandler(this.button1_MouseHover);
             // 
+            // buttonLogout
+            // 
+            this.buttonLogout.BackColor = System.Drawing.Color.Bisque;
+            this.buttonLogout.BackgroundImage = global::OlorALibro.Properties.Resources.logout;
+            this.buttonLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonLogout.FlatAppearance.BorderColor = System.Drawing.Color.Bisque;
+            this.buttonLogout.FlatAppearance.BorderSize = 0;
+            this.buttonLogout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Bisque;
+            this.buttonLogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Bisque;
+            this.buttonLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLogout.Location = new System.Drawing.Point(570, 5);
+            this.buttonLogout.Name = "buttonLogout";
+            this.buttonLogout.Size = new System.Drawing.Size(20, 17);
+            this.buttonLogout.TabIndex = 7;
+            this.buttonLogout.UseVisualStyleBackColor = false;
+            this.buttonLogout.Click += new System.EventHandler(this.buttonLogout_Click);
+            this.buttonLogout.MouseHover += new System.EventHandler(this.buttonLogout_MouseHover);
+            // 
+            // buttonExit
+            // 
+            this.buttonExit.BackColor = System.Drawing.Color.Bisque;
+            this.buttonExit.BackgroundImage = global::OlorALibro.Properties.Resources.power_button_off1;
+            this.buttonExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonExit.FlatAppearance.BorderColor = System.Drawing.Color.Bisque;
+            this.buttonExit.FlatAppearance.BorderSize = 0;
+            this.buttonExit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Bisque;
+            this.buttonExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Bisque;
+            this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonExit.Location = new System.Drawing.Point(621, 5);
+            this.buttonExit.Name = "buttonExit";
+            this.buttonExit.Size = new System.Drawing.Size(22, 17);
+            this.buttonExit.TabIndex = 8;
+            this.buttonExit.UseVisualStyleBackColor = false;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
+            this.buttonExit.MouseHover += new System.EventHandler(this.buttonExit_MouseHover);
+            // 
             // formPanel
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImage = global::OlorALibro.Properties.Resources.rsz_back2;
             this.ClientSize = new System.Drawing.Size(689, 318);
+            this.Controls.Add(this.buttonExit);
+            this.Controls.Add(this.buttonLogout);
             this.Controls.Add(this.buttonUsers);
             this.Controls.Add(this.buttonLibreria);
             this.Controls.Add(this.labelUser);
@@ -379,5 +421,9 @@
         private System.Windows.Forms.ToolStripMenuItem usuariosLibreríasToolStripMenuItem;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button buttonLogout;
+        private System.Windows.Forms.Button buttonExit;
+        private System.Windows.Forms.ToolTip toolTipLogout;
+        private System.Windows.Forms.ToolTip toolTipExit;
     }
 }

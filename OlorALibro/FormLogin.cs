@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using OlorALibro.CRUD_users;
 
 namespace OlorALibro
 {
@@ -27,7 +28,7 @@ namespace OlorALibro
 
         private void FormLogin_Load(object sender, EventArgs e)
         {
-            textBoxLoginUserText.Focus();
+            textBoxLoginPasswordText.Focus();
             if (File.Exists(@"..\..\Json\AdminUsers\loginAdmin.json"))
             {
                 JArray jArrayUsers = JArray.Parse(File.ReadAllText(@"..\..\Json\AdminUsers\loginAdmin.json"));
@@ -59,10 +60,12 @@ namespace OlorALibro
             if (login)
             {
                 labelIncorrecta.Visible = false;
-                MessageBox.Show("Bienvenido, " + usuarios[contador].User + "!", "Login Correcto!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.usuario = usuarios[contador].User;
-                this.admin = usuarios[contador].admin;
-                this.DialogResult = System.Windows.Forms.DialogResult.OK;
+                if (MessageBox.Show("Bienvenido, " + usuarios[contador].User + "!", "Login Correcto!", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
+                {
+                    formPanel f = new formPanel(usuarios[contador].User, usuarios[contador].admin);
+                    f.Show();
+                    this.Hide();
+                }
             }
             else
             {
@@ -70,31 +73,46 @@ namespace OlorALibro
             }
         }
 
-        private void textBoxLoginUserText_TextChanged(object sender, EventArgs e)
+        private void textBoxLoginUserText_Enter(object sender, EventArgs e)
         {
-            labelIncorrecta.Visible = false;
-            if (deleteUserBackgroundText)
+            if(textBoxLoginUserText.Text == "User")
             {
-                
                 textBoxLoginUserText.Text = "";
-                deleteUserBackgroundText = false;
+                textBoxLoginUserText.ForeColor = Color.Black;
+                textBoxLoginUserText.TextAlign = HorizontalAlignment.Left;
             }
-            textBoxLoginUserText.TextAlign = HorizontalAlignment.Left;
-            textBoxLoginUserText.ForeColor = Color.Black;                    
         }
 
-        private void textBoxLoginPasswordText_TextChanged(object sender, EventArgs e)
+        private void textBoxLoginUserText_Leave(object sender, EventArgs e)
         {
-            labelIncorrecta.Visible = false;
-            if (deletePasswordBackgroundText)
+            if (textBoxLoginUserText.Text == "")
+            {
+                textBoxLoginUserText.Text = "User";
+                textBoxLoginUserText.ForeColor = Color.DimGray;
+                textBoxLoginUserText.TextAlign = HorizontalAlignment.Center;
+            }
+        }
+
+        private void textBoxLoginPasswordText_Enter(object sender, EventArgs e)
+        {
+            if (textBoxLoginPasswordText.Text == "Password")
             {
                 textBoxLoginPasswordText.Text = "";
-                deletePasswordBackgroundText = false;
+                textBoxLoginPasswordText.ForeColor = Color.Black;
+                textBoxLoginPasswordText.TextAlign = HorizontalAlignment.Left;
+                textBoxLoginPasswordText.PasswordChar = '•';
             }
-            textBoxLoginPasswordText.TextAlign = HorizontalAlignment.Left;
-            textBoxLoginPasswordText.ForeColor = Color.Black;
-            textBoxLoginPasswordText.PasswordChar = '•';
+        }
 
+        private void textBoxLoginPasswordText_Leave(object sender, EventArgs e)
+        {
+            if (textBoxLoginPasswordText.Text == "")
+            {
+                textBoxLoginPasswordText.PasswordChar = '\0';
+                textBoxLoginPasswordText.Text = "Password";
+                textBoxLoginPasswordText.ForeColor = Color.DimGray;
+                textBoxLoginPasswordText.TextAlign = HorizontalAlignment.Center;
+            }
         }
     }
 }

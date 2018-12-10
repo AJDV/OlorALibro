@@ -38,6 +38,13 @@ namespace OlorALibro
                 }
                 dataGridView1.DataSource = users;
                 dataGridView1.ScrollBars = ScrollBars.None;
+                dataGridView1.Columns["Contrasenia"].Visible = false;
+                DataGridViewColumnCollection col = dataGridView1.Columns;
+                col.RemoveAt(2);
+                foreach(DataGridViewColumn co in col)
+                {
+                    co.Width = dataGridView1.Size.Width / col.Count;
+                }
                 dataGridView1.ClearSelection();
             }
             catch (Exception)
@@ -64,15 +71,21 @@ namespace OlorALibro
                     jw.Close();
                     dataGridView1.DataSource = null;
                     dataGridView1.DataSource = users;
+                    dataGridView1.Columns["Contrasenia"].Visible = false;
+                    dataGridView1.Columns["Contrasenia"].Visible = false;
+                    DataGridViewColumnCollection col = dataGridView1.Columns;
+                    col.RemoveAt(2);
+                    foreach (DataGridViewColumn co in col)
+                    {
+                        co.Width = dataGridView1.Size.Width / col.Count;
+                    }
+                    dataGridView1.ClearSelection();
                     groupBoxAdmin.Visible = false;
                     textBox1.Clear();
                     textBox2.Clear();
                     textBox3.Clear();
                     checkBoxAdmin.Checked = false;
-                }
-
-                
-                
+                }               
             }
 
             
@@ -143,6 +156,16 @@ namespace OlorALibro
             {
                 MessageBox.Show("No has seleccionado ningun usuario", "MENSAJE", MessageBoxButtons.OK);
             }
+        }
+
+        private void buttonDelete_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.Show("delete user", buttonDelete);
+        }
+
+        private void button1_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.Show("add user", button1);
         }
     }
 }

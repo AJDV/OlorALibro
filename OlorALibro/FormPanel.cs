@@ -28,10 +28,10 @@ namespace OlorALibro.CRUD_users
         #endregion
 
         private void formPanel_Load(object sender, EventArgs e)
-        {            
+        {
             if (admin)
             {
-                this.Text = "Panel de admnistrador (" + usuario.ToUpper()+") - Admin";
+                this.Text = "Panel de admnistrador (" + usuario.ToUpper() + ") - Admin";
             }
             else
             {
@@ -116,6 +116,34 @@ namespace OlorALibro.CRUD_users
         {
             UsuariosAdmins u = new UsuariosAdmins();
             u.ShowDialog();
+        }
+
+        private void buttonLogout_MouseHover(object sender, EventArgs e)
+        {
+            toolTipLogout.Show("logout", buttonLogout);
+        }
+
+        private void buttonExit_MouseHover(object sender, EventArgs e)
+        {
+            toolTipExit.Show("Exit", buttonExit);
+        }
+
+        private void buttonLogout_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("seguro que quieres Salir?", "LOGOUT", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
+            {
+                FormLogin f = new FormLogin();
+                f.Show();
+                Close();
+            }
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("seguro que quieres cerrar la Aplicación?", "EXIT", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
+            {
+                System.Environment.Exit(1);
+            }
         }
     }
 }

@@ -240,6 +240,42 @@ namespace OlorALibro
             FormActividades f = new FormActividades(a);
             f.ShowDialog();
         }
+
+        private void textBox1_Enter(object sender, EventArgs e)
+        {
+            if(textBox1.Text == "ALTITUD")
+            {
+                textBox1.Text = "";
+            }
+        }
+
+        private void textBox1_Leave(object sender, EventArgs e)
+        {
+            if(textBox1.Text == "")
+            {
+                textBox1.TextAlign = HorizontalAlignment.Center;
+                textBox1.ForeColor = Color.DarkGray;
+                textBox1.Text = "ALTITUD";
+            }
+        }
+
+        private void textBox2_Enter(object sender, EventArgs e)
+        {
+            if (textBox2.Text == "LATITUD")
+            {
+                textBox2.Text = "";
+            }
+        }
+
+        private void textBox2_Leave(object sender, EventArgs e)
+        {
+            if (textBox2.Text == "")
+            {
+                textBox2.TextAlign = HorizontalAlignment.Center;
+                textBox2.ForeColor = Color.DarkGray;
+                textBox2.Text = "LATITUD";
+            }
+        }
         //----------------------------
     }
 }

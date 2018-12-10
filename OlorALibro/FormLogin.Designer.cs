@@ -43,11 +43,12 @@
             this.textBoxLoginUserText.Location = new System.Drawing.Point(268, 91);
             this.textBoxLoginUserText.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxLoginUserText.Name = "textBoxLoginUserText";
-            this.textBoxLoginUserText.Size = new System.Drawing.Size(222, 20);
-            this.textBoxLoginUserText.TabIndex = 1;
+            this.textBoxLoginUserText.Size = new System.Drawing.Size(222, 26);
+            this.textBoxLoginUserText.TabIndex = 2;
             this.textBoxLoginUserText.Text = "User";
             this.textBoxLoginUserText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBoxLoginUserText.TextChanged += new System.EventHandler(this.textBoxLoginUserText_TextChanged);
+            this.textBoxLoginUserText.Enter += new System.EventHandler(this.textBoxLoginUserText_Enter);
+            this.textBoxLoginUserText.Leave += new System.EventHandler(this.textBoxLoginUserText_Leave);
             // 
             // textBoxLoginPasswordText
             // 
@@ -56,11 +57,12 @@
             this.textBoxLoginPasswordText.Location = new System.Drawing.Point(268, 148);
             this.textBoxLoginPasswordText.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxLoginPasswordText.Name = "textBoxLoginPasswordText";
-            this.textBoxLoginPasswordText.Size = new System.Drawing.Size(222, 20);
-            this.textBoxLoginPasswordText.TabIndex = 2;
+            this.textBoxLoginPasswordText.Size = new System.Drawing.Size(222, 26);
+            this.textBoxLoginPasswordText.TabIndex = 3;
             this.textBoxLoginPasswordText.Text = "Password";
             this.textBoxLoginPasswordText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBoxLoginPasswordText.TextChanged += new System.EventHandler(this.textBoxLoginPasswordText_TextChanged);
+            this.textBoxLoginPasswordText.Enter += new System.EventHandler(this.textBoxLoginPasswordText_Enter);
+            this.textBoxLoginPasswordText.Leave += new System.EventHandler(this.textBoxLoginPasswordText_Leave);
             // 
             // buttonLogin
             // 
@@ -72,7 +74,7 @@
             this.buttonLogin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(101, 35);
-            this.buttonLogin.TabIndex = 3;
+            this.buttonLogin.TabIndex = 1;
             this.buttonLogin.Text = "Login";
             this.buttonLogin.UseVisualStyleBackColor = false;
             this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
@@ -86,7 +88,7 @@
             this.labelIncorrecta.Location = new System.Drawing.Point(282, 273);
             this.labelIncorrecta.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelIncorrecta.Name = "labelIncorrecta";
-            this.labelIncorrecta.Size = new System.Drawing.Size(148, 15);
+            this.labelIncorrecta.Size = new System.Drawing.Size(208, 22);
             this.labelIncorrecta.TabIndex = 4;
             this.labelIncorrecta.Text = "Contraseña Incorrecta";
             this.labelIncorrecta.Visible = false;

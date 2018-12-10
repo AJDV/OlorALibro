@@ -17,14 +17,7 @@ namespace OlorALibro
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
-            using (FormLogin login = new FormLogin())
-            {
-                if (login.ShowDialog() == DialogResult.OK)
-                {
-                   Application.Run(new formPanel(login.usuario, login.admin));
-                }
-            }
+            Application.Run(new FormLogin());
         }
     }
 }
