@@ -13,9 +13,9 @@ namespace OlorALibro.CRUD_users
     public partial class formPanel : Form
     {
         #region Propiedades
-        public string usuario;
+        public string usuario { get; set; }
 
-        public bool admin;
+        public bool admin {get; set; }
         #endregion
 
         #region Constructor
@@ -95,11 +95,6 @@ namespace OlorALibro.CRUD_users
             a.ShowDialog();
         }
         #endregion
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void button1_MouseHover(object sender, EventArgs e)
         {

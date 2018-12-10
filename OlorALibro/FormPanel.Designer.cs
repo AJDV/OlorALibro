@@ -105,7 +105,7 @@
             this.labelUser.Location = new System.Drawing.Point(18, 45);
             this.labelUser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelUser.Name = "labelUser";
-            this.labelUser.Size = new System.Drawing.Size(0, 20);
+            this.labelUser.Size = new System.Drawing.Size(0, 13);
             this.labelUser.TabIndex = 2;
             // 
             // pictureUsuarios
@@ -150,7 +150,7 @@
             this.menu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(689, 33);
+            this.menu.Size = new System.Drawing.Size(689, 24);
             this.menu.TabIndex = 5;
             this.menu.Text = "menuStrip1";
             // 
@@ -162,7 +162,7 @@
             this.toolStripMenuItem1,
             this.usuariosLibreríasToolStripMenuItem});
             this.menuGestion.Name = "menuGestion";
-            this.menuGestion.Size = new System.Drawing.Size(84, 29);
+            this.menuGestion.Size = new System.Drawing.Size(59, 20);
             this.menuGestion.Text = "Gestión";
             // 
             // usuariosToolStripMenuItem
@@ -194,7 +194,7 @@
             this.toolStripMenuItem2,
             this.usuariosToolStripMenuItem1});
             this.libreriasToolStripMenuItem.Name = "libreriasToolStripMenuItem";
-            this.libreriasToolStripMenuItem.Size = new System.Drawing.Size(67, 29);
+            this.libreriasToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.libreriasToolStripMenuItem.Text = "Listas";
             // 
             // listaDeLibreriasToolStripMenuItem
@@ -211,14 +211,14 @@
             // 
             this.listaDeLibreríasToolStripMenuItem.Image = global::OlorALibro.Properties.Resources.list;
             this.listaDeLibreríasToolStripMenuItem.Name = "listaDeLibreríasToolStripMenuItem";
-            this.listaDeLibreríasToolStripMenuItem.Size = new System.Drawing.Size(236, 30);
+            this.listaDeLibreríasToolStripMenuItem.Size = new System.Drawing.Size(175, 30);
             this.listaDeLibreríasToolStripMenuItem.Text = "Lista de Librerías";
             // 
             // mapaDeLibreríasToolStripMenuItem
             // 
             this.mapaDeLibreríasToolStripMenuItem.Image = global::OlorALibro.Properties.Resources.placeholder;
             this.mapaDeLibreríasToolStripMenuItem.Name = "mapaDeLibreríasToolStripMenuItem";
-            this.mapaDeLibreríasToolStripMenuItem.Size = new System.Drawing.Size(236, 30);
+            this.mapaDeLibreríasToolStripMenuItem.Size = new System.Drawing.Size(175, 30);
             this.mapaDeLibreríasToolStripMenuItem.Text = "Mapa de Librerías";
             // 
             // mapaToolStripMenuItem
@@ -251,14 +251,14 @@
             this.salirToolStripMenuItem,
             this.salirToolStripMenuItem1});
             this.opcionesToolStripMenuItem.Name = "opcionesToolStripMenuItem";
-            this.opcionesToolStripMenuItem.Size = new System.Drawing.Size(99, 29);
+            this.opcionesToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
             this.opcionesToolStripMenuItem.Text = "Opciones";
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Image = global::OlorALibro.Properties.Resources.maps_and_flags;
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(141, 30);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
             this.salirToolStripMenuItem.Text = "Mapa";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -266,13 +266,13 @@
             // 
             this.salirToolStripMenuItem1.Image = global::OlorALibro.Properties.Resources.power_button_off;
             this.salirToolStripMenuItem1.Name = "salirToolStripMenuItem1";
-            this.salirToolStripMenuItem1.Size = new System.Drawing.Size(141, 30);
+            this.salirToolStripMenuItem1.Size = new System.Drawing.Size(104, 22);
             this.salirToolStripMenuItem1.Text = "Salir";
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(28, 29);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(22, 20);
             this.toolStripMenuItem3.Text = "|";
             // 
             // otrosToolStripMenuItem
@@ -282,25 +282,25 @@
             this.jugarToolStripMenuItem,
             this.acercaDeToolStripMenuItem});
             this.otrosToolStripMenuItem.Name = "otrosToolStripMenuItem";
-            this.otrosToolStripMenuItem.Size = new System.Drawing.Size(69, 29);
+            this.otrosToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.otrosToolStripMenuItem.Text = "Otros";
             // 
             // librosToolStripMenuItem
             // 
             this.librosToolStripMenuItem.Name = "librosToolStripMenuItem";
-            this.librosToolStripMenuItem.Size = new System.Drawing.Size(186, 30);
+            this.librosToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.librosToolStripMenuItem.Text = "Libros";
             // 
             // jugarToolStripMenuItem
             // 
             this.jugarToolStripMenuItem.Name = "jugarToolStripMenuItem";
-            this.jugarToolStripMenuItem.Size = new System.Drawing.Size(186, 30);
+            this.jugarToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.jugarToolStripMenuItem.Text = "Jugar";
             // 
             // acercaDeToolStripMenuItem
             // 
             this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
-            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(186, 30);
+            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.acercaDeToolStripMenuItem.Text = "Acerca de ?";
             // 
             // button1
@@ -321,7 +321,6 @@
             this.button1.Size = new System.Drawing.Size(52, 33);
             this.button1.TabIndex = 6;
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             this.button1.MouseHover += new System.EventHandler(this.button1_MouseHover);
             // 
             // buttonLogout

@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using OlorALibro.CRUD_users;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,12 +16,19 @@ namespace OlorALibro
 {
     public partial class UsuariosAdmins : Form
     {
+        #region Properties
         private BindingList<UsuarioAdm> users;
+        #endregion
+
+        #region Constructor
         public UsuariosAdmins()
         {
             InitializeComponent();
         }
+        #endregion
 
+        #region Load
+       
         private void UsuariosAdmins_Load(object sender, EventArgs e)
         {
             groupBoxAdmin.Visible = false;
@@ -54,6 +62,11 @@ namespace OlorALibro
 
         }
 
+        #endregion
+
+        #region Methods
+
+        #region buttons
         private void button1_Click(object sender, EventArgs e)
         {
             groupBoxAdmin.Visible = true;
@@ -85,13 +98,17 @@ namespace OlorALibro
                     textBox2.Clear();
                     textBox3.Clear();
                     checkBoxAdmin.Checked = false;
-                }               
+                }
+
+                
+                
             }
 
             
         }
 
-        private bool verificarContraseña()
+        #region Metodos suplementarios
+        private bool verificarContraseña() //Verificamos Coincidencia de la contraseña para asegurar que la contraseña es la deseada
         {
             bool ok = false;
             if (textBox3.Text!="" && (textBox3.Text == textBox2.Text))
@@ -108,7 +125,7 @@ namespace OlorALibro
             return ok;
         }
 
-        private bool VerificarUser()
+        private bool VerificarUser() //Verificamos que este usuario no exista
         {
             bool ok = true;
             foreach(UsuarioAdm user in users)
@@ -116,10 +133,14 @@ namespace OlorALibro
                 if(user.User == textBox1.Text)
                 {
                     ok = false;
+                    MessageBox.Show(textBox1.Text + " ya existe como nombre de Usuario, introduce uno valido!", "Oops!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    textBox1.Clear();
+                    textBox1.Focus();
                 }
             }
             return ok;
         }
+        #endregion
 
         private void button3_MouseUp(object sender, MouseEventArgs e)
         {
