@@ -46,14 +46,14 @@ namespace OlorALibro
 
                 Console.WriteLine();
 
-                textBoxEditUser.Text = u.User;
-                textBoxEditContrasenia.Text = u.Contrasenia;
-                textBoxEditNombre.Text = u.Nombre;
-                textBoxEditApellido.Text = u.Apellido;
-                textBoxEditCorreo.Text = u.Correo;
-                textBoxEditPuntos.Text = u.Puntos.ToString();
+                //textBoxEditUser.Text = u.User;
+                //textBoxEditContrasenia.Text = u.Contrasenia;
+                //textBoxEditNombre.Text = u.Nombre;
+                //textBoxEditApellido.Text = u.Apellido;
+                //textBoxEditCorreo.Text = u.Correo;
+                //textBoxEditPuntos.Text = u.Puntos.ToString();
 
-                tabControlEdicion.SelectedIndex = 1;
+                //tabControlEdicion.SelectedIndex = 1;
             }
             catch(Exception entry)
             {
@@ -74,8 +74,8 @@ namespace OlorALibro
 
         private void toolStripAniadir_Click(object sender, EventArgs e)
         {
-            tabControlEdicion.SelectedIndex = 0;
-            textBoxAddUser.Focus();
+            //tabControlEdicion.SelectedIndex = 0;
+            //textBoxAddUser.Focus();
         }
 
         private void toolStripEditar_Click(object sender, EventArgs e)
@@ -87,9 +87,9 @@ namespace OlorALibro
         {
             try
             {
-                Usuario user = new Usuario(false, textBoxAddNombre.Text, textBoxAddContrasenia.Text, textBoxAddNombre.Text, textBoxAddApellido.Text, textBoxAddCorreo.Text, Int32.Parse(textBoxAddPuntos.Text));
-                usuarios.Add(user);
-                updateGridJsonUsuarios();
+                //Usuario user = new Usuario(false, textBoxAddNombre.Text, textBoxAddContrasenia.Text, textBoxAddNombre.Text, textBoxAddApellido.Text, textBoxAddCorreo.Text, Int32.Parse(textBoxAddPuntos.Text));
+                //usuarios.Add(user);
+                //updateGridJsonUsuarios();
             }
             catch (Exception)
             {
@@ -126,12 +126,12 @@ namespace OlorALibro
             {
                 Usuario u = (Usuario)dataGridViewUsuarios.CurrentRow.DataBoundItem;
 
-                u.User = textBoxEditUser.Text;
-                u.Contrasenia = textBoxEditContrasenia.Text;
-                u.Nombre = textBoxEditNombre.Text;
-                u.Apellido = textBoxEditApellido.Text;
-                u.Correo = textBoxEditCorreo.Text;
-                u.Puntos = Int32.Parse(textBoxEditPuntos.Text);
+                //u.User = textBoxEditUser.Text;
+                //u.Contrasenia = textBoxEditContrasenia.Text;
+                //u.Nombre = textBoxEditNombre.Text;
+                //u.Apellido = textBoxEditApellido.Text;
+                //u.Correo = textBoxEditCorreo.Text;
+                //u.Puntos = Int32.Parse(textBoxEditPuntos.Text);
 
                 updateGridJsonUsuarios();
 
@@ -141,6 +141,11 @@ namespace OlorALibro
             {
                 Console.WriteLine(entry.ToString());
             }
+        }
+
+        private void buttonCorreo_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://accounts.google.com/ServiceLogin/identifier?flowName=GlifWebSignIn&flowEntry=AddSession");
         }
     }
 }

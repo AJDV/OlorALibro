@@ -79,7 +79,7 @@ namespace OlorALibro
             {
                 textBoxLoginUserText.Text = "";
                 textBoxLoginUserText.ForeColor = Color.Black;
-                textBoxLoginUserText.TextAlign = HorizontalAlignment.Left;
+                textBoxLoginUserText.TextAlign = HorizontalAlignment.Center;
             }
         }
 
@@ -99,7 +99,7 @@ namespace OlorALibro
             {
                 textBoxLoginPasswordText.Text = "";
                 textBoxLoginPasswordText.ForeColor = Color.Black;
-                textBoxLoginPasswordText.TextAlign = HorizontalAlignment.Left;
+                textBoxLoginPasswordText.TextAlign = HorizontalAlignment.Center;
                 textBoxLoginPasswordText.PasswordChar = '•';
             }
         }

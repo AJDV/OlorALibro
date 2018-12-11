@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formPanel));
             this.buttonUsers = new System.Windows.Forms.Button();
             this.buttonLibreria = new System.Windows.Forms.Button();
             this.labelUser = new System.Windows.Forms.Label();
@@ -71,8 +72,11 @@
             // 
             this.buttonUsers.BackColor = System.Drawing.Color.Transparent;
             this.buttonUsers.FlatAppearance.BorderSize = 0;
+            this.buttonUsers.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Orange;
+            this.buttonUsers.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;
             this.buttonUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonUsers.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonUsers.ForeColor = System.Drawing.Color.White;
             this.buttonUsers.Location = new System.Drawing.Point(50, 232);
             this.buttonUsers.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonUsers.Name = "buttonUsers";
@@ -88,8 +92,11 @@
             this.buttonLibreria.BackColor = System.Drawing.Color.Transparent;
             this.buttonLibreria.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.buttonLibreria.FlatAppearance.BorderSize = 0;
+            this.buttonLibreria.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Orange;
+            this.buttonLibreria.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;
             this.buttonLibreria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLibreria.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold);
+            this.buttonLibreria.ForeColor = System.Drawing.Color.White;
             this.buttonLibreria.Location = new System.Drawing.Point(390, 232);
             this.buttonLibreria.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonLibreria.Name = "buttonLibreria";
@@ -105,17 +112,17 @@
             this.labelUser.Location = new System.Drawing.Point(18, 45);
             this.labelUser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelUser.Name = "labelUser";
-            this.labelUser.Size = new System.Drawing.Size(0, 13);
+            this.labelUser.Size = new System.Drawing.Size(0, 20);
             this.labelUser.TabIndex = 2;
             // 
             // pictureUsuarios
             // 
             this.pictureUsuarios.BackColor = System.Drawing.Color.Transparent;
+            this.pictureUsuarios.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureUsuarios.BackgroundImage")));
             this.pictureUsuarios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureUsuarios.Image = global::OlorALibro.Properties.Resources.multiple_users_silhouette;
-            this.pictureUsuarios.Location = new System.Drawing.Point(50, 103);
+            this.pictureUsuarios.Location = new System.Drawing.Point(122, 103);
             this.pictureUsuarios.Name = "pictureUsuarios";
-            this.pictureUsuarios.Size = new System.Drawing.Size(257, 131);
+            this.pictureUsuarios.Size = new System.Drawing.Size(146, 131);
             this.pictureUsuarios.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureUsuarios.TabIndex = 3;
             this.pictureUsuarios.TabStop = false;
@@ -126,10 +133,11 @@
             // pictureLibrerias
             // 
             this.pictureLibrerias.BackColor = System.Drawing.Color.Transparent;
-            this.pictureLibrerias.Image = global::OlorALibro.Properties.Resources.open_book;
-            this.pictureLibrerias.Location = new System.Drawing.Point(405, 113);
+            this.pictureLibrerias.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureLibrerias.BackgroundImage")));
+            this.pictureLibrerias.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureLibrerias.Location = new System.Drawing.Point(473, 113);
             this.pictureLibrerias.Name = "pictureLibrerias";
-            this.pictureLibrerias.Size = new System.Drawing.Size(238, 111);
+            this.pictureLibrerias.Size = new System.Drawing.Size(137, 121);
             this.pictureLibrerias.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureLibrerias.TabIndex = 4;
             this.pictureLibrerias.TabStop = false;
@@ -150,7 +158,7 @@
             this.menu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(689, 24);
+            this.menu.Size = new System.Drawing.Size(706, 33);
             this.menu.TabIndex = 5;
             this.menu.Text = "menuStrip1";
             // 
@@ -162,27 +170,27 @@
             this.toolStripMenuItem1,
             this.usuariosLibreríasToolStripMenuItem});
             this.menuGestion.Name = "menuGestion";
-            this.menuGestion.Size = new System.Drawing.Size(59, 20);
+            this.menuGestion.Size = new System.Drawing.Size(84, 29);
             this.menuGestion.Text = "Gestión";
             // 
             // usuariosToolStripMenuItem
             // 
-            this.usuariosToolStripMenuItem.Image = global::OlorALibro.Properties.Resources.user;
+            this.usuariosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("usuariosToolStripMenuItem.Image")));
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(234, 30);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
             this.usuariosToolStripMenuItem.Text = "Usuarios Admins";
             this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(231, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(249, 6);
             // 
             // usuariosLibreríasToolStripMenuItem
             // 
-            this.usuariosLibreríasToolStripMenuItem.Image = global::OlorALibro.Properties.Resources.phone_book;
+            this.usuariosLibreríasToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("usuariosLibreríasToolStripMenuItem.Image")));
             this.usuariosLibreríasToolStripMenuItem.Name = "usuariosLibreríasToolStripMenuItem";
-            this.usuariosLibreríasToolStripMenuItem.Size = new System.Drawing.Size(234, 30);
+            this.usuariosLibreríasToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
             this.usuariosLibreríasToolStripMenuItem.Text = "Usuarios Librerías";
             // 
             // libreriasToolStripMenuItem
@@ -194,7 +202,7 @@
             this.toolStripMenuItem2,
             this.usuariosToolStripMenuItem1});
             this.libreriasToolStripMenuItem.Name = "libreriasToolStripMenuItem";
-            this.libreriasToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.libreriasToolStripMenuItem.Size = new System.Drawing.Size(67, 29);
             this.libreriasToolStripMenuItem.Text = "Listas";
             // 
             // listaDeLibreriasToolStripMenuItem
@@ -202,47 +210,46 @@
             this.listaDeLibreriasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.listaDeLibreríasToolStripMenuItem,
             this.mapaDeLibreríasToolStripMenuItem});
-            this.listaDeLibreriasToolStripMenuItem.Image = global::OlorALibro.Properties.Resources.notebook;
             this.listaDeLibreriasToolStripMenuItem.Name = "listaDeLibreriasToolStripMenuItem";
-            this.listaDeLibreriasToolStripMenuItem.Size = new System.Drawing.Size(187, 30);
+            this.listaDeLibreriasToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
             this.listaDeLibreriasToolStripMenuItem.Text = "Librerías";
             // 
             // listaDeLibreríasToolStripMenuItem
             // 
-            this.listaDeLibreríasToolStripMenuItem.Image = global::OlorALibro.Properties.Resources.list;
+            this.listaDeLibreríasToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("listaDeLibreríasToolStripMenuItem.Image")));
             this.listaDeLibreríasToolStripMenuItem.Name = "listaDeLibreríasToolStripMenuItem";
-            this.listaDeLibreríasToolStripMenuItem.Size = new System.Drawing.Size(175, 30);
+            this.listaDeLibreríasToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
             this.listaDeLibreríasToolStripMenuItem.Text = "Lista de Librerías";
             // 
             // mapaDeLibreríasToolStripMenuItem
             // 
-            this.mapaDeLibreríasToolStripMenuItem.Image = global::OlorALibro.Properties.Resources.placeholder;
+            this.mapaDeLibreríasToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("mapaDeLibreríasToolStripMenuItem.Image")));
             this.mapaDeLibreríasToolStripMenuItem.Name = "mapaDeLibreríasToolStripMenuItem";
-            this.mapaDeLibreríasToolStripMenuItem.Size = new System.Drawing.Size(175, 30);
+            this.mapaDeLibreríasToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
             this.mapaDeLibreríasToolStripMenuItem.Text = "Mapa de Librerías";
             // 
             // mapaToolStripMenuItem
             // 
             this.mapaToolStripMenuItem.Name = "mapaToolStripMenuItem";
-            this.mapaToolStripMenuItem.Size = new System.Drawing.Size(184, 6);
+            this.mapaToolStripMenuItem.Size = new System.Drawing.Size(249, 6);
             // 
             // actividadesToolStripMenuItem1
             // 
-            this.actividadesToolStripMenuItem1.Image = global::OlorALibro.Properties.Resources.calendar_with_a_clock_time_tools;
+            this.actividadesToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("actividadesToolStripMenuItem1.Image")));
             this.actividadesToolStripMenuItem1.Name = "actividadesToolStripMenuItem1";
-            this.actividadesToolStripMenuItem1.Size = new System.Drawing.Size(187, 30);
+            this.actividadesToolStripMenuItem1.Size = new System.Drawing.Size(252, 30);
             this.actividadesToolStripMenuItem1.Text = "Actividades";
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(184, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(249, 6);
             // 
             // usuariosToolStripMenuItem1
             // 
-            this.usuariosToolStripMenuItem1.Image = global::OlorALibro.Properties.Resources.users;
+            this.usuariosToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("usuariosToolStripMenuItem1.Image")));
             this.usuariosToolStripMenuItem1.Name = "usuariosToolStripMenuItem1";
-            this.usuariosToolStripMenuItem1.Size = new System.Drawing.Size(187, 30);
+            this.usuariosToolStripMenuItem1.Size = new System.Drawing.Size(252, 30);
             this.usuariosToolStripMenuItem1.Text = "Usuarios";
             // 
             // opcionesToolStripMenuItem
@@ -251,28 +258,28 @@
             this.salirToolStripMenuItem,
             this.salirToolStripMenuItem1});
             this.opcionesToolStripMenuItem.Name = "opcionesToolStripMenuItem";
-            this.opcionesToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
+            this.opcionesToolStripMenuItem.Size = new System.Drawing.Size(99, 29);
             this.opcionesToolStripMenuItem.Text = "Opciones";
             // 
             // salirToolStripMenuItem
             // 
-            this.salirToolStripMenuItem.Image = global::OlorALibro.Properties.Resources.maps_and_flags;
+            this.salirToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("salirToolStripMenuItem.Image")));
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
             this.salirToolStripMenuItem.Text = "Mapa";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem1
             // 
-            this.salirToolStripMenuItem1.Image = global::OlorALibro.Properties.Resources.power_button_off;
+            this.salirToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("salirToolStripMenuItem1.Image")));
             this.salirToolStripMenuItem1.Name = "salirToolStripMenuItem1";
-            this.salirToolStripMenuItem1.Size = new System.Drawing.Size(104, 22);
+            this.salirToolStripMenuItem1.Size = new System.Drawing.Size(252, 30);
             this.salirToolStripMenuItem1.Text = "Salir";
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(22, 20);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(28, 29);
             this.toolStripMenuItem3.Text = "|";
             // 
             // otrosToolStripMenuItem
@@ -282,32 +289,33 @@
             this.jugarToolStripMenuItem,
             this.acercaDeToolStripMenuItem});
             this.otrosToolStripMenuItem.Name = "otrosToolStripMenuItem";
-            this.otrosToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.otrosToolStripMenuItem.Size = new System.Drawing.Size(69, 29);
             this.otrosToolStripMenuItem.Text = "Otros";
             // 
             // librosToolStripMenuItem
             // 
             this.librosToolStripMenuItem.Name = "librosToolStripMenuItem";
-            this.librosToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.librosToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
             this.librosToolStripMenuItem.Text = "Libros";
             // 
             // jugarToolStripMenuItem
             // 
+            this.jugarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("jugarToolStripMenuItem.Image")));
             this.jugarToolStripMenuItem.Name = "jugarToolStripMenuItem";
-            this.jugarToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.jugarToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
             this.jugarToolStripMenuItem.Text = "Jugar";
             // 
             // acercaDeToolStripMenuItem
             // 
             this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
-            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
             this.acercaDeToolStripMenuItem.Text = "Acerca de ?";
             // 
             // button1
             // 
             this.button1.AccessibleName = "";
             this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImage = global::OlorALibro.Properties.Resources.game;
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatAppearance.BorderSize = 0;
@@ -316,7 +324,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.button1.Location = new System.Drawing.Point(637, 32);
+            this.button1.Location = new System.Drawing.Point(642, 36);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(52, 33);
             this.button1.TabIndex = 6;
@@ -326,14 +334,14 @@
             // buttonLogout
             // 
             this.buttonLogout.BackColor = System.Drawing.Color.Bisque;
-            this.buttonLogout.BackgroundImage = global::OlorALibro.Properties.Resources.logout;
+            this.buttonLogout.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonLogout.BackgroundImage")));
             this.buttonLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.buttonLogout.FlatAppearance.BorderColor = System.Drawing.Color.Bisque;
             this.buttonLogout.FlatAppearance.BorderSize = 0;
             this.buttonLogout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Bisque;
             this.buttonLogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Bisque;
             this.buttonLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLogout.Location = new System.Drawing.Point(570, 5);
+            this.buttonLogout.Location = new System.Drawing.Point(590, 5);
             this.buttonLogout.Name = "buttonLogout";
             this.buttonLogout.Size = new System.Drawing.Size(20, 17);
             this.buttonLogout.TabIndex = 7;
@@ -344,14 +352,14 @@
             // buttonExit
             // 
             this.buttonExit.BackColor = System.Drawing.Color.Bisque;
-            this.buttonExit.BackgroundImage = global::OlorALibro.Properties.Resources.power_button_off1;
+            this.buttonExit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonExit.BackgroundImage")));
             this.buttonExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.buttonExit.FlatAppearance.BorderColor = System.Drawing.Color.Bisque;
             this.buttonExit.FlatAppearance.BorderSize = 0;
             this.buttonExit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Bisque;
             this.buttonExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Bisque;
             this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonExit.Location = new System.Drawing.Point(621, 5);
+            this.buttonExit.Location = new System.Drawing.Point(658, 5);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(22, 17);
             this.buttonExit.TabIndex = 8;
@@ -363,8 +371,8 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.BackgroundImage = global::OlorALibro.Properties.Resources.rsz_back2;
-            this.ClientSize = new System.Drawing.Size(689, 318);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(706, 311);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.buttonLogout);
             this.Controls.Add(this.buttonUsers);
@@ -374,6 +382,7 @@
             this.Controls.Add(this.pictureLibrerias);
             this.Controls.Add(this.menu);
             this.Controls.Add(this.button1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menu;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "formPanel";

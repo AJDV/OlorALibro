@@ -41,8 +41,9 @@ namespace OlorALibro
                 JsonTextWriter jsonWriter = new JsonTextWriter(file);
             }
 
-            dataGridViewLibrerias.DataSource = libs;
-
+            RefresacarLista(libs);
+            DimensionDeColumnas(dataGridViewLibrerias);
+            dataGridViewLibrerias.ClearSelection();
         }
 
         public void cargarActividades(Libreria l)
@@ -77,29 +78,56 @@ namespace OlorALibro
         //Grabamos el JSON en el activated
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
-            if (textBoxNom.Text == "")
+            if (textBoxNom.ReadOnly == true)
             {
-                MessageBox.Show("Te has dejado el nombre de la libreria");
+                MessageBox.Show("No se puede Guardar, para editar, ir a 'EDITAR LIBRERIA'");
             }
-            else if (textBoxTelefon.Text == "")
+            else // en este punto se hacen todas las comprobaciones pertinentes para poder guardar los datos sin ningún problema
             {
-                MessageBox.Show("Te has dejado el telefono de la libreria");
+                if (textBoxNom.Text == "")
+                {
+                    MessageBox.Show("Te has dejado el nombre de la libreria");
+                }
+                else if (textBoxTelefon.Text == "")
+                {
+                    MessageBox.Show("Te has dejado el telefono de la libreria");
+                }
+                else if (textBoxDireccio.Text == "")
+                {
+                    MessageBox.Show("Te has dejado la direccion de la libreria");
+                }
+                else if ((textBoxLatitud.Text == "LATITUD" || textBoxLatitud.Text == "") || (textBoxAltitud.Text == "ALTITUD" || textBoxAltitud.Text == ""))
+                {
+                    MessageBox.Show("Las coordenadas no esta rellenadas al completo!");
+                    textBoxAltitud.Focus();
+                }
+                else if (textBoxCorreo.Text == "")
+                {
+                    MessageBox.Show("El correo no esta rellenado");
+                    textBoxCorreo.Focus();
+                } 
+                else
+                {
+                    if(MessageBox.Show("Guardar ?", "GUARDAR", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
+                    {
+                        try
+                        {
+                            libs.Add(new Libreria(textBoxNom.Text, textBoxDireccio.Text, Int32.Parse(textBoxTelefon.Text), textBoxCorreo.Text, $"{textBoxAltitud.Text},{textBoxLatitud.Text}"));
+                            JsonTextWriter jw = new JsonTextWriter(File.CreateText(filePath));
+                            JToken.FromObject(libs).WriteTo(jw);
+                            jw.Close();
+                            RefresacarLista(libs);
+                            MessageBox.Show("Libreria guardada");
+                            limpiezaBox();
+                        }
+                        catch (Exception)
+                        {
+                            MessageBox.Show("Error", "Mensaje", MessageBoxButtons.OK);
+                        }
+                    }
+                }         
+
             }
-            else if (textBoxDireccio.Text == "")
-            {
-                MessageBox.Show("Te has dejado la direccion de la libreria");
-            }
-            else
-            {
-                l.Nombre = textBoxNom.Text;
-                l.Direccion = textBoxDireccio.Text;
-                l.Telefono = Int32.Parse(textBoxTelefon.Text);
-                libs.Add(l);
-                MessageBox.Show("Libreria guardada");
-                limpiezaBox();
-                guardarJSON();
-            }
-         
         }
 
         public void limpiezaBox()
@@ -107,64 +135,63 @@ namespace OlorALibro
             textBoxNom.Clear();
             textBoxDireccio.Clear();
             textBoxTelefon.Clear();
+            textBoxCorreo.Clear();
+            textBoxAltitud.Text = "ALTITUD";
+            textBoxLatitud.Text = "LATITUD";
         }
 
         private void buttonEliminar_Click(object sender, EventArgs e)
-        {
-
-            var data = dataGridViewLibrerias.SelectedCells;
-
-            //Buscamos la libreria en la bindingList de librerias
-            //for (int i = 0; i < libs.Count(); i++)
-            //{
-            //    if ()
-            //}
-            int p = 0, eliminar = 0; ;
-            DialogResult msg;
-            foreach (Libreria item in libs)
+        {            
+            int row = dataGridViewLibrerias.CurrentRow.Index;
+            int selected = dataGridViewLibrerias.SelectedRows.Count;
+            if(selected == 1 && MessageBox.Show("Seguro que quieres eliminar lo seleccionado ? ", "ELIMINAR", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation)==DialogResult.OK)
             {
-                if (item.Nombre == textBoxNom.Text && item.Telefono == Int32.Parse(textBoxTelefon.Text) && item.Direccion == textBoxDireccio.Text)
-                {
-                    eliminar = p;
-                }
-                else
-                {
-                    p++;
-                    msg = DialogResult.Cancel;
-                }
+                dataGridViewLibrerias.Rows.RemoveAt(row);
+                JsonTextWriter jw = new JsonTextWriter(File.CreateText(filePath));
+                JToken.FromObject(libs).WriteTo(jw);
+                jw.Close();
+                RefresacarLista(libs);
             }
-
-            if (MessageBox.Show("Esta seguro que desea eliminar la libreria?...", "ALERTA", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
+            else if(row == 0)
             {
-                libs.RemoveAt(p);
+                MessageBox.Show("Ninguna Libreria seleccionada");
             }
-            limpiezaBox();
-            guardarJSON();
-            //MessageBox.Show(dataGridViewLibrerias.SelectedCells.ToString());
         }
 
         private void dataGridViewLibrerias_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            //MessageBox.Show(e.ColumnIndex.ToString());
-            //MessageBox.Show(dataGridViewLibrerias.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString());
-           
             l = (Libreria) dataGridViewLibrerias.CurrentRow.DataBoundItem;
             cargarActividades(l);
         }
 
         private void buttonEditar_Click(object sender, EventArgs e)
         {
-            Libreria toSend = new Libreria();
-            foreach(Libreria item in libs)
+            int selected = dataGridViewLibrerias.SelectedRows.Count;
+            if (selected == 1)
             {
-                if(item.Nombre == textBoxNom.Text && item.Telefono == Int32.Parse(textBoxTelefon.Text) && item.Direccion == textBoxDireccio.Text)
+                int pos = dataGridViewLibrerias.CurrentRow.Index ;
+                FormEditar edit = new FormEditar(libs[pos]);
+                edit.ShowDialog();
+                if (edit.cambios)
                 {
-                    toSend = item;
+                    JsonTextWriter jw = new JsonTextWriter(File.CreateText(filePath));
+                    JToken.FromObject(libs).WriteTo(jw);
+                    jw.Close();
+                    RefresacarLista(libs);
                 }
+
+
             }
-            FormEditar edit = new FormEditar(toSend);
-            edit.ShowDialog();
-            guardarJSON();
+            else if(selected > 1)
+            {
+                MessageBox.Show("Selecciona unicamente una librería");
+            }
+            else
+            {
+                MessageBox.Show("selecciona alguna librería");
+            }
+
+            //guardarJSON();
         }
 
         public void guardarJSON()
@@ -185,6 +212,8 @@ namespace OlorALibro
         {
             //Refrescar grid
             refrescarGrid();
+
+            MostrarDatos(libs[dataGridViewLibrerias.CurrentRow.Index]);
         }
 
         //Añadir una nueva actividad
@@ -226,6 +255,8 @@ namespace OlorALibro
         //Método para refrescar la dataGridView
         private void refrescarGrid()
         {
+            RefresacarLista(libs);
+
             dataGridViewActividades.DataSource = null;
             dataGridViewActividades.DataSource = l.Actividades;
 
@@ -243,39 +274,138 @@ namespace OlorALibro
 
         private void textBox1_Enter(object sender, EventArgs e)
         {
-            if(textBox1.Text == "ALTITUD")
+            if(textBoxAltitud.Text == "ALTITUD")
             {
-                textBox1.Text = "";
+                textBoxAltitud.Text = "";
+                textBoxAltitud.TextAlign = HorizontalAlignment.Left;
+                textBoxAltitud.ForeColor = Color.Black;
             }
         }
 
         private void textBox1_Leave(object sender, EventArgs e)
         {
-            if(textBox1.Text == "")
+            if(textBoxAltitud.Text == "")
             {
-                textBox1.TextAlign = HorizontalAlignment.Center;
-                textBox1.ForeColor = Color.DarkGray;
-                textBox1.Text = "ALTITUD";
+                textBoxAltitud.TextAlign = HorizontalAlignment.Center;
+                textBoxAltitud.ForeColor = Color.DarkGray;
+                textBoxAltitud.Text = "ALTITUD";
             }
         }
 
         private void textBox2_Enter(object sender, EventArgs e)
         {
-            if (textBox2.Text == "LATITUD")
+            if (textBoxLatitud.Text == "LATITUD")
             {
-                textBox2.Text = "";
+                textBoxLatitud.Text = "";
+                textBoxLatitud.TextAlign = HorizontalAlignment.Left;
+                textBoxLatitud.ForeColor = Color.Black;
             }
         }
 
         private void textBox2_Leave(object sender, EventArgs e)
         {
-            if (textBox2.Text == "")
+            if (textBoxLatitud.Text == "")
             {
-                textBox2.TextAlign = HorizontalAlignment.Center;
-                textBox2.ForeColor = Color.DarkGray;
-                textBox2.Text = "LATITUD";
+                textBoxLatitud.TextAlign = HorizontalAlignment.Center;
+                textBoxLatitud.ForeColor = Color.DarkGray;
+                textBoxLatitud.Text = "LATITUD";
             }
         }
         //----------------------------
+
+        public void RefresacarLista(BindingList<Libreria> listaObjeto)
+        {
+            dataGridViewLibrerias.DataSource = null;
+            dataGridViewLibrerias.DataSource = listaObjeto;
+        }
+
+        public void DimensionDeColumnas(DataGridView dataGrid)
+        {
+            DataGridViewColumnCollection col = dataGridViewLibrerias.Columns;
+            foreach (DataGridViewColumn co in col)
+            {
+                co.Width = (dataGridViewLibrerias.Size.Width / col.Count) - 1;
+            }
+           
+        }
+
+        private void dataGridViewLibrerias_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(dataGridViewLibrerias.SelectedRows.Count == 1)
+            {
+                Libreria lib = libs[dataGridViewLibrerias.CurrentRow.Index];
+                MostrarDatos(lib);
+                DesactivarActivarEdicion(true);
+            }
+            else
+            {
+                MessageBox.Show("Seleccionar solo una libreria");
+            }
+                
+        }
+
+        public void DesactivarActivarEdicion(bool activ_desactiv)
+        {
+            textBoxNom.ReadOnly = activ_desactiv;
+            textBoxTelefon.ReadOnly = activ_desactiv;
+            textBoxCorreo.ReadOnly = activ_desactiv;
+            textBoxDireccio.ReadOnly = activ_desactiv;
+            textBoxAltitud.ReadOnly = activ_desactiv;
+            textBoxLatitud.ReadOnly = activ_desactiv;
+        }
+
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+            dataGridViewLibrerias.ClearSelection();
+            limpiezaBox();
+            DesactivarActivarEdicion(false);
+            textBoxNom.Focus();
+        }
+
+        private void buttonAdd_MouseHover(object sender, EventArgs e)
+        {
+            toolTipadd.Show("Añadir Librería", buttonAdd);
+        }
+
+        private void buttonAnadir_MouseHover(object sender, EventArgs e)
+        {
+            buttonAnadir.ForeColor = Color.Orange;
+        }
+
+        private void buttonEliminarActividad_MouseHover(object sender, EventArgs e)
+        {
+            buttonEliminarActividad.ForeColor = Color.Orange;
+        }
+
+        private void buttonEditarActividad_MouseHover(object sender, EventArgs e)
+        {
+            buttonEditarActividad.ForeColor = Color.Orange;
+        }
+
+        private void buttonAnadir_MouseLeave(object sender, EventArgs e)
+        {
+            buttonAnadir.ForeColor = Color.White;
+        }
+
+        private void buttonEliminarActividad_MouseLeave(object sender, EventArgs e)
+        {
+            buttonEliminarActividad.ForeColor = Color.White;
+        }
+
+        private void buttonEditarActividad_MouseLeave(object sender, EventArgs e)
+        {
+            buttonEditarActividad.ForeColor = Color.White;
+        }
+
+        public void MostrarDatos(Libreria unaLibreria)
+        {
+            string[] coord = unaLibreria.Coordenadas.Split(','); //para separar las diferentes coordenadas
+            textBoxNom.Text = unaLibreria.Nombre;
+            textBoxTelefon.Text = unaLibreria.Telefono.ToString();
+            textBoxCorreo.Text = unaLibreria.correo;
+            textBoxDireccio.Text = unaLibreria.Direccion;
+            textBoxAltitud.Text = coord[0];
+            textBoxLatitud.Text = coord[1];
+        }
     }
 }

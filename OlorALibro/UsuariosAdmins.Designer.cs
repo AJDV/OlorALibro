@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UsuariosAdmins));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Adminitrador = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.User = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,12 +54,13 @@
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Adminitrador,
             this.User});
             this.dataGridView1.GridColor = System.Drawing.Color.White;
-            this.dataGridView1.Location = new System.Drawing.Point(21, 122);
+            this.dataGridView1.Location = new System.Drawing.Point(21, 84);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -67,7 +69,7 @@
             this.dataGridView1.RowHeadersWidth = 50;
             this.dataGridView1.RowTemplate.Height = 33;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(245, 170);
+            this.dataGridView1.Size = new System.Drawing.Size(301, 208);
             this.dataGridView1.TabIndex = 0;
             // 
             // Adminitrador
@@ -90,21 +92,21 @@
             this.labelUsuariosAdmin.BackColor = System.Drawing.Color.Transparent;
             this.labelUsuariosAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelUsuariosAdmin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.labelUsuariosAdmin.Location = new System.Drawing.Point(53, 23);
+            this.labelUsuariosAdmin.Location = new System.Drawing.Point(12, 22);
             this.labelUsuariosAdmin.Name = "labelUsuariosAdmin";
-            this.labelUsuariosAdmin.Size = new System.Drawing.Size(189, 46);
+            this.labelUsuariosAdmin.Size = new System.Drawing.Size(282, 69);
             this.labelUsuariosAdmin.TabIndex = 1;
             this.labelUsuariosAdmin.Text = "Usuarios ";
             // 
             // buttonDelete
             // 
             this.buttonDelete.BackColor = System.Drawing.Color.Transparent;
-            this.buttonDelete.BackgroundImage = global::OlorALibro.Properties.Resources.remove_user;
+            this.buttonDelete.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonDelete.BackgroundImage")));
             this.buttonDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.buttonDelete.FlatAppearance.BorderSize = 0;
             this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDelete.ForeColor = System.Drawing.Color.Black;
-            this.buttonDelete.Location = new System.Drawing.Point(293, 33);
+            this.buttonDelete.Location = new System.Drawing.Point(404, 33);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(46, 45);
             this.buttonDelete.TabIndex = 3;
@@ -114,12 +116,12 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImage = global::OlorALibro.Properties.Resources.new_user;
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(399, 33);
+            this.button1.Location = new System.Drawing.Point(510, 33);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(46, 45);
             this.button1.TabIndex = 4;
@@ -140,17 +142,17 @@
             this.groupBoxAdmin.Controls.Add(this.textBox1);
             this.groupBoxAdmin.Controls.Add(this.button3);
             this.groupBoxAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBoxAdmin.Location = new System.Drawing.Point(265, 79);
+            this.groupBoxAdmin.Location = new System.Drawing.Point(329, 84);
             this.groupBoxAdmin.Name = "groupBoxAdmin";
-            this.groupBoxAdmin.Size = new System.Drawing.Size(220, 170);
+            this.groupBoxAdmin.Size = new System.Drawing.Size(277, 199);
             this.groupBoxAdmin.TabIndex = 5;
             this.groupBoxAdmin.TabStop = false;
             this.groupBoxAdmin.Visible = false;
             // 
             // buttonAccept
             // 
-            this.buttonAccept.Location = new System.Drawing.Point(60, 140);
-            this.buttonAccept.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonAccept.Location = new System.Drawing.Point(104, 169);
+            this.buttonAccept.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAccept.Name = "buttonAccept";
             this.buttonAccept.Size = new System.Drawing.Size(105, 25);
             this.buttonAccept.TabIndex = 5;
@@ -165,7 +167,7 @@
             this.labelPassw2.ForeColor = System.Drawing.Color.White;
             this.labelPassw2.Location = new System.Drawing.Point(0, 91);
             this.labelPassw2.Name = "labelPassw2";
-            this.labelPassw2.Size = new System.Drawing.Size(71, 13);
+            this.labelPassw2.Size = new System.Drawing.Size(102, 20);
             this.labelPassw2.TabIndex = 11;
             this.labelPassw2.Text = "Contraseña";
             // 
@@ -176,7 +178,7 @@
             this.labelPassw.ForeColor = System.Drawing.Color.White;
             this.labelPassw.Location = new System.Drawing.Point(0, 56);
             this.labelPassw.Name = "labelPassw";
-            this.labelPassw.Size = new System.Drawing.Size(71, 13);
+            this.labelPassw.Size = new System.Drawing.Size(102, 20);
             this.labelPassw.TabIndex = 10;
             this.labelPassw.Text = "Contraseña";
             // 
@@ -187,15 +189,15 @@
             this.labelUser.ForeColor = System.Drawing.Color.White;
             this.labelUser.Location = new System.Drawing.Point(0, 21);
             this.labelUser.Name = "labelUser";
-            this.labelUser.Size = new System.Drawing.Size(50, 13);
+            this.labelUser.Size = new System.Drawing.Size(71, 20);
             this.labelUser.TabIndex = 9;
             this.labelUser.Text = "Usuario";
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(70, 54);
+            this.textBox3.Location = new System.Drawing.Point(104, 54);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(117, 20);
+            this.textBox3.Size = new System.Drawing.Size(117, 26);
             this.textBox3.TabIndex = 2;
             // 
             // checkBoxAdmin
@@ -203,31 +205,31 @@
             this.checkBoxAdmin.AutoSize = true;
             this.checkBoxAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxAdmin.ForeColor = System.Drawing.Color.White;
-            this.checkBoxAdmin.Location = new System.Drawing.Point(63, 111);
+            this.checkBoxAdmin.Location = new System.Drawing.Point(81, 130);
             this.checkBoxAdmin.Name = "checkBoxAdmin";
-            this.checkBoxAdmin.Size = new System.Drawing.Size(102, 17);
+            this.checkBoxAdmin.Size = new System.Drawing.Size(146, 24);
             this.checkBoxAdmin.TabIndex = 4;
             this.checkBoxAdmin.Text = "Administrador";
             this.checkBoxAdmin.UseVisualStyleBackColor = true;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(70, 89);
+            this.textBox2.Location = new System.Drawing.Point(104, 88);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(117, 20);
+            this.textBox2.Size = new System.Drawing.Size(117, 26);
             this.textBox2.TabIndex = 3;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(70, 19);
+            this.textBox1.Location = new System.Drawing.Point(104, 15);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(117, 20);
+            this.textBox1.Size = new System.Drawing.Size(117, 26);
             this.textBox1.TabIndex = 1;
             // 
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.Transparent;
-            this.button3.BackgroundImage = global::OlorALibro.Properties.Resources.eye;
+            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button3.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button3.FlatAppearance.BorderSize = 0;
@@ -235,7 +237,7 @@
             this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Location = new System.Drawing.Point(187, 45);
+            this.button3.Location = new System.Drawing.Point(243, 50);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(28, 34);
             this.button3.TabIndex = 7;
@@ -246,13 +248,13 @@
             // UsuariosAdmins
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackgroundImage = global::OlorALibro.Properties.Resources.rsz_back2;
-            this.ClientSize = new System.Drawing.Size(493, 258);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(641, 295);
             this.Controls.Add(this.groupBoxAdmin);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonDelete);
-            this.Controls.Add(this.labelUsuariosAdmin);
             this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.labelUsuariosAdmin);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "UsuariosAdmins";

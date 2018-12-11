@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLibrerias));
             this.dataGridViewLibrerias = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -46,9 +48,15 @@
             this.buttonAnadir = new System.Windows.Forms.Button();
             this.dataGridViewActividades = new System.Windows.Forms.DataGridView();
             this.hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxAltitud = new System.Windows.Forms.TextBox();
+            this.textBoxLatitud = new System.Windows.Forms.TextBox();
             this.labelCoord = new System.Windows.Forms.Label();
+            this.textBoxCorreo = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.buttonAdd = new System.Windows.Forms.Button();
+            this.toolTipadd = new System.Windows.Forms.ToolTip(this.components);
             this.nombreDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,18 +77,22 @@
             this.dataGridViewLibrerias.AllowUserToAddRows = false;
             this.dataGridViewLibrerias.AllowUserToDeleteRows = false;
             this.dataGridViewLibrerias.AutoGenerateColumns = false;
+            this.dataGridViewLibrerias.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridViewLibrerias.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dataGridViewLibrerias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewLibrerias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nombreDataGridViewTextBoxColumn,
             this.direccionDataGridViewTextBoxColumn,
             this.telefonoDataGridViewTextBoxColumn});
             this.dataGridViewLibrerias.DataSource = this.libreriaBindingSource;
-            this.dataGridViewLibrerias.Location = new System.Drawing.Point(18, 270);
+            this.dataGridViewLibrerias.Location = new System.Drawing.Point(28, 230);
             this.dataGridViewLibrerias.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridViewLibrerias.Name = "dataGridViewLibrerias";
             this.dataGridViewLibrerias.ReadOnly = true;
-            this.dataGridViewLibrerias.Size = new System.Drawing.Size(664, 252);
+            this.dataGridViewLibrerias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewLibrerias.Size = new System.Drawing.Size(555, 227);
             this.dataGridViewLibrerias.TabIndex = 0;
+            this.dataGridViewLibrerias.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewLibrerias_CellClick);
             this.dataGridViewLibrerias.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewLibrerias_CellContentClick);
             // 
             // label1
@@ -88,7 +100,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(30, 83);
+            this.label1.Location = new System.Drawing.Point(40, 63);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(42, 20);
@@ -100,7 +112,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(24, 128);
+            this.label2.Location = new System.Drawing.Point(34, 108);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(62, 20);
@@ -112,7 +124,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(24, 171);
+            this.label3.Location = new System.Drawing.Point(34, 199);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 20);
@@ -121,51 +133,51 @@
             // 
             // textBoxNom
             // 
-            this.textBoxNom.Location = new System.Drawing.Point(96, 78);
+            this.textBoxNom.Location = new System.Drawing.Point(106, 58);
             this.textBoxNom.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxNom.Name = "textBoxNom";
-            this.textBoxNom.Size = new System.Drawing.Size(584, 26);
+            this.textBoxNom.Size = new System.Drawing.Size(264, 26);
             this.textBoxNom.TabIndex = 4;
             // 
             // textBoxTelefon
             // 
-            this.textBoxTelefon.Location = new System.Drawing.Point(96, 123);
+            this.textBoxTelefon.Location = new System.Drawing.Point(106, 103);
             this.textBoxTelefon.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxTelefon.Name = "textBoxTelefon";
-            this.textBoxTelefon.Size = new System.Drawing.Size(584, 26);
+            this.textBoxTelefon.Size = new System.Drawing.Size(264, 26);
             this.textBoxTelefon.TabIndex = 5;
             // 
             // textBoxDireccio
             // 
-            this.textBoxDireccio.Location = new System.Drawing.Point(96, 166);
+            this.textBoxDireccio.Location = new System.Drawing.Point(106, 194);
             this.textBoxDireccio.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxDireccio.Name = "textBoxDireccio";
-            this.textBoxDireccio.Size = new System.Drawing.Size(584, 26);
+            this.textBoxDireccio.Size = new System.Drawing.Size(264, 26);
             this.textBoxDireccio.TabIndex = 6;
             // 
             // labelLibrerias
             // 
             this.labelLibrerias.AutoSize = true;
             this.labelLibrerias.BackColor = System.Drawing.Color.Transparent;
-            this.labelLibrerias.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLibrerias.Font = new System.Drawing.Font("Microsoft Sans Serif", 23F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelLibrerias.ForeColor = System.Drawing.Color.White;
-            this.labelLibrerias.Location = new System.Drawing.Point(12, 14);
+            this.labelLibrerias.Location = new System.Drawing.Point(34, 0);
             this.labelLibrerias.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelLibrerias.Name = "labelLibrerias";
-            this.labelLibrerias.Size = new System.Drawing.Size(232, 61);
+            this.labelLibrerias.Size = new System.Drawing.Size(200, 53);
             this.labelLibrerias.TabIndex = 7;
             this.labelLibrerias.Text = "Librerias";
             // 
             // buttonGuardar
             // 
             this.buttonGuardar.BackColor = System.Drawing.Color.Transparent;
-            this.buttonGuardar.FlatAppearance.BorderSize = 0;
-            this.buttonGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.buttonGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.buttonGuardar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.buttonGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Orange;
+            this.buttonGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;
             this.buttonGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonGuardar.ForeColor = System.Drawing.Color.White;
-            this.buttonGuardar.Location = new System.Drawing.Point(18, 531);
+            this.buttonGuardar.Location = new System.Drawing.Point(23, 476);
             this.buttonGuardar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonGuardar.Name = "buttonGuardar";
             this.buttonGuardar.Size = new System.Drawing.Size(146, 48);
@@ -177,13 +189,13 @@
             // buttonEditar
             // 
             this.buttonEditar.BackColor = System.Drawing.Color.Transparent;
-            this.buttonEditar.FlatAppearance.BorderSize = 0;
-            this.buttonEditar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.buttonEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.buttonEditar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.buttonEditar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Orange;
+            this.buttonEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;
             this.buttonEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonEditar.ForeColor = System.Drawing.Color.White;
-            this.buttonEditar.Location = new System.Drawing.Point(537, 531);
+            this.buttonEditar.Location = new System.Drawing.Point(437, 476);
             this.buttonEditar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonEditar.Name = "buttonEditar";
             this.buttonEditar.Size = new System.Drawing.Size(146, 48);
@@ -195,13 +207,13 @@
             // buttonEliminar
             // 
             this.buttonEliminar.BackColor = System.Drawing.Color.Transparent;
-            this.buttonEliminar.FlatAppearance.BorderSize = 0;
-            this.buttonEliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.buttonEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.buttonEliminar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.buttonEliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Orange;
+            this.buttonEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;
             this.buttonEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonEliminar.ForeColor = System.Drawing.Color.White;
-            this.buttonEliminar.Location = new System.Drawing.Point(279, 531);
+            this.buttonEliminar.Location = new System.Drawing.Point(237, 476);
             this.buttonEliminar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonEliminar.Name = "buttonEliminar";
             this.buttonEliminar.Size = new System.Drawing.Size(146, 48);
@@ -218,24 +230,24 @@
             this.groupBoxActividades.Controls.Add(this.buttonAnadir);
             this.groupBoxActividades.Controls.Add(this.dataGridViewActividades);
             this.groupBoxActividades.ForeColor = System.Drawing.Color.White;
-            this.groupBoxActividades.Location = new System.Drawing.Point(720, 20);
+            this.groupBoxActividades.Location = new System.Drawing.Point(591, 58);
             this.groupBoxActividades.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBoxActividades.Name = "groupBoxActividades";
             this.groupBoxActividades.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBoxActividades.Size = new System.Drawing.Size(600, 558);
+            this.groupBoxActividades.Size = new System.Drawing.Size(431, 466);
             this.groupBoxActividades.TabIndex = 12;
             this.groupBoxActividades.TabStop = false;
-            this.groupBoxActividades.Text = "Actividades";
             // 
             // buttonEditarActividad
             // 
+            this.buttonEditarActividad.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.buttonEditarActividad.FlatAppearance.BorderSize = 0;
-            this.buttonEditarActividad.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.buttonEditarActividad.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.buttonEditarActividad.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.buttonEditarActividad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonEditarActividad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonEditarActividad.ForeColor = System.Drawing.Color.White;
-            this.buttonEditarActividad.Location = new System.Drawing.Point(448, 518);
+            this.buttonEditarActividad.Location = new System.Drawing.Point(261, 388);
             this.buttonEditarActividad.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonEditarActividad.Name = "buttonEditarActividad";
             this.buttonEditarActividad.Size = new System.Drawing.Size(152, 35);
@@ -243,16 +255,19 @@
             this.buttonEditarActividad.Text = "Editar Actividad";
             this.buttonEditarActividad.UseVisualStyleBackColor = true;
             this.buttonEditarActividad.Click += new System.EventHandler(this.buttonEditarActividad_Click);
+            this.buttonEditarActividad.MouseLeave += new System.EventHandler(this.buttonEditarActividad_MouseLeave);
+            this.buttonEditarActividad.MouseHover += new System.EventHandler(this.buttonEditarActividad_MouseHover);
             // 
             // buttonEliminarActividad
             // 
+            this.buttonEliminarActividad.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.buttonEliminarActividad.FlatAppearance.BorderSize = 0;
-            this.buttonEliminarActividad.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.buttonEliminarActividad.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.buttonEliminarActividad.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.buttonEliminarActividad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonEliminarActividad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonEliminarActividad.ForeColor = System.Drawing.Color.White;
-            this.buttonEliminarActividad.Location = new System.Drawing.Point(233, 518);
+            this.buttonEliminarActividad.Location = new System.Drawing.Point(134, 422);
             this.buttonEliminarActividad.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonEliminarActividad.Name = "buttonEliminarActividad";
             this.buttonEliminarActividad.Size = new System.Drawing.Size(158, 35);
@@ -260,16 +275,19 @@
             this.buttonEliminarActividad.Text = "Eliminar Actividad";
             this.buttonEliminarActividad.UseVisualStyleBackColor = true;
             this.buttonEliminarActividad.Click += new System.EventHandler(this.buttonEliminarActividad_Click);
+            this.buttonEliminarActividad.MouseLeave += new System.EventHandler(this.buttonEliminarActividad_MouseLeave);
+            this.buttonEliminarActividad.MouseHover += new System.EventHandler(this.buttonEliminarActividad_MouseHover);
             // 
             // buttonAnadir
             // 
+            this.buttonAnadir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.buttonAnadir.FlatAppearance.BorderSize = 0;
-            this.buttonAnadir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.buttonAnadir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.buttonAnadir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.buttonAnadir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAnadir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAnadir.ForeColor = System.Drawing.Color.White;
-            this.buttonAnadir.Location = new System.Drawing.Point(9, 518);
+            this.buttonAnadir.Location = new System.Drawing.Point(18, 388);
             this.buttonAnadir.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonAnadir.Name = "buttonAnadir";
             this.buttonAnadir.Size = new System.Drawing.Size(148, 35);
@@ -277,12 +295,15 @@
             this.buttonAnadir.Text = "Añadir Actividad";
             this.buttonAnadir.UseVisualStyleBackColor = true;
             this.buttonAnadir.Click += new System.EventHandler(this.buttonAnadir_Click);
+            this.buttonAnadir.MouseLeave += new System.EventHandler(this.buttonAnadir_MouseLeave);
+            this.buttonAnadir.MouseHover += new System.EventHandler(this.buttonAnadir_MouseHover);
             // 
             // dataGridViewActividades
             // 
             this.dataGridViewActividades.AllowUserToAddRows = false;
             this.dataGridViewActividades.AllowUserToDeleteRows = false;
             this.dataGridViewActividades.AutoGenerateColumns = false;
+            this.dataGridViewActividades.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewActividades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewActividades.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nombreDataGridViewTextBoxColumn1,
@@ -290,12 +311,21 @@
             this.hora,
             this.descripcionDataGridViewTextBoxColumn});
             this.dataGridViewActividades.DataSource = this.actividadBindingSource;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewActividades.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewActividades.Location = new System.Drawing.Point(9, 29);
             this.dataGridViewActividades.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridViewActividades.Name = "dataGridViewActividades";
             this.dataGridViewActividades.ReadOnly = true;
+            this.dataGridViewActividades.RowHeadersVisible = false;
             this.dataGridViewActividades.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewActividades.Size = new System.Drawing.Size(582, 472);
+            this.dataGridViewActividades.Size = new System.Drawing.Size(404, 349);
             this.dataGridViewActividades.TabIndex = 13;
             this.dataGridViewActividades.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewActividades_CellDoubleClick);
             // 
@@ -306,43 +336,105 @@
             this.hora.Name = "hora";
             this.hora.ReadOnly = true;
             // 
-            // textBox1
+            // textBoxAltitud
             // 
-            this.textBox1.ForeColor = System.Drawing.Color.DarkGray;
-            this.textBox1.Location = new System.Drawing.Point(143, 216);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(238, 26);
-            this.textBox1.TabIndex = 13;
-            this.textBox1.Text = "ALTITUD";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox1.Enter += new System.EventHandler(this.textBox1_Enter);
-            this.textBox1.Leave += new System.EventHandler(this.textBox1_Leave);
+            this.textBoxAltitud.ForeColor = System.Drawing.Color.DarkGray;
+            this.textBoxAltitud.Location = new System.Drawing.Point(406, 102);
+            this.textBoxAltitud.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxAltitud.Name = "textBoxAltitud";
+            this.textBoxAltitud.Size = new System.Drawing.Size(171, 26);
+            this.textBoxAltitud.TabIndex = 13;
+            this.textBoxAltitud.Text = "ALTITUD";
+            this.textBoxAltitud.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxAltitud.Enter += new System.EventHandler(this.textBox1_Enter);
+            this.textBoxAltitud.Leave += new System.EventHandler(this.textBox1_Leave);
             // 
-            // textBox2
+            // textBoxLatitud
             // 
-            this.textBox2.ForeColor = System.Drawing.Color.DarkGray;
-            this.textBox2.Location = new System.Drawing.Point(419, 216);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(264, 26);
-            this.textBox2.TabIndex = 14;
-            this.textBox2.Text = "LATITUD";
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox2.Enter += new System.EventHandler(this.textBox2_Enter);
-            this.textBox2.Leave += new System.EventHandler(this.textBox2_Leave);
+            this.textBoxLatitud.ForeColor = System.Drawing.Color.DarkGray;
+            this.textBoxLatitud.Location = new System.Drawing.Point(406, 149);
+            this.textBoxLatitud.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxLatitud.Name = "textBoxLatitud";
+            this.textBoxLatitud.Size = new System.Drawing.Size(171, 26);
+            this.textBoxLatitud.TabIndex = 14;
+            this.textBoxLatitud.Text = "LATITUD";
+            this.textBoxLatitud.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxLatitud.Enter += new System.EventHandler(this.textBox2_Enter);
+            this.textBoxLatitud.Leave += new System.EventHandler(this.textBox2_Leave);
             // 
             // labelCoord
             // 
             this.labelCoord.AutoSize = true;
             this.labelCoord.BackColor = System.Drawing.Color.Transparent;
             this.labelCoord.ForeColor = System.Drawing.Color.White;
-            this.labelCoord.Location = new System.Drawing.Point(24, 222);
+            this.labelCoord.Location = new System.Drawing.Point(443, 47);
             this.labelCoord.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelCoord.Name = "labelCoord";
-            this.labelCoord.Size = new System.Drawing.Size(105, 20);
+            this.labelCoord.Size = new System.Drawing.Size(109, 20);
             this.labelCoord.TabIndex = 15;
-            this.labelCoord.Text = "Coordenadas";
+            this.labelCoord.Text = "Coordenadas ";
+            // 
+            // textBoxCorreo
+            // 
+            this.textBoxCorreo.Location = new System.Drawing.Point(106, 149);
+            this.textBoxCorreo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxCorreo.Name = "textBoxCorreo";
+            this.textBoxCorreo.Size = new System.Drawing.Size(264, 26);
+            this.textBoxCorreo.TabIndex = 16;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(39, 152);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(57, 20);
+            this.label4.TabIndex = 17;
+            this.label4.Text = "Correo";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(403, 67);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(180, 20);
+            this.label5.TabIndex = 18;
+            this.label5.Text = "(ubicacion de la Libreria)";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(718, 16);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(180, 37);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "Actividades";
+            // 
+            // buttonAdd
+            // 
+            this.buttonAdd.BackColor = System.Drawing.Color.Transparent;
+            this.buttonAdd.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonAdd.BackgroundImage")));
+            this.buttonAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonAdd.FlatAppearance.BorderSize = 0;
+            this.buttonAdd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.buttonAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAdd.Location = new System.Drawing.Point(472, 190);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(27, 29);
+            this.buttonAdd.TabIndex = 20;
+            this.buttonAdd.UseVisualStyleBackColor = false;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
+            this.buttonAdd.MouseHover += new System.EventHandler(this.buttonAdd_MouseHover);
             // 
             // nombreDataGridViewTextBoxColumn1
             // 
@@ -398,11 +490,17 @@
             // FormLibrerias
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackgroundImage = global::OlorALibro.Properties.Resources.rsz_back2;
-            this.ClientSize = new System.Drawing.Size(1330, 611);
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(1032, 529);
+            this.Controls.Add(this.buttonAdd);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.textBoxCorreo);
             this.Controls.Add(this.labelCoord);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxLatitud);
+            this.Controls.Add(this.textBoxAltitud);
             this.Controls.Add(this.groupBoxActividades);
             this.Controls.Add(this.buttonEliminar);
             this.Controls.Add(this.buttonEditar);
@@ -415,6 +513,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridViewLibrerias);
+            this.Controls.Add(this.label6);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -460,8 +560,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn hora;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxAltitud;
+        private System.Windows.Forms.TextBox textBoxLatitud;
         private System.Windows.Forms.Label labelCoord;
+        private System.Windows.Forms.TextBox textBoxCorreo;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button buttonAdd;
+        private System.Windows.Forms.ToolTip toolTipadd;
     }
 }

@@ -112,3 +112,15 @@ C:\Users\cep.CEPNET0\Source\Repos\AJDV\OlorALibro\OlorALibro\obj\Debug\OlorALibr
 C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\bin\Debug\Newtonsoft.Json.pdb
 C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\obj\Debug\OlorALibro.Mapa.resources
 C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\obj\Debug\OlorALibro.UsuariosAdmins.resources
+C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\bin\Debug\EntityFramework.dll
+C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\bin\Debug\GMap.NET.Core.dll
+C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\bin\Debug\GMap.NET.WindowsForms.dll
+C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\bin\Debug\GMap.NET.WindowsPresentation.dll
+C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\bin\Debug\System.Data.SQLite.dll
+C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\bin\Debug\EntityFramework.xml
+C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\bin\Debug\System.Data.SQLite.xml
+C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\bin\Debug\System.Data.SQLite.dll.config

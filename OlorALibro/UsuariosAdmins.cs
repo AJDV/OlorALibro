@@ -85,7 +85,6 @@ namespace OlorALibro
                     dataGridView1.DataSource = null;
                     dataGridView1.DataSource = users;
                     dataGridView1.Columns["Contrasenia"].Visible = false;
-                    dataGridView1.Columns["Contrasenia"].Visible = false;
                     DataGridViewColumnCollection col = dataGridView1.Columns;
                     col.RemoveAt(2);
                     foreach (DataGridViewColumn co in col)
@@ -98,10 +97,7 @@ namespace OlorALibro
                     textBox2.Clear();
                     textBox3.Clear();
                     checkBoxAdmin.Checked = false;
-                }
-
-                
-                
+                }   
             }
 
             
@@ -167,6 +163,14 @@ namespace OlorALibro
                     jw.Close();
                     dataGridView1.DataSource = null;
                     dataGridView1.DataSource = users;
+                    dataGridView1.Columns["Contrasenia"].Visible = false;
+                    DataGridViewColumnCollection col = dataGridView1.Columns;
+                    col.RemoveAt(2);
+                    foreach (DataGridViewColumn co in col)
+                    {
+                        co.Width = dataGridView1.Size.Width / col.Count;
+                    }
+                    dataGridView1.ClearSelection();
                 }
                 else
                 {
@@ -188,5 +192,7 @@ namespace OlorALibro
         {
             toolTip1.Show("add user", button1);
         }
+        #endregion
+        #endregion
     }
 }

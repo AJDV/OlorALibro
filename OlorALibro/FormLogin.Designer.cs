@@ -96,7 +96,6 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::OlorALibro.Properties.Resources.rsz_output_onlinepngtools_1;
             this.pictureBox1.Location = new System.Drawing.Point(-31, 28);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox1.Name = "pictureBox1";
@@ -109,7 +108,6 @@
             this.AcceptButton = this.buttonLogin;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.BackgroundImage = global::OlorALibro.Properties.Resources.rsz_3853168234_8a2452a929_b1_copy1aa22_copy_2b;
             this.ClientSize = new System.Drawing.Size(502, 380);
             this.Controls.Add(this.labelIncorrecta);
             this.Controls.Add(this.buttonLogin);

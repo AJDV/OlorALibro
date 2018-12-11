@@ -13,6 +13,8 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
     <PublishUrl>publicar\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -27,8 +29,6 @@
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -51,6 +51,10 @@
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -173,14 +177,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="UsuariosAdmins.resx">
       <DependentUpon>UsuariosAdmins.cs</DependentUpon>
     </EmbeddedResource>
@@ -217,16 +215,16 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\plus-sign-in-a-black-circle.png" />
+    <None Include="Resources\remove-user32.png" />
+    <Content Include="Webp.net-resizeimage.ico" />
     <None Include="Resources\user.png" />
     <None Include="Resources\users.png" />
-    <None Include="Resources\3853168234_8a2452a929_b1-copy1aa22-copy-2b.jpg" />
     <Content Include="Resources\add.png" />
     <None Include="Resources\rubbish-bin1.png" />
     <None Include="Resources\edit1.png" />
     <None Include="Resources\add1.png" />
     <None Include="Resources\background.jpg" />
-    <None Include="Resources\calendar-with-a-clock-time-tools.png" />
-    <Content Include="Resources\calendario_actividades.jpg" />
     <None Include="Resources\calendario_actividades1.jpg" />
     <Content Include="Resources\edit.png" />
     <None Include="Resources\output-onlinepngtools.png" />
@@ -235,10 +233,8 @@
     <None Include="Resources\output-onlinepngtools %281%29.png" />
     <None Include="Resources\rsz_output-onlinepngtools_1.png" />
     <None Include="Resources\rsz_back2.jpg" />
-    <None Include="Resources\multiple-users-silhouette.png" />
     <None Include="Resources\open-book.png" />
     <None Include="Resources\power-button-off.png" />
-    <None Include="Resources\maps-and-flags.png" />
     <None Include="Resources\notebook.png" />
     <None Include="Resources\list.png" />
     <None Include="Resources\placeholder.png" />
