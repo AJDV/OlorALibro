@@ -1,151 +1,166 @@
-﻿using OlorALibro.CRUD_users;
-using System;
+﻿using System;
 using System.IO;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
+using System.Linq;
 
 namespace OlorALibro
 {
     public partial class FormUsers : Form
     {
-        BindingList<Usuario> usuarios = new BindingList<Usuario>();
+        #region Properties
+        BindingList<Usuario> usuarios;
+        private const int PUNTOS_MAX = 100; // el limite a partir del cual el adminsitrador es notificado de que hay usuarios
+                                            // que tienen los puntos suficientes para alguna promo (por ejemplo)
+        BindingList<Usuario> userNot = new BindingList<Usuario>();
+        int numUsuarios = 0;
+        #endregion
+
+        #region Constructor
 
         public FormUsers()
         {
             InitializeComponent();
         }
 
-        private void updateGridJsonUsuarios()
-        {
-            JArray jArrayUsuarios = (JArray)JToken.FromObject(usuarios);
-
-            StreamWriter fichero = File.CreateText(@"../../Json/AdminUsers/users.json");
-
-            JsonTextWriter jsonWriter = new JsonTextWriter(fichero);
-
-            jArrayUsuarios.WriteTo(jsonWriter);
-
-            jsonWriter.Close();
-
-            dataGridViewUsuarios.DataSource = usuarios;
-        }
-
-        private void editarUsuario()
-        {
-            try
-            {
-                Usuario u = (Usuario)dataGridViewUsuarios.CurrentRow.DataBoundItem;
-
-                Console.WriteLine();
-
-                //textBoxEditUser.Text = u.User;
-                //textBoxEditContrasenia.Text = u.Contrasenia;
-                //textBoxEditNombre.Text = u.Nombre;
-                //textBoxEditApellido.Text = u.Apellido;
-                //textBoxEditCorreo.Text = u.Correo;
-                //textBoxEditPuntos.Text = u.Puntos.ToString();
-
-                //tabControlEdicion.SelectedIndex = 1;
-            }
-            catch(Exception entry)
-            {
-                MessageBox.Show("No se ha seleccionado nigun usuario para editar!", "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            
-        }
-
-
+        #endregion
 
         private void FormUsers_Load(object sender, EventArgs e)
         {
+            
             JArray jArrayUsuarios = JArray.Parse(File.ReadAllText(@"../../Json/AdminUsers/users.json"));
             usuarios = jArrayUsuarios.ToObject<BindingList<Usuario>>();
+            GridRefresh();
 
-            dataGridViewUsuarios.DataSource = usuarios;
-        }
-
-        private void toolStripAniadir_Click(object sender, EventArgs e)
-        {
-            //tabControlEdicion.SelectedIndex = 0;
-            //textBoxAddUser.Focus();
-        }
-
-        private void toolStripEditar_Click(object sender, EventArgs e)
-        {
-            editarUsuario();
-        }
-
-        private void buttonAdd_Click(object sender, EventArgs e)
-        {
-            try
+            foreach(Usuario user in usuarios)
             {
-                //Usuario user = new Usuario(false, textBoxAddNombre.Text, textBoxAddContrasenia.Text, textBoxAddNombre.Text, textBoxAddApellido.Text, textBoxAddCorreo.Text, Int32.Parse(textBoxAddPuntos.Text));
-                //usuarios.Add(user);
-                //updateGridJsonUsuarios();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Todos los campos son obligatorios!", "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void toolStripBorrar_Click(object sender, EventArgs e)
-        {
-            
-            if(dataGridViewUsuarios.CurrentRow != null)
-            {
-                DialogResult confirm = MessageBox.Show("Confirmar", "Borrar usuario", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
-                if (confirm == DialogResult.OK)
+                if(user.Puntos > PUNTOS_MAX)
                 {
-                    usuarios.RemoveAt(dataGridViewUsuarios.CurrentRow.Index);
-                    updateGridJsonUsuarios();
+                    userNot.Add(user);
                 }
             }
-            else
+
+            numUsuarios = userNot.Count;
+
+            if(numUsuarios > 0)
             {
-                MessageBox.Show("No se ha seleccionado ningun usuario para borrar", "Borrar usuario", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                labelNot.Text = numUsuarios.ToString();
             }
-        }
 
-        private void dataGridViewUsuarios_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            editarUsuario();
-        }
-
-        private void buttonEdit_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Usuario u = (Usuario)dataGridViewUsuarios.CurrentRow.DataBoundItem;
-
-                //u.User = textBoxEditUser.Text;
-                //u.Contrasenia = textBoxEditContrasenia.Text;
-                //u.Nombre = textBoxEditNombre.Text;
-                //u.Apellido = textBoxEditApellido.Text;
-                //u.Correo = textBoxEditCorreo.Text;
-                //u.Puntos = Int32.Parse(textBoxEditPuntos.Text);
-
-                updateGridJsonUsuarios();
-
-                dataGridViewUsuarios.Refresh();
-            }
-            catch(Exception entry)
-            {
-                Console.WriteLine(entry.ToString());
-            }
+            dimensionesColumnes();
+            
         }
 
         private void buttonCorreo_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("https://accounts.google.com/ServiceLogin/identifier?flowName=GlifWebSignIn&flowEntry=AddSession");
+            System.Diagnostics.Process.Start("https://accounts.google.com/ServiceLogin/identifier?continue=https%3A%2F%2Fmail.google.com%2Fmail&passive=1209600&sacu=1&ignoreShadow=0&hl=en-GB&acui=0&flowName=GlifWebSignIn&flowEntry=AddSession");
+        }
+
+        private void buttonMostrar_Click(object sender, EventArgs e)
+        {
+            if(!groupBoxUser.Visible)
+            {
+                groupBoxUser.Visible = true;
+            }
+            else if (groupBoxUser.Visible)
+            {
+                groupBoxUser.Visible = false;
+            }
+            //--------
+            if (dataGridViewUsuarios.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Selecciona algun usuario para visualizar sus datos");
+            }
+            
+        }
+
+        public void GridRefresh()
+        {
+            dataGridViewUsuarios.ClearSelection();
+            dataGridViewUsuarios.DataSource = null;
+            dataGridViewUsuarios.DataSource = usuarios;
+            //---------------------- ancho de columnas
+            DataGridViewColumnCollection col = dataGridViewUsuarios.Columns;
+            foreach (DataGridViewColumn co in col)
+            {
+                co.Width = (dataGridViewUsuarios.Size.Width / 3);
+            }
+        }
+
+        private void dataGridViewUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (groupBoxUser.Visible)
+            {
+                //-------- rellenar la informacion de la muestra de Datos
+                Usuario u = usuarios[dataGridViewUsuarios.CurrentRow.Index];
+                textBoxNombre.Text = u.Nombre;
+                textBoxUsuario.Text = u.User;
+                textBoxApellido.Text = u.Apellido;
+                textBoxCorreo.Text = u.Correo;
+                textBoxPuntos.Text = u.Puntos.ToString();
+                //--------
+            }
+        }
+
+        private void buttonEliminar_Click(object sender, EventArgs e)
+        {
+            DataGridViewSelectedRowCollection rows = dataGridViewUsuarios.SelectedRows;
+
+            if(rows.Count > 0 && MessageBox.Show("Eliminar lo seleccionado ?", "ELIMINAR", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
+            {
+                foreach (DataGridViewRow row in rows)
+                {
+                    dataGridViewUsuarios.Rows.RemoveAt(row.Index);
+                }
+                GrabarDatosEnJson();
+                GridRefresh();
+            }
+            else if(rows.Count == 0)
+            {
+                MessageBox.Show("Debes seleccionar algun usuario para poder Borrar");
+            }            
+        }
+
+        public void GrabarDatosEnJson()
+        {
+            //---------- grabar JSONs
+            JsonTextWriter jsonWriter = new JsonTextWriter(File.CreateText(@"../../Json/AdminUsers/users.json"));
+            JToken.FromObject(usuarios).WriteTo(jsonWriter);
+            jsonWriter.Close();
+            //----------
+        }
+
+        private void buttonCorreo_MouseHover(object sender, EventArgs e)
+        {
+            toolTipMail.Show("EMAIL", buttonCorreo);
+        }
+
+        private void buttonEliminar_MouseHover(object sender, EventArgs e)
+        {
+            toolTipDelete.Show("Borrar", buttonEliminar);
+        }
+
+        private void buttonMostrar_MouseHover(object sender, EventArgs e)
+        {
+            toolTipAdd.Show("Mostrar", buttonMostrar);
+        }
+
+        public void dimensionesColumnes()
+        {
+            DataGridViewSelectedRowCollection rows = dataGridViewUsuarios.SelectedRows;
+            foreach (DataGridViewRow row in rows)
+            {
+                row.Selected = false;
+            }
+            groupBoxUser.Visible = false;
+        }
+
+        private void buttonNotif_Click(object sender, EventArgs e)
+        {
+            FormNotificaciones fn = new FormNotificaciones(numUsuarios, PUNTOS_MAX);
+            fn.Show();
         }
     }
 }

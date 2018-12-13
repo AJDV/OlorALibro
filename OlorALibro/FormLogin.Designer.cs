@@ -40,13 +40,14 @@
             // textBoxLoginUserText
             // 
             this.textBoxLoginUserText.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBoxLoginUserText.Location = new System.Drawing.Point(268, 91);
+            this.textBoxLoginUserText.Location = new System.Drawing.Point(297, 67);
             this.textBoxLoginUserText.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxLoginUserText.Name = "textBoxLoginUserText";
-            this.textBoxLoginUserText.Size = new System.Drawing.Size(222, 26);
+            this.textBoxLoginUserText.Size = new System.Drawing.Size(192, 26);
             this.textBoxLoginUserText.TabIndex = 2;
             this.textBoxLoginUserText.Text = "User";
             this.textBoxLoginUserText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxLoginUserText.TextChanged += new System.EventHandler(this.textBoxLoginUserText_TextChanged);
             this.textBoxLoginUserText.Enter += new System.EventHandler(this.textBoxLoginUserText_Enter);
             this.textBoxLoginUserText.Leave += new System.EventHandler(this.textBoxLoginUserText_Leave);
             // 
@@ -54,13 +55,14 @@
             // 
             this.textBoxLoginPasswordText.AcceptsTab = true;
             this.textBoxLoginPasswordText.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBoxLoginPasswordText.Location = new System.Drawing.Point(268, 148);
+            this.textBoxLoginPasswordText.Location = new System.Drawing.Point(297, 124);
             this.textBoxLoginPasswordText.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxLoginPasswordText.Name = "textBoxLoginPasswordText";
-            this.textBoxLoginPasswordText.Size = new System.Drawing.Size(222, 26);
+            this.textBoxLoginPasswordText.Size = new System.Drawing.Size(192, 26);
             this.textBoxLoginPasswordText.TabIndex = 3;
             this.textBoxLoginPasswordText.Text = "Password";
             this.textBoxLoginPasswordText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxLoginPasswordText.TextChanged += new System.EventHandler(this.textBoxLoginPasswordText_TextChanged);
             this.textBoxLoginPasswordText.Enter += new System.EventHandler(this.textBoxLoginPasswordText_Enter);
             this.textBoxLoginPasswordText.Leave += new System.EventHandler(this.textBoxLoginPasswordText_Leave);
             // 
@@ -96,10 +98,12 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Location = new System.Drawing.Point(-31, 28);
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox1.Location = new System.Drawing.Point(-19, 35);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(277, 267);
+            this.pictureBox1.Size = new System.Drawing.Size(284, 285);
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
@@ -108,6 +112,7 @@
             this.AcceptButton = this.buttonLogin;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(502, 380);
             this.Controls.Add(this.labelIncorrecta);
             this.Controls.Add(this.buttonLogin);

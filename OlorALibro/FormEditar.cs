@@ -33,12 +33,14 @@ namespace OlorALibro
             textBoxCorreo.Text = lib.correo;
             textBoxAltitud.Text = coord[0];
             textBoxLatitud.Text = coord[1];
+            textBoxLink.Text = lib.linkWeb;
         }
 
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
             if(textBoxNom.Text == lib.Nombre && textBoxTelefono.Text == lib.Telefono.ToString() && textBoxDireccion.Text == lib.Direccion 
-                && $"{textBoxAltitud.Text},{textBoxLatitud.Text}" == lib.Coordenadas && textBoxCorreo.Text == lib.correo)
+                && $"{textBoxAltitud.Text},{textBoxLatitud.Text}" == lib.Coordenadas && textBoxCorreo.Text == lib.correo
+                && textBoxLink.Text == lib.linkWeb)
             {
                 MessageBox.Show("No hay cambios efectuados!");
             }
@@ -49,6 +51,7 @@ namespace OlorALibro
                 lib.Telefono = int.Parse(textBoxTelefono.Text);
                 lib.correo = textBoxCorreo.Text;
                 lib.Coordenadas = $"{textBoxAltitud.Text},{textBoxLatitud.Text}";
+                lib.linkWeb = textBoxLink.Text;
                 MessageBox.Show("Libreria Actualizada");
                 cambios = true;
                 Hide();

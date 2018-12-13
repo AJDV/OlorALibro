@@ -15,15 +15,33 @@ namespace OlorALibro
 {
     public partial class FormLibrerias : Form
     {
-        public String filePath = @"..\..\Json\ListaDeLibrerías\Librerias.json";
+        #region Properties
+        public static string filePath = @"..\..\Json\ListaDeLibrerías\Librerias.json";
+
+        public const string filePathAct = "..\\..\\Json\\ListaDeLibrerías\\ActivDeLibrerias\\Act_";
+
         BindingList<Libreria> libs;
+
         BindingList<Actividad> acts;
+
         Libreria l = new Libreria();
 
+        private string linkWeb = "";
+
+        private bool isAdding = false;
+
+        #endregion
+
+        #region Constructor
         public FormLibrerias()
         {
             InitializeComponent();
         }
+
+        #endregion
+
+        #region Metodos
+        #region eventos
 
         //VICTOR------------------------
         //Contiene el leer JSON por DAVID
@@ -42,37 +60,9 @@ namespace OlorALibro
             }
 
             RefresacarLista(libs);
+            limpiezaBox();
             DimensionDeColumnas(dataGridViewLibrerias);
-            dataGridViewLibrerias.ClearSelection();
-        }
-
-        public void cargarActividades(Libreria l)
-        {
-            string nombreLib = l.Nombre;
-            nombreLib = nombreLib.Replace(" ", string.Empty);
-            string activPath = @"..\..\Json\ListaDeLibrerías\ActivDeLibrerias\Act_" + nombreLib + ".json";   
-              
-
-            l.Actividades = new BindingList<Actividad>();
-
-            if (File.Exists(activPath))
-            {
-                JArray jArrayActividades = JArray.Parse(File.ReadAllText(activPath));
-                l.Actividades = jArrayActividades.ToObject<BindingList<Actividad>>();
-            }
-            else
-            {
-                //GRABAR JSON ACTIVIDADES
-                JArray ja = (JArray)JToken.FromObject(l.Actividades);
-                StreamWriter jw = File.CreateText(activPath);
-                JsonTextWriter jtw = new JsonTextWriter(jw);
-                ja.WriteTo(jtw);
-                jtw.Close();
-
-                MessageBox.Show("Grabado correctamente!", "GRABADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            dataGridViewActividades.DataSource = l.Actividades;
-            dataGridViewActividades.ClearSelection();
+            DesactivarActivarEdicion(true);
         }
 
         //Grabamos el JSON en el activated
@@ -105,106 +95,39 @@ namespace OlorALibro
                 {
                     MessageBox.Show("El correo no esta rellenado");
                     textBoxCorreo.Focus();
-                } 
+                }
                 else
                 {
-                    if(MessageBox.Show("Guardar ?", "GUARDAR", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
+                    if (MessageBox.Show("Guardar ?", "GUARDAR", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
                     {
                         try
                         {
-                            libs.Add(new Libreria(textBoxNom.Text, textBoxDireccio.Text, Int32.Parse(textBoxTelefon.Text), textBoxCorreo.Text, $"{textBoxAltitud.Text},{textBoxLatitud.Text}"));
+                            libs.Add(new Libreria( //añadimos un objeto con sus propiedades
+                                textBoxNom.Text, 
+                                textBoxDireccio.Text, 
+                                int.Parse(textBoxTelefon.Text),
+                                textBoxCorreo.Text,
+                                $"{textBoxAltitud.Text},{textBoxLatitud.Text}",
+                                linkWeb,
+                                RutaActividades(textBoxNom.Text)));
+
                             JsonTextWriter jw = new JsonTextWriter(File.CreateText(filePath));
                             JToken.FromObject(libs).WriteTo(jw);
                             jw.Close();
                             RefresacarLista(libs);
                             MessageBox.Show("Libreria guardada");
                             limpiezaBox();
+                            isAdding = false;
                         }
                         catch (Exception)
                         {
                             MessageBox.Show("Error", "Mensaje", MessageBoxButtons.OK);
                         }
                     }
-                }         
-
-            }
-        }
-
-        public void limpiezaBox()
-        {
-            textBoxNom.Clear();
-            textBoxDireccio.Clear();
-            textBoxTelefon.Clear();
-            textBoxCorreo.Clear();
-            textBoxAltitud.Text = "ALTITUD";
-            textBoxLatitud.Text = "LATITUD";
-        }
-
-        private void buttonEliminar_Click(object sender, EventArgs e)
-        {            
-            int row = dataGridViewLibrerias.CurrentRow.Index;
-            int selected = dataGridViewLibrerias.SelectedRows.Count;
-            if(selected == 1 && MessageBox.Show("Seguro que quieres eliminar lo seleccionado ? ", "ELIMINAR", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation)==DialogResult.OK)
-            {
-                dataGridViewLibrerias.Rows.RemoveAt(row);
-                JsonTextWriter jw = new JsonTextWriter(File.CreateText(filePath));
-                JToken.FromObject(libs).WriteTo(jw);
-                jw.Close();
-                RefresacarLista(libs);
-            }
-            else if(row == 0)
-            {
-                MessageBox.Show("Ninguna Libreria seleccionada");
-            }
-        }
-
-        private void dataGridViewLibrerias_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            l = (Libreria) dataGridViewLibrerias.CurrentRow.DataBoundItem;
-            cargarActividades(l);
-        }
-
-        private void buttonEditar_Click(object sender, EventArgs e)
-        {
-            int selected = dataGridViewLibrerias.SelectedRows.Count;
-            if (selected == 1)
-            {
-                int pos = dataGridViewLibrerias.CurrentRow.Index ;
-                FormEditar edit = new FormEditar(libs[pos]);
-                edit.ShowDialog();
-                if (edit.cambios)
-                {
-                    JsonTextWriter jw = new JsonTextWriter(File.CreateText(filePath));
-                    JToken.FromObject(libs).WriteTo(jw);
-                    jw.Close();
-                    RefresacarLista(libs);
                 }
 
-
             }
-            else if(selected > 1)
-            {
-                MessageBox.Show("Selecciona unicamente una librería");
-            }
-            else
-            {
-                MessageBox.Show("selecciona alguna librería");
-            }
-
-            //guardarJSON();
         }
-
-        public void guardarJSON()
-        {
-            StreamWriter file = File.CreateText(filePath);
-            JArray jArrayLibs = (JArray)JToken.FromObject(libs);
-            JsonWriter jsonWriter = new JsonTextWriter(file);
-            jArrayLibs.WriteTo(jsonWriter);
-            jsonWriter.Close();
-        }
-        //----------------------------
-
-
 
         //DAVID------------------------
         //Refrescar actividades y guardar JSON
@@ -212,16 +135,14 @@ namespace OlorALibro
         {
             //Refrescar grid
             refrescarGrid();
-
-            MostrarDatos(libs[dataGridViewLibrerias.CurrentRow.Index]);
         }
 
         //Añadir una nueva actividad
         private void buttonAnadir_Click(object sender, EventArgs e)
         {
-            
+
             l = (Libreria)dataGridViewLibrerias.CurrentRow.DataBoundItem;
-            String nombrelib = l.Nombre;
+            string nombrelib = l.Nombre;
             FormActividades f = new FormActividades(l.Actividades, nombrelib);
             f.ShowDialog();
         }
@@ -252,16 +173,57 @@ namespace OlorALibro
             }
         }
 
-        //Método para refrescar la dataGridView
-        private void refrescarGrid()
+        private void buttonEliminar_Click(object sender, EventArgs e)
         {
-            RefresacarLista(libs);
+            int row = dataGridViewLibrerias.CurrentRow.Index;
+            int selected = dataGridViewLibrerias.SelectedRows.Count;
+            if (selected == 1 && MessageBox.Show("Seguro que quieres eliminar lo seleccionado ? ", "ELIMINAR", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
+            {
+                dataGridViewLibrerias.Rows.RemoveAt(row);
+                JsonTextWriter jw = new JsonTextWriter(File.CreateText(filePath));
+                JToken.FromObject(libs).WriteTo(jw);
+                jw.Close();
+                RefresacarLista(libs);
+                limpiezaBox();
+            }
+            else if (row == 0)
+            {
+                MessageBox.Show("Ninguna Libreria seleccionada");
+            }
+        }
 
-            dataGridViewActividades.DataSource = null;
-            dataGridViewActividades.DataSource = l.Actividades;
+        private void dataGridViewLibrerias_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //l = (Libreria) dataGridViewLibrerias.CurrentRow.DataBoundItem;
+            //cargarActividades(l);
+        }
 
-            dataGridViewActividades.Columns[0].Visible = false;
-            dataGridViewActividades.ClearSelection();
+        private void buttonEditar_Click(object sender, EventArgs e)
+        {
+            int selected = dataGridViewLibrerias.SelectedRows.Count;
+            if (selected == 1)
+            {
+                int pos = dataGridViewLibrerias.CurrentRow.Index;
+                FormEditar edit = new FormEditar(libs[pos]);
+                edit.ShowDialog();
+                if (edit.cambios)
+                {
+                    JsonTextWriter jw = new JsonTextWriter(File.CreateText(filePath));
+                    JToken.FromObject(libs).WriteTo(jw);
+                    jw.Close();
+                    RefresacarLista(libs);
+                }
+                MostrarDatos(libs[dataGridViewLibrerias.CurrentRow.Index]);
+            }
+            else if (selected > 1)
+            {
+                MessageBox.Show("Selecciona unicamente una librería");
+            }
+            else
+            {
+                MessageBox.Show("selecciona alguna librería");
+            }
+            
         }
 
         //Editar una actividad al hacer doble click sobre la row
@@ -274,7 +236,7 @@ namespace OlorALibro
 
         private void textBox1_Enter(object sender, EventArgs e)
         {
-            if(textBoxAltitud.Text == "ALTITUD")
+            if (textBoxAltitud.Text == "ALTITUD")
             {
                 textBoxAltitud.Text = "";
                 textBoxAltitud.TextAlign = HorizontalAlignment.Left;
@@ -284,7 +246,7 @@ namespace OlorALibro
 
         private void textBox1_Leave(object sender, EventArgs e)
         {
-            if(textBoxAltitud.Text == "")
+            if (textBoxAltitud.Text == "")
             {
                 textBoxAltitud.TextAlign = HorizontalAlignment.Center;
                 textBoxAltitud.ForeColor = Color.DarkGray;
@@ -311,55 +273,15 @@ namespace OlorALibro
                 textBoxLatitud.Text = "LATITUD";
             }
         }
-        //----------------------------
-
-        public void RefresacarLista(BindingList<Libreria> listaObjeto)
-        {
-            dataGridViewLibrerias.DataSource = null;
-            dataGridViewLibrerias.DataSource = listaObjeto;
-        }
-
-        public void DimensionDeColumnas(DataGridView dataGrid)
-        {
-            DataGridViewColumnCollection col = dataGridViewLibrerias.Columns;
-            foreach (DataGridViewColumn co in col)
-            {
-                co.Width = (dataGridViewLibrerias.Size.Width / col.Count) - 1;
-            }
-           
-        }
-
-        private void dataGridViewLibrerias_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if(dataGridViewLibrerias.SelectedRows.Count == 1)
-            {
-                Libreria lib = libs[dataGridViewLibrerias.CurrentRow.Index];
-                MostrarDatos(lib);
-                DesactivarActivarEdicion(true);
-            }
-            else
-            {
-                MessageBox.Show("Seleccionar solo una libreria");
-            }
-                
-        }
-
-        public void DesactivarActivarEdicion(bool activ_desactiv)
-        {
-            textBoxNom.ReadOnly = activ_desactiv;
-            textBoxTelefon.ReadOnly = activ_desactiv;
-            textBoxCorreo.ReadOnly = activ_desactiv;
-            textBoxDireccio.ReadOnly = activ_desactiv;
-            textBoxAltitud.ReadOnly = activ_desactiv;
-            textBoxLatitud.ReadOnly = activ_desactiv;
-        }
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
+            isAdding = true; // hace saber que estamos en modo add
             dataGridViewLibrerias.ClearSelection();
             limpiezaBox();
             DesactivarActivarEdicion(false);
             textBoxNom.Focus();
+            buttonAdd.BackColor = Color.Transparent;
         }
 
         private void buttonAdd_MouseHover(object sender, EventArgs e)
@@ -407,5 +329,186 @@ namespace OlorALibro
             textBoxAltitud.Text = coord[0];
             textBoxLatitud.Text = coord[1];
         }
+
+        private void button1_MouseHover(object sender, EventArgs e)
+        {
+            toolTipAddLink.Show("Añadir Link", buttonLink);
+        }
+
+        private void buttonLink_Click(object sender, EventArgs e)
+        {
+            if (isAdding)
+            {
+                FormLinkGoogle lG = new FormLinkGoogle();
+                lG.ShowDialog();
+                linkWeb = lG.linkWeb;
+            }
+            else
+            {
+                MessageBox.Show("Para añadir un Link debes añadir una Libreria");
+            }
+        }
+
+        private void textBoxNom_Click(object sender, EventArgs e)
+        {
+            if (!isAdding)
+            {
+                MessageBox.Show("Debes Añadir una Librería para poder editar!");
+                buttonAdd.BackColor = Color.Orange;
+            }
+        }
+
+        private void dataGridViewLibrerias_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridViewLibrerias.SelectedRows.Count == 1)
+            {
+                Libreria lib = libs[dataGridViewLibrerias.CurrentRow.Index];
+                MostrarDatos(lib);
+                DesactivarActivarEdicion(true);
+                
+                dataGridViewActividades.DataSource = null;
+                dataGridViewActividades.DataSource = ObtenerActividades(lib);
+                ClearSelectionGrid(dataGridViewActividades);
+                DimensionDeColumnas(dataGridViewActividades);
+            }
+            else
+            {
+                MessageBox.Show("Seleccionar solo una libreria");
+            }
+
+        }
+
+        #endregion
+
+        public string RutaActividades(string nombreLib)
+        {
+            return $"{filePathAct}{nombreLib.Replace("",string.Empty)}.json";
+        }
+
+        public BindingList<Actividad> ObtenerActividades(Libreria libreria)
+        {
+            try
+            {
+                    JArray jArrayLibrerias = JArray.Parse(File.ReadAllText(libreria.actividesRuta));
+                    acts = jArrayLibrerias.ToObject<BindingList<Actividad>>();               
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("Error de lectura");
+            }
+            return acts;
+        }
+
+
+
+
+
+        //public void cargarActividades(Libreria l)
+        //{
+        //    string nombreLib = l.Nombre;
+        //    nombreLib = nombreLib.Replace(" ", string.Empty);
+        //    string activPath = @"..\..\Json\ListaDeLibrerías\ActivDeLibrerias\Act_" + nombreLib + ".json";   
+
+
+        //    l.Actividades = new BindingList<Actividad>();
+
+        //    if (File.Exists(activPath))
+        //    {
+        //        JArray jArrayActividades = JArray.Parse(File.ReadAllText(activPath));
+        //        l.Actividades = jArrayActividades.ToObject<BindingList<Actividad>>();
+        //    }
+        //    else
+        //    {
+        //        //GRABAR JSON ACTIVIDADES
+        //        JArray ja = (JArray)JToken.FromObject(l.Actividades);
+        //        StreamWriter jw = File.CreateText(activPath);
+        //        JsonTextWriter jtw = new JsonTextWriter(jw);
+        //        ja.WriteTo(jtw);
+        //        jtw.Close();
+
+        //        MessageBox.Show("Grabado correctamente!", "GRABADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //    }
+        //    dataGridViewActividades.DataSource = l.Actividades;
+        //    dataGridViewActividades.ClearSelection();
+        //}
+        #region metodos propios
+        public void limpiezaBox()
+        {
+            textBoxNom.Clear();
+            textBoxDireccio.Clear();
+            textBoxTelefon.Clear();
+            textBoxCorreo.Clear();
+            textBoxAltitud.Text = "ALTITUD";
+            textBoxLatitud.Text = "LATITUD";
+        }
+
+        public void guardarJSON()
+        {
+            StreamWriter file = File.CreateText(filePath);
+            JArray jArrayLibs = (JArray)JToken.FromObject(libs);
+            JsonWriter jsonWriter = new JsonTextWriter(file);
+            jArrayLibs.WriteTo(jsonWriter);
+            jsonWriter.Close();
+        }
+        //----------------------------
+        //Método para refrescar la dataGridView
+        private void refrescarGrid()
+        {
+            RefresacarLista(libs);
+
+            dataGridViewActividades.DataSource = null;
+            dataGridViewActividades.DataSource = l.Actividades;
+        } 
+        //----------------------------
+        public void RefresacarLista(BindingList<Libreria> listaObjeto)
+        {
+            dataGridViewLibrerias.DataSource = null;
+            dataGridViewLibrerias.DataSource = listaObjeto;
+
+            DataGridViewSelectedRowCollection rows = dataGridViewLibrerias.SelectedRows;
+            foreach(DataGridViewRow row in rows)
+            {
+                row.Selected = false;
+            }
+        }
+
+        public void DimensionDeColumnas(DataGridView dataGrid)
+        {
+            DataGridViewColumnCollection col = dataGridViewLibrerias.Columns;
+            foreach (DataGridViewColumn co in col)
+            {
+                co.Width = (dataGridViewLibrerias.Size.Width / col.Count) - 1;
+            }
+           
+        }        
+
+        public void ClearSelectionGrid(DataGridView dataGrid)
+        {
+            DataGridViewSelectedRowCollection rows = dataGrid.SelectedRows;
+            foreach(DataGridViewRow row in rows)
+            {
+                row.Selected = false;
+            }
+        }
+
+        public void DesactivarActivarEdicion(bool activ_desactiv)
+        {
+            textBoxNom.ReadOnly = activ_desactiv;
+            textBoxTelefon.ReadOnly = activ_desactiv;
+            textBoxCorreo.ReadOnly = activ_desactiv;
+            textBoxDireccio.ReadOnly = activ_desactiv;
+            textBoxAltitud.ReadOnly = activ_desactiv;
+            textBoxLatitud.ReadOnly = activ_desactiv;
+            if (activ_desactiv)
+            {
+                buttonLink.Enabled = false;
+            }
+            else
+            {
+                buttonLink.Enabled = true;
+            }
+        }
+        #endregion
+        #endregion
     }
 }

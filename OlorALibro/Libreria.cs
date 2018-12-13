@@ -14,6 +14,8 @@ namespace OlorALibro
         public int Telefono { get; set; }
         public string correo { get; set; }
         public string Coordenadas { get; set; }
+        public string linkWeb { get; set; }
+        public string actividesRuta { get; set; }
         public BindingList<Actividad> Actividades { get; set; }
 
         public Libreria()
@@ -21,13 +23,15 @@ namespace OlorALibro
 
         }
 
-        public Libreria(string nombre, string direccion, int tel, string corr, string coord)
+        public Libreria(string nombre, string direccion, int tel, string corr, string coord, string link,string actRuta)
         {
             Nombre = nombre;
             Direccion = direccion;
             Telefono = tel;
             correo = corr;
             Coordenadas = coord;
+            linkWeb = link;
+            actividesRuta = actRuta;
         }
     }
 }

@@ -124,3 +124,9 @@ C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\bin\Debug\EntityFramew
 C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\bin\Debug\System.Data.SQLite.xml
 C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\bin\Debug\System.Data.SQLite.dll.config
+C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\obj\Debug\OlorALibro.ListaLibreria.resources
+C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\obj\Debug\OlorALibro.ListUsers.resources
+C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\obj\Debug\OlorALibro.FormInfo.resources
+C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\obj\Debug\OlorALibro.FormLinkGoogle.resources
+C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\obj\Debug\OlorALibro.FormLocalizacion.resources
+C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\obj\Debug\OlorALibro.FormNotificaciones.resources

@@ -48,7 +48,6 @@
             this.Controls.Add(this.webBrowser1);
             this.Name = "Mapa";
             this.Text = "Mapa";
-            this.Load += new System.EventHandler(this.Mapa_Load);
             this.ResumeLayout(false);
 
         }

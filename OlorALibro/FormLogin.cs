@@ -114,5 +114,15 @@ namespace OlorALibro
                 textBoxLoginPasswordText.TextAlign = HorizontalAlignment.Center;
             }
         }
+
+        private void textBoxLoginUserText_TextChanged(object sender, EventArgs e)
+        {
+            labelIncorrecta.Visible = false;
+        }
+
+        private void textBoxLoginPasswordText_TextChanged(object sender, EventArgs e)
+        {
+            labelIncorrecta.Visible = false;
+        }
     }
 }

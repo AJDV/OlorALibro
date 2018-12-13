@@ -1,5 +1,6 @@
 [
   {
+    "admin": false,
     "User": "jonathan94",
     "Contrasenia": "jonathan",
     "Nombre": "Jonathan",
@@ -8,6 +9,7 @@
     "Puntos": 10
   },
   {
+    "admin": false,
     "User": "oasihaosdhf",
     "Contrasenia": "asdfkajsdhf",
     "Nombre": "oasihaosdhf",
@@ -16,11 +18,30 @@
     "Puntos": 1685
   },
   {
-    "User": "David",
-    "Contrasenia": "123",
-    "Nombre": "David",
-    "Apellido": "Gutierrez",
-    "Correo": "dguti@mail.com",
-    "Puntos": 200
+    "admin": false,
+    "User": "oasihaosdhf",
+    "Contrasenia": "asdfkajsdhf",
+    "Nombre": "oasihaosdhf",
+    "Apellido": "sldkhfaolsdhfi",
+    "Correo": "oasd",
+    "Puntos": 1685
+  },
+  {
+    "admin": false,
+    "User": "oasihaosdhf",
+    "Contrasenia": "asdfkajsdhf",
+    "Nombre": "oasihaosdhf",
+    "Apellido": "sldkhfaolsdhfi",
+    "Correo": "oasd",
+    "Puntos": 1685
+  },
+  {
+    "admin": false,
+    "User": "oasihaosdhf",
+    "Contrasenia": "asdfkajsdhf",
+    "Nombre": "oasihaosdhf",
+    "Apellido": "sldkhfaolsdhfi",
+    "Correo": "oasd",
+    "Puntos": 1685
   }
 ]

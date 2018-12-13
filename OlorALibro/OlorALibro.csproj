@@ -113,6 +113,30 @@
     <Compile Include="FormEditar.Designer.cs">
       <DependentUpon>FormEditar.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInfo.Designer.cs">
+      <DependentUpon>FormInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLinkGoogle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLinkGoogle.Designer.cs">
+      <DependentUpon>FormLinkGoogle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLocalizacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLocalizacion.Designer.cs">
+      <DependentUpon>FormLocalizacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormNotificaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNotificaciones.Designer.cs">
+      <DependentUpon>FormNotificaciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPanel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,11 +156,28 @@
     <Compile Include="FormLibrerias.Designer.cs">
       <DependentUpon>FormLibrerias.cs</DependentUpon>
     </Compile>
+    <Compile Include="ListaLibreria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListaLibreria.Designer.cs">
+      <DependentUpon>ListaLibreria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListUsers.Designer.cs">
+      <DependentUpon>ListUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mapa.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Mapa.Designer.cs">
       <DependentUpon>Mapa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="UsuarioAdm.cs" />
     <Compile Include="Usuario.cs" />
@@ -160,6 +201,18 @@
     <EmbeddedResource Include="FormEditar.resx">
       <DependentUpon>FormEditar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormInfo.resx">
+      <DependentUpon>FormInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLinkGoogle.resx">
+      <DependentUpon>FormLinkGoogle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLocalizacion.resx">
+      <DependentUpon>FormLocalizacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNotificaciones.resx">
+      <DependentUpon>FormNotificaciones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormPanel.resx">
       <DependentUpon>FormPanel.cs</DependentUpon>
     </EmbeddedResource>
@@ -172,12 +225,19 @@
     <EmbeddedResource Include="FormLibrerias.resx">
       <DependentUpon>FormLibrerias.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ListaLibreria.resx">
+      <DependentUpon>ListaLibreria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListUsers.resx">
+      <DependentUpon>ListUsers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mapa.resx">
       <DependentUpon>Mapa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="UsuariosAdmins.resx">
       <DependentUpon>UsuariosAdmins.cs</DependentUpon>
@@ -217,6 +277,20 @@
   <ItemGroup>
     <None Include="Resources\plus-sign-in-a-black-circle.png" />
     <None Include="Resources\remove-user32.png" />
+    <None Include="Resources\multiple-users-silhouette.png" />
+    <Content Include="Resources\3853168234_8a2452a929_b1_copy1aa22_copy_2b.jpg" />
+    <None Include="Resources\amazon.png" />
+    <None Include="Resources\google.png" />
+    <None Include="Resources\information.png" />
+    <None Include="Resources\books-stack-of-three.png" />
+    <None Include="Resources\calendario.png" />
+    <None Include="Resources\book-shelf.png" />
+    <Content Include="Resources\calendar-with-a-clock-time-tools.png" />
+    <None Include="Resources\link.png" />
+    <None Include="Resources\download.png" />
+    <Content Include="Resources\global.png" />
+    <Content Include="Resources\maps_and_flags.png" />
+    <None Include="Resources\notificationsbutton.png" />
     <Content Include="Webp.net-resizeimage.ico" />
     <None Include="Resources\user.png" />
     <None Include="Resources\users.png" />

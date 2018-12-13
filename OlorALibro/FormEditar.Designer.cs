@@ -43,6 +43,9 @@
             this.textBoxLatitud = new System.Windows.Forms.TextBox();
             this.labelCorreo = new System.Windows.Forms.Label();
             this.labelCoord = new System.Windows.Forms.Label();
+            this.textBoxLink = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelNom
@@ -86,7 +89,7 @@
             this.textBoxNom.Location = new System.Drawing.Point(90, 92);
             this.textBoxNom.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxNom.Name = "textBoxNom";
-            this.textBoxNom.Size = new System.Drawing.Size(279, 26);
+            this.textBoxNom.Size = new System.Drawing.Size(303, 26);
             this.textBoxNom.TabIndex = 3;
             // 
             // buttonGuardar
@@ -98,7 +101,7 @@
             this.buttonGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonGuardar.ForeColor = System.Drawing.Color.White;
-            this.buttonGuardar.Location = new System.Drawing.Point(71, 347);
+            this.buttonGuardar.Location = new System.Drawing.Point(74, 376);
             this.buttonGuardar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonGuardar.Name = "buttonGuardar";
             this.buttonGuardar.Size = new System.Drawing.Size(136, 49);
@@ -116,7 +119,7 @@
             this.buttonCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCancelar.ForeColor = System.Drawing.Color.White;
-            this.buttonCancelar.Location = new System.Drawing.Point(215, 347);
+            this.buttonCancelar.Location = new System.Drawing.Point(218, 376);
             this.buttonCancelar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(132, 49);
@@ -143,7 +146,7 @@
             this.textBoxTelefono.Location = new System.Drawing.Point(90, 132);
             this.textBoxTelefono.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxTelefono.Name = "textBoxTelefono";
-            this.textBoxTelefono.Size = new System.Drawing.Size(279, 26);
+            this.textBoxTelefono.Size = new System.Drawing.Size(303, 26);
             this.textBoxTelefono.TabIndex = 9;
             // 
             // textBoxDireccion
@@ -151,7 +154,7 @@
             this.textBoxDireccion.Location = new System.Drawing.Point(90, 171);
             this.textBoxDireccion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxDireccion.Name = "textBoxDireccion";
-            this.textBoxDireccion.Size = new System.Drawing.Size(279, 26);
+            this.textBoxDireccion.Size = new System.Drawing.Size(303, 26);
             this.textBoxDireccion.TabIndex = 10;
             // 
             // textBoxCorreo
@@ -159,7 +162,7 @@
             this.textBoxCorreo.Location = new System.Drawing.Point(90, 207);
             this.textBoxCorreo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxCorreo.Name = "textBoxCorreo";
-            this.textBoxCorreo.Size = new System.Drawing.Size(279, 26);
+            this.textBoxCorreo.Size = new System.Drawing.Size(303, 26);
             this.textBoxCorreo.TabIndex = 11;
             // 
             // textBoxAltitud
@@ -167,7 +170,7 @@
             this.textBoxAltitud.Location = new System.Drawing.Point(90, 254);
             this.textBoxAltitud.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxAltitud.Name = "textBoxAltitud";
-            this.textBoxAltitud.Size = new System.Drawing.Size(279, 26);
+            this.textBoxAltitud.Size = new System.Drawing.Size(303, 26);
             this.textBoxAltitud.TabIndex = 12;
             this.textBoxAltitud.Enter += new System.EventHandler(this.textBoxAltitud_Enter);
             this.textBoxAltitud.Leave += new System.EventHandler(this.textBoxAltitud_Leave);
@@ -177,7 +180,7 @@
             this.textBoxLatitud.Location = new System.Drawing.Point(90, 290);
             this.textBoxLatitud.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxLatitud.Name = "textBoxLatitud";
-            this.textBoxLatitud.Size = new System.Drawing.Size(279, 26);
+            this.textBoxLatitud.Size = new System.Drawing.Size(303, 26);
             this.textBoxLatitud.TabIndex = 13;
             this.textBoxLatitud.Enter += new System.EventHandler(this.textBoxLatitud_Enter);
             this.textBoxLatitud.Leave += new System.EventHandler(this.textBoxLatitud_Leave);
@@ -206,12 +209,47 @@
             this.labelCoord.TabIndex = 16;
             this.labelCoord.Text = "Coord";
             // 
+            // textBoxLink
+            // 
+            this.textBoxLink.Location = new System.Drawing.Point(90, 340);
+            this.textBoxLink.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxLink.Name = "textBoxLink";
+            this.textBoxLink.Size = new System.Drawing.Size(303, 26);
+            this.textBoxLink.TabIndex = 17;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(17, 330);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(32, 20);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "link";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(17, 352);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(42, 20);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "Web";
+            // 
             // FormEditar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(398, 410);
+            this.ClientSize = new System.Drawing.Size(414, 455);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.textBoxLink);
             this.Controls.Add(this.labelCoord);
             this.Controls.Add(this.labelCorreo);
             this.Controls.Add(this.textBoxLatitud);
@@ -255,5 +293,8 @@
         private System.Windows.Forms.TextBox textBoxLatitud;
         private System.Windows.Forms.Label labelCorreo;
         private System.Windows.Forms.Label labelCoord;
+        private System.Windows.Forms.TextBox textBoxLink;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }

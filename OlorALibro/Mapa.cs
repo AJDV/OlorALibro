@@ -5,14 +5,8 @@ namespace OlorALibro
 {
     public partial class Mapa : Form
     {
-        public Mapa()
-        {
-            InitializeComponent();
-        }
+        public const string googleMaps = "https://www.google.com/maps/@41.4304092,2.1941609,15z";
 
-        private void Mapa_Load(object sender, EventArgs e)
-        {
-            webBrowser1.Navigate(new Uri("https://www.google.es/maps/place/CEP/@41.3892684,2.1706431,17z/data=!3m1!4b1!4m5!3m4!1s0x12a4a2f0468c1cd1:0xa50af3e9cffaa23a!8m2!3d41.3892644!4d2.1728318"));
-        }
+        public const string listaLibroAmazon = "https://www.amazon.es/s/ref=nb_sb_ss_c_1_10?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&url=search-alias%3Daps&field-keywords=libros+mas+vendidos&sprefix=Libros+mas%2Caps%2C169&crid=3MTFN3R3RA09J&rh=i%3Aaps%2Ck%3Alibros+mas+vendidos";
     }
 }
