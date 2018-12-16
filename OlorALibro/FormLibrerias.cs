@@ -151,10 +151,6 @@ namespace OlorALibro
         //Refrescar actividades y guardar JSON
         private void FormLibrerias_Activated(object sender, EventArgs e)
         {
-            //Refrescar grid
-            //MostrarDatosActividades();
-            //ClearSelectionGrid(dataGridViewActividades);
-            //refrescarGrid();
             if (offActivitie && !isDelete)
             {
                 dataGridViewActividades.DataSource = LeerJson(((Libreria)dataGridViewLibrerias.CurrentRow.DataBoundItem).actividesRuta);
@@ -521,38 +517,6 @@ namespace OlorALibro
             return acts;
         }
 
-
-
-
-
-        //public void cargarActividades(Libreria l)
-        //{
-        //    string nombreLib = l.Nombre;
-        //    nombreLib = nombreLib.Replace(" ", string.Empty);
-        //    string activPath = @"..\..\Json\ListaDeLibrerías\ActivDeLibrerias\Act_" + nombreLib + ".json";   
-
-
-        //    l.Actividades = new BindingList<Actividad>();
-
-        //    if (File.Exists(activPath))
-        //    {
-        //        JArray jArrayActividades = JArray.Parse(File.ReadAllText(activPath));
-        //        l.Actividades = jArrayActividades.ToObject<BindingList<Actividad>>();
-        //    }
-        //    else
-        //    {
-        //        //GRABAR JSON ACTIVIDADES
-        //        JArray ja = (JArray)JToken.FromObject(l.Actividades);
-        //        StreamWriter jw = File.CreateText(activPath);
-        //        JsonTextWriter jtw = new JsonTextWriter(jw);
-        //        ja.WriteTo(jtw);
-        //        jtw.Close();
-
-        //        MessageBox.Show("Grabado correctamente!", "GRABADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        //    }
-        //    dataGridViewActividades.DataSource = l.Actividades;
-        //    dataGridViewActividades.ClearSelection();
-        //}
         #region metodos propios
         public void limpiezaBox()
         {
