@@ -126,7 +126,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::OlorALibro.Properties.Resources.rsz_back21;
+            this.BackgroundImage = global::OlorALibro.Properties.Resources.backgroundDesktopAp;
             this.ClientSize = new System.Drawing.Size(527, 677);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);

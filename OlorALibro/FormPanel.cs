@@ -17,6 +17,10 @@ namespace OlorALibro.CRUD_users
         public string usuario { get; set; }
 
         public bool admin {get; set; }
+
+        public bool closing = false; // permite saber que tipo de cierre es, si mediante boton o X(cruz)
+
+        int closed = 0;
         #endregion
 
         #region Constructor
@@ -119,8 +123,15 @@ namespace OlorALibro.CRUD_users
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
-            FormClosingEventArgs ec = new FormClosingEventArgs(CloseReason.None, false);
-            formPanel_FormClosing(sender, ec);
+            if(MessageBox.Show("Salir de la aplicación ?", "SALIR", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
+            {
+                closing = true;
+                Application.Exit();
+            }
+            else
+            {
+                closing = false;
+            }
         }
 
         private void usuariosLibreríasToolStripMenuItem_Click(object sender, EventArgs e)
@@ -147,8 +158,15 @@ namespace OlorALibro.CRUD_users
 
         private void salirToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            FormClosingEventArgs ec = new FormClosingEventArgs(CloseReason.None, false);
-            formPanel_FormClosing(sender, ec);
+            if (MessageBox.Show("Salir de la aplicación ?", "SALIR", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
+            {
+                closing = true;
+                Application.Exit();
+            }
+            else
+            {
+                closing = false;
+            }
         }
 
         private void librosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -177,18 +195,6 @@ namespace OlorALibro.CRUD_users
             FormLocalizacion fl = new FormLocalizacion();
             fl.ShowDialog();
         }
-
-        private void formPanel_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (MessageBox.Show("seguro que quieres cerrar la Aplicación?", "EXIT", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.Cancel)
-            {
-                e.Cancel = true;
-            }
-            else
-            {
-                Application.Exit();
-            }
-        }
         #endregion
 
         private void accesoFormLibrerias()
@@ -209,11 +215,30 @@ namespace OlorALibro.CRUD_users
             {
                 FormLogin f = new FormLogin();
                 f.Show();
-                Close();
+                closing = true;
+                Hide();
+            }
+            else
+            {
+                closing = false;
             }
         }
+
         #endregion
 
-       
+        private void formPanel_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            
+            if(closed == 0 &&!closing && MessageBox.Show("Salir de apliación", "SALIR", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
+            {
+                closed++;
+                closing = true;
+                Application.Exit();                
+            }
+            else if(!closing)
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }

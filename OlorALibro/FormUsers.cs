@@ -14,7 +14,8 @@ namespace OlorALibro
         BindingList<Usuario> usuarios;
         private const int PUNTOS_MAX = 100; // el limite a partir del cual el adminsitrador es notificado de que hay usuarios
                                             // que tienen los puntos suficientes para alguna promo (por ejemplo)
-        BindingList<Usuario> userNot = new BindingList<Usuario>();
+        BindingList<Usuario> userNot;
+
         int numUsuarios = 0;
         #endregion
 
@@ -29,29 +30,29 @@ namespace OlorALibro
 
         private void FormUsers_Load(object sender, EventArgs e)
         {
-            
+            userNot = new BindingList<Usuario>();
             JArray jArrayUsuarios = JArray.Parse(File.ReadAllText(@"../../Json/AdminUsers/users.json"));
             usuarios = jArrayUsuarios.ToObject<BindingList<Usuario>>();
             GridRefresh();
 
-            foreach(Usuario user in usuarios)
+            foreach (Usuario user in usuarios)
             {
-                if(user.Puntos > PUNTOS_MAX)
+                if (user.Puntos > PUNTOS_MAX)
                 {
                     userNot.Add(user);
                 }
             }
-
             numUsuarios = userNot.Count;
 
-            if(numUsuarios > 0)
+            if (numUsuarios > 0)
             {
                 labelNot.Text = numUsuarios.ToString();
             }
 
             dimensionesColumnes();
-            
         }
+
+
 
         private void buttonCorreo_Click(object sender, EventArgs e)
         {
@@ -106,6 +107,7 @@ namespace OlorALibro
 
         private void buttonEliminar_Click(object sender, EventArgs e)
         {
+            userNot = new BindingList<Usuario>();
             DataGridViewSelectedRowCollection rows = dataGridViewUsuarios.SelectedRows;
 
             if(rows.Count > 0 && MessageBox.Show("Eliminar lo seleccionado ?", "ELIMINAR", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
@@ -115,7 +117,23 @@ namespace OlorALibro
                     dataGridViewUsuarios.Rows.RemoveAt(row.Index);
                 }
                 GrabarDatosEnJson();
-                GridRefresh();
+
+                JArray jArrayUsuarios = JArray.Parse(File.ReadAllText(@"../../Json/AdminUsers/users.json"));
+                usuarios = jArrayUsuarios.ToObject<BindingList<Usuario>>();
+                foreach (Usuario user in usuarios)
+                {
+                    if (user.Puntos > PUNTOS_MAX)
+                    {
+                        userNot.Add(user);
+                    }
+                }
+                numUsuarios = userNot.Count;
+
+                if (numUsuarios > 0)
+                {
+                    labelNot.Text = numUsuarios.ToString();
+                }
+                GridRefresh();   
             }
             else if(rows.Count == 0)
             {
@@ -161,6 +179,6 @@ namespace OlorALibro
         {
             FormNotificaciones fn = new FormNotificaciones(numUsuarios, PUNTOS_MAX);
             fn.Show();
-        }
+        }        
     }
 }

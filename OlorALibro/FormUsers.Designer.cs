@@ -35,6 +35,13 @@
             this.buttonMostrar = new System.Windows.Forms.Button();
             this.buttonCorreo = new System.Windows.Forms.Button();
             this.dataGridViewUsuarios = new System.Windows.Forms.DataGridView();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Puntos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Admin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Contrasenia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.User = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBoxUser = new System.Windows.Forms.GroupBox();
             this.labelUserP = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -53,13 +60,6 @@
             this.buttonNotif = new System.Windows.Forms.Button();
             this.labelNot = new System.Windows.Forms.Label();
             this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Puntos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Admin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Contrasenia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.User = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsuarios)).BeginInit();
             this.groupBoxUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
@@ -151,6 +151,58 @@
             this.dataGridViewUsuarios.Size = new System.Drawing.Size(674, 286);
             this.dataGridViewUsuarios.TabIndex = 3;
             this.dataGridViewUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewUsuarios_CellClick);
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "Nombre";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // Apellido
+            // 
+            this.Apellido.DataPropertyName = "Apellido";
+            this.Apellido.HeaderText = "Apellido";
+            this.Apellido.Name = "Apellido";
+            this.Apellido.ReadOnly = true;
+            // 
+            // Puntos
+            // 
+            this.Puntos.DataPropertyName = "Puntos";
+            this.Puntos.HeaderText = "Puntos";
+            this.Puntos.Name = "Puntos";
+            this.Puntos.ReadOnly = true;
+            // 
+            // Correo
+            // 
+            this.Correo.DataPropertyName = "Correo";
+            this.Correo.HeaderText = "Correo";
+            this.Correo.Name = "Correo";
+            this.Correo.ReadOnly = true;
+            // 
+            // Admin
+            // 
+            this.Admin.DataPropertyName = "Admin";
+            this.Admin.HeaderText = "Admin";
+            this.Admin.Name = "Admin";
+            this.Admin.ReadOnly = true;
+            this.Admin.Visible = false;
+            // 
+            // Contrasenia
+            // 
+            this.Contrasenia.DataPropertyName = "Contrasenia";
+            this.Contrasenia.HeaderText = "Contrasenia";
+            this.Contrasenia.Name = "Contrasenia";
+            this.Contrasenia.ReadOnly = true;
+            this.Contrasenia.Visible = false;
+            // 
+            // User
+            // 
+            this.User.DataPropertyName = "User";
+            this.User.HeaderText = "User";
+            this.User.Name = "User";
+            this.User.ReadOnly = true;
+            this.User.Visible = false;
             // 
             // groupBoxUser
             // 
@@ -315,63 +367,11 @@
             // 
             this.usuarioBindingSource.DataSource = typeof(OlorALibro.Usuario);
             // 
-            // Nombre
-            // 
-            this.Nombre.DataPropertyName = "Nombre";
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            // 
-            // Apellido
-            // 
-            this.Apellido.DataPropertyName = "Apellido";
-            this.Apellido.HeaderText = "Apellido";
-            this.Apellido.Name = "Apellido";
-            this.Apellido.ReadOnly = true;
-            // 
-            // Puntos
-            // 
-            this.Puntos.DataPropertyName = "Puntos";
-            this.Puntos.HeaderText = "Puntos";
-            this.Puntos.Name = "Puntos";
-            this.Puntos.ReadOnly = true;
-            // 
-            // Correo
-            // 
-            this.Correo.DataPropertyName = "Correo";
-            this.Correo.HeaderText = "Correo";
-            this.Correo.Name = "Correo";
-            this.Correo.ReadOnly = true;
-            // 
-            // Admin
-            // 
-            this.Admin.DataPropertyName = "Admin";
-            this.Admin.HeaderText = "Admin";
-            this.Admin.Name = "Admin";
-            this.Admin.ReadOnly = true;
-            this.Admin.Visible = false;
-            // 
-            // Contrasenia
-            // 
-            this.Contrasenia.DataPropertyName = "Contrasenia";
-            this.Contrasenia.HeaderText = "Contrasenia";
-            this.Contrasenia.Name = "Contrasenia";
-            this.Contrasenia.ReadOnly = true;
-            this.Contrasenia.Visible = false;
-            // 
-            // User
-            // 
-            this.User.DataPropertyName = "User";
-            this.User.HeaderText = "User";
-            this.User.Name = "User";
-            this.User.ReadOnly = true;
-            this.User.Visible = false;
-            // 
             // FormUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::OlorALibro.Properties.Resources.backgroundDesktopAp;
             this.ClientSize = new System.Drawing.Size(1180, 408);
             this.Controls.Add(this.labelNot);
             this.Controls.Add(this.buttonNotif);

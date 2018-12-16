@@ -40,7 +40,7 @@
             // textBoxLoginUserText
             // 
             this.textBoxLoginUserText.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBoxLoginUserText.Location = new System.Drawing.Point(297, 67);
+            this.textBoxLoginUserText.Location = new System.Drawing.Point(262, 67);
             this.textBoxLoginUserText.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxLoginUserText.Name = "textBoxLoginUserText";
             this.textBoxLoginUserText.Size = new System.Drawing.Size(192, 26);
@@ -55,7 +55,7 @@
             // 
             this.textBoxLoginPasswordText.AcceptsTab = true;
             this.textBoxLoginPasswordText.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBoxLoginPasswordText.Location = new System.Drawing.Point(297, 124);
+            this.textBoxLoginPasswordText.Location = new System.Drawing.Point(262, 132);
             this.textBoxLoginPasswordText.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxLoginPasswordText.Name = "textBoxLoginPasswordText";
             this.textBoxLoginPasswordText.Size = new System.Drawing.Size(192, 26);
@@ -72,7 +72,7 @@
             this.buttonLogin.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.buttonLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLogin.Location = new System.Drawing.Point(338, 207);
+            this.buttonLogin.Location = new System.Drawing.Point(307, 191);
             this.buttonLogin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(101, 35);
@@ -87,7 +87,7 @@
             this.labelIncorrecta.BackColor = System.Drawing.Color.Transparent;
             this.labelIncorrecta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelIncorrecta.ForeColor = System.Drawing.Color.Red;
-            this.labelIncorrecta.Location = new System.Drawing.Point(282, 273);
+            this.labelIncorrecta.Location = new System.Drawing.Point(281, 248);
             this.labelIncorrecta.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelIncorrecta.Name = "labelIncorrecta";
             this.labelIncorrecta.Size = new System.Drawing.Size(208, 22);
@@ -100,10 +100,11 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox1.Location = new System.Drawing.Point(-19, 35);
+            this.pictureBox1.Location = new System.Drawing.Point(-23, -11);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(284, 285);
+            this.pictureBox1.Size = new System.Drawing.Size(273, 290);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
@@ -112,8 +113,8 @@
             this.AcceptButton = this.buttonLogin;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(502, 380);
+            this.BackgroundImage = global::OlorALibro.Properties.Resources.backgroundDesktopAp;
+            this.ClientSize = new System.Drawing.Size(502, 277);
             this.Controls.Add(this.labelIncorrecta);
             this.Controls.Add(this.buttonLogin);
             this.Controls.Add(this.textBoxLoginPasswordText);

@@ -1,8 +1,11 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +15,7 @@ namespace OlorALibro
 {
     public partial class FormEditar : Form
     {
+        public static string filePath = @"..\..\Json\ListaDeLibrerías\Librerias.json";
 
         public Libreria lib = new Libreria();
 
@@ -44,10 +48,20 @@ namespace OlorALibro
             {
                 MessageBox.Show("No hay cambios efectuados!");
             }
+            else if(!ComprobarNombre(textBoxNom.Text, LeerNombreDeLibrerias()))
+            {
+                MessageBox.Show("Este nombre ya existe");
+                textBoxNom.Clear();
+                textBoxNom.Focus();
+            }
             else
             {
+                if(textBoxNom.Text != lib.Nombre)
+                {
+                    CambiarDeArchivoActiv(textBoxNom.Text); //cambia el JSON de actividades asociado
+                }
                 lib.Nombre = textBoxNom.Text;
-                lib.Direccion = textBoxDireccion.Text;
+                lib.Direccion = textBoxDireccion.Text;                
                 lib.Telefono = int.Parse(textBoxTelefono.Text);
                 lib.correo = textBoxCorreo.Text;
                 lib.Coordenadas = $"{textBoxAltitud.Text},{textBoxLatitud.Text}";
@@ -94,6 +108,64 @@ namespace OlorALibro
             {
                 textBoxLatitud.Text = "LATITUD";
             }
+        }
+        public static bool ComprobarNombre(string nombre, List<string> nombres)
+        {
+            int i = 0;
+            bool ok = true;
+            string nomAux;
+            if (nombre.Contains(" "))
+            {
+                nombre = nombre.Replace(" ", string.Empty);
+            }
+            nombre = nombre.ToLower();
+
+            while(i< nombres.Count && ok)
+            {
+                nomAux = nombres[i].ToLower();
+
+                if (nomAux.Contains(" "))
+                {
+                    nomAux = nomAux.Replace(" ", string.Empty);
+                }
+
+                if (nombre == nomAux)
+                {
+                    ok = false;
+                }
+                i++;
+            }
+            return ok;
+        }
+
+        public static List<string> LeerNombreDeLibrerias()
+        {
+            List<string> nombreDeLibrerias = new List<string>();
+            BindingList<Libreria> libs = new BindingList<Libreria>();
+            JArray jArrayLibrerias = JArray.Parse(File.ReadAllText(filePath));
+            libs = jArrayLibrerias.ToObject<BindingList<Libreria>>();
+            foreach(Libreria libreria in libs)
+            {
+                nombreDeLibrerias.Add(libreria.Nombre);
+            }
+            return nombreDeLibrerias;
+        }
+
+        private void CambiarDeArchivoActiv(string nombreLibreria)
+        {
+            string nuevaRutaActividad = FormLibrerias.RutaActividades(nombreLibreria);
+
+
+            BindingList<Actividad> act = new BindingList<Actividad>();
+            JArray jArrayLibrerias = JArray.Parse(File.ReadAllText(lib.actividesRuta));
+            act = jArrayLibrerias.ToObject<BindingList<Actividad>>();
+
+            JsonTextWriter jw = new JsonTextWriter(File.CreateText(nuevaRutaActividad));
+            JToken.FromObject(act).WriteTo(jw);
+            jw.Close();
+
+            File.Delete(lib.actividesRuta);
+            lib.actividesRuta = nuevaRutaActividad;
         }
     }
 }

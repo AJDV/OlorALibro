@@ -56,6 +56,8 @@
             // 
             // dataGridViewUsers
             // 
+            this.dataGridViewUsers.AllowUserToAddRows = false;
+            this.dataGridViewUsers.AllowUserToDeleteRows = false;
             this.dataGridViewUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewUsers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.User,
@@ -67,6 +69,7 @@
             this.Puntos});
             this.dataGridViewUsers.Location = new System.Drawing.Point(12, 84);
             this.dataGridViewUsers.Name = "dataGridViewUsers";
+            this.dataGridViewUsers.ReadOnly = true;
             this.dataGridViewUsers.RowHeadersVisible = false;
             this.dataGridViewUsers.RowTemplate.Height = 28;
             this.dataGridViewUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -78,12 +81,14 @@
             this.User.DataPropertyName = "User";
             this.User.HeaderText = "User";
             this.User.Name = "User";
+            this.User.ReadOnly = true;
             // 
             // admin
             // 
             this.admin.DataPropertyName = "admin";
             this.admin.HeaderText = "admin";
             this.admin.Name = "admin";
+            this.admin.ReadOnly = true;
             this.admin.Visible = false;
             // 
             // Correo
@@ -91,6 +96,7 @@
             this.Correo.DataPropertyName = "Correo";
             this.Correo.HeaderText = "Correo";
             this.Correo.Name = "Correo";
+            this.Correo.ReadOnly = true;
             this.Correo.Visible = false;
             // 
             // Apellido
@@ -98,6 +104,7 @@
             this.Apellido.DataPropertyName = "Apellido";
             this.Apellido.HeaderText = "Apellido";
             this.Apellido.Name = "Apellido";
+            this.Apellido.ReadOnly = true;
             this.Apellido.Visible = false;
             // 
             // Contrasenia
@@ -105,6 +112,7 @@
             this.Contrasenia.DataPropertyName = "Contrasenia";
             this.Contrasenia.HeaderText = "Contrasenia";
             this.Contrasenia.Name = "Contrasenia";
+            this.Contrasenia.ReadOnly = true;
             this.Contrasenia.Visible = false;
             // 
             // Nombre
@@ -112,18 +120,20 @@
             this.Nombre.DataPropertyName = "Nombre";
             this.Nombre.HeaderText = "Nombre";
             this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
             // 
             // Puntos
             // 
             this.Puntos.DataPropertyName = "Puntos";
             this.Puntos.HeaderText = "Puntos";
             this.Puntos.Name = "Puntos";
+            this.Puntos.ReadOnly = true;
             // 
             // ListUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::OlorALibro.Properties.Resources.rsz_back21;
+            this.BackgroundImage = global::OlorALibro.Properties.Resources.backgroundDesktopAp;
             this.ClientSize = new System.Drawing.Size(417, 524);
             this.Controls.Add(this.dataGridViewUsers);
             this.Controls.Add(this.labelUsers);

@@ -66,6 +66,10 @@
             // 
             // dataGridViewNotif
             // 
+            this.dataGridViewNotif.AllowUserToAddRows = false;
+            this.dataGridViewNotif.AllowUserToDeleteRows = false;
+            this.dataGridViewNotif.AllowUserToResizeColumns = false;
+            this.dataGridViewNotif.AllowUserToResizeRows = false;
             this.dataGridViewNotif.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewNotif.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Nombre,
@@ -133,7 +137,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::OlorALibro.Properties.Resources.rsz_back21;
+            this.BackgroundImage = global::OlorALibro.Properties.Resources.backgroundDesktopAp;
             this.ClientSize = new System.Drawing.Size(370, 450);
             this.Controls.Add(this.dataGridViewNotif);
             this.Controls.Add(this.label2);

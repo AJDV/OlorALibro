@@ -285,6 +285,7 @@
     <None Include="Resources\books-stack-of-three.png" />
     <None Include="Resources\calendario.png" />
     <None Include="Resources\book-shelf.png" />
+    <None Include="Resources\backgroundDesktopAp.jpg" />
     <Content Include="Resources\calendar-with-a-clock-time-tools.png" />
     <None Include="Resources\link.png" />
     <None Include="Resources\download.png" />

@@ -15,17 +15,23 @@ namespace OlorALibro
 {
     public partial class FormActividades : Form
     {
+        #region Properties
         //Lista enlazada por referencia a la Lista de actividades
-        BindingList<Actividad> acts;
+        BindingList<Actividad> acts = new BindingList<Actividad>();
 
         //Nombre de la libreria que nos servirá para el id de la actividad
-        String nombrelib;
+        string nombrelib;
 
         //Actividad enlazada por referencia a una Actividad
-        Actividad a;
+        Actividad act = new Actividad();
 
         //Booleano para comprobar si haremos un ADD de la actividad en caso que no editemos
-        bool editar = false;
+        bool siEdicion;
+
+        private int posicion;
+
+        private string filePathActiv;
+        #endregion
 
         //Constructor general NO UTILiZADO
         public FormActividades()
@@ -34,104 +40,131 @@ namespace OlorALibro
         }
 
         //Constructor donde le pasamos la Lista de Actividades
-        public FormActividades(BindingList<Actividad> acts, String nombrelib)
+        public FormActividades(string filePath, bool siEdicion, string nombreLib)
         {
             InitializeComponent();
-            acts = new BindingList<Actividad>();
-            this.acts = acts;
-            this.nombrelib = nombrelib;
+            filePathActiv = filePath;
+            this.siEdicion = siEdicion;
+            nombrelib = nombreLib;
         }
 
-        //Constructor donde le pasamos una Actividad
-        public FormActividades(Actividad a)
+        //Constructor en caso de Edicion
+        public FormActividades(string filePath, string nombreLib, int posicion, Actividad activdad)
         {
             InitializeComponent();
-            this.editar = true;
-            this.a = a;
+            filePathActiv = filePath;
+            siEdicion = true;
+            nombrelib = nombreLib;
+            this.posicion = posicion;
+            act = activdad;
         }
-
+        
         //En el load comprobaremos si le pasamos una actividad, en caso de no pasarle crearemos una nueva
         private void Actividades_Load(object sender, EventArgs e)
         {
-
-            if (a != null)
+            if (siEdicion)
             {
-                textBoxNombre.Text = a.Nombre;
-                dateTimePickerFecha.Value = DateTime.Parse(a.Fecha);
-                dateTimePickerHora.Value = DateTime.Parse(a.Hora);
-                textBoxDescripcion.Text = a.Descripcion;
-            }
-            else
-            {
-                this.a = new Actividad();
+                textBoxNombre.Text = act.Nombre;
+                dateTimePickerFecha.Value = DateTime.Parse(act.Fecha);
+                dateTimePickerHora.Value = DateTime.Parse(act.Hora);
+                textBoxDescripcion.Text = act.Descripcion;
             }
         }
 
         //En el aceptar añadiremos datos a una actividad, pero solo haremos el add en caso de que no estemos modificando
         private void buttonAceptar_Click(object sender, EventArgs e)
         {
-            anadirActividad();
-            if (!editar)
+            if (!siEdicion)
             {
-                guardarActividad();
+                if (nombrelib.Contains(" "))
+                {
+                    nombrelib = nombrelib.Replace(" ", string.Empty);
+                }
+
+                if (ValidarCampos())
+                {
+                    LeerJson(filePathActiv);
+                    acts.Add(new Actividad(nombrelib, textBoxNombre.Text, dateTimePickerFecha.Text, dateTimePickerHora.Text, textBoxDescripcion.Text));
+                    EscribirJson(filePathActiv, acts);
+                    MessageBox.Show("actividad registrada");
+                }
             }
-            this.Close();
-        }
-
-        //Añadimos los datos de una actividad
-        private void anadirActividad()
-        {
-            a.Nombre = textBoxNombre.Text;
-            a.Fecha = dateTimePickerFecha.Value.ToString("yyyy-MM-dd");
-            a.Hora = dateTimePickerHora.Value.ToString("HH:mm");
-            a.Descripcion = textBoxDescripcion.Text;
-        }
-
-        //Realizaremos el add de una actividad sobre la List, solo en caso que no estemos modificando
-        private void guardarActividad()
-        {
-            DialogResult dr = MessageBox.Show("Está apunto de añadir una actividad, está seguro?", "Atención", MessageBoxButtons.OKCancel);
-
-            if (dr == DialogResult.OK && !editar)
+            if (siEdicion && HaSidoModificaco())
             {
-                a.id_act = "Act_" + nombrelib;
-                acts.Add(a);
-                //GRABAR JSON ACTIVIDADES
-                JArray ja = (JArray)JToken.FromObject(acts);
-                String nombreLib = nombrelib;
-                nombreLib = nombreLib.Replace(" ", string.Empty);
-                String activPath = @"..\..\Json\ListaDeLibrerías\ActivDeLibrerias\Act_" + nombreLib + ".json";
-                StreamWriter jw = File.CreateText(activPath);
-                JsonTextWriter jtw = new JsonTextWriter(jw);
-
-                ja.WriteTo(jtw);
-                
-                jtw.Close();
-
-                MessageBox.Show("Grabado correctamente!", "GRABADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (ValidarCampos())
+                {
+                    LeerJson(filePathActiv);
+                    acts[posicion] = new Actividad(nombrelib, textBoxNombre.Text, dateTimePickerFecha.Text, dateTimePickerHora.Text, textBoxDescripcion.Text);
+                    EscribirJson(filePathActiv, acts);
+                    MessageBox.Show("ActividadAtualizada");
+                }
             }
-            else
-            {
-                //GRABAR JSON ACTIVIDADES
-                JArray ja = (JArray)JToken.FromObject(acts);
-                String nombreLib = nombrelib;
-                nombreLib = nombreLib.Replace(" ", string.Empty);
-                String activPath = @"..\..\Json\ListaDeLibrerías\ActivDeLibrerias\Act_" + nombreLib + ".json";
-                StreamWriter jw = File.CreateText(activPath);
-                JsonTextWriter jtw = new JsonTextWriter(jw);
-
-                ja.WriteTo(jtw);
-
-                jtw.Close();
-
-                MessageBox.Show("Grabado correctamente!", "GRABADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            Hide();
         }
-
         //El boton CANCELAR nos cerrará el form
         private void buttonCancelar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Hide();
+        }
+
+        private void LeerJson(string filePath)
+        {
+            try
+            {
+                if (File.Exists(filePath))
+                {
+                    JArray jArrayLibrerias = JArray.Parse(File.ReadAllText(filePath));
+                    acts = jArrayLibrerias.ToObject<BindingList<Actividad>>();
+                }
+                else
+                {
+                    acts = new BindingList<Actividad>();
+                    JsonTextWriter jw = new JsonTextWriter(File.CreateText(filePath));
+                    JToken.FromObject(acts).WriteTo(jw);
+                    jw.Close();
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error");
+            }
+            
+        }
+
+        private void EscribirJson(string filePath, BindingList<Actividad> acts)
+        {
+            try
+            {
+                JsonTextWriter jw = new JsonTextWriter(File.CreateText(filePath));
+                JToken.FromObject(acts).WriteTo(jw);
+                jw.Close();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error");
+            }
+            
+        }
+
+        public bool ValidarCampos()
+        {
+            bool ok = true;
+            if(textBoxNombre.Text == "" || textBoxDescripcion.Text == "")
+            {
+                ok = false;
+            }
+            return ok;
+        }
+
+        public bool HaSidoModificaco()
+        {
+            bool ok = false;
+            if(textBoxNombre.Text != act.Nombre || textBoxDescripcion.Text != act.Descripcion || 
+                dateTimePickerFecha.Text != act.Fecha || dateTimePickerHora.Text!= act.Hora)
+            {
+                ok = true;
+            }
+            return ok;
         }
     }
 }

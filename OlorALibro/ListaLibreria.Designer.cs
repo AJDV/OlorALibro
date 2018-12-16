@@ -30,17 +30,19 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListaLibreria));
             this.dataGridViewListaLib = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Coordenadas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListaLib)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewListaLib
             // 
+            this.dataGridViewListaLib.AllowUserToAddRows = false;
+            this.dataGridViewListaLib.AllowUserToDeleteRows = false;
             this.dataGridViewListaLib.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewListaLib.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Nombre,
@@ -50,11 +52,47 @@
             this.Direccion});
             this.dataGridViewListaLib.Location = new System.Drawing.Point(24, 63);
             this.dataGridViewListaLib.Name = "dataGridViewListaLib";
+            this.dataGridViewListaLib.ReadOnly = true;
             this.dataGridViewListaLib.RowHeadersVisible = false;
             this.dataGridViewListaLib.RowTemplate.Height = 28;
             this.dataGridViewListaLib.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewListaLib.Size = new System.Drawing.Size(372, 446);
             this.dataGridViewListaLib.TabIndex = 0;
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "Nombre";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // Correo
+            // 
+            this.Correo.DataPropertyName = "Correo";
+            this.Correo.HeaderText = "Correo";
+            this.Correo.Name = "Correo";
+            this.Correo.ReadOnly = true;
+            // 
+            // Coordenadas
+            // 
+            this.Coordenadas.DataPropertyName = "Coordenadas";
+            this.Coordenadas.HeaderText = "Coordenadas";
+            this.Coordenadas.Name = "Coordenadas";
+            this.Coordenadas.ReadOnly = true;
+            // 
+            // Telefono
+            // 
+            this.Telefono.DataPropertyName = "Telefono";
+            this.Telefono.HeaderText = "Telefono";
+            this.Telefono.Name = "Telefono";
+            this.Telefono.ReadOnly = true;
+            // 
+            // Direccion
+            // 
+            this.Direccion.DataPropertyName = "Direccion";
+            this.Direccion.HeaderText = "Direccion";
+            this.Direccion.Name = "Direccion";
+            this.Direccion.ReadOnly = true;
             // 
             // label1
             // 
@@ -69,41 +107,11 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "ACCESO RAPIDO LIBRERIAS";
             // 
-            // Nombre
-            // 
-            this.Nombre.DataPropertyName = "Nombre";
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            // 
-            // Correo
-            // 
-            this.Correo.DataPropertyName = "Correo";
-            this.Correo.HeaderText = "Correo";
-            this.Correo.Name = "Correo";
-            // 
-            // Coordenadas
-            // 
-            this.Coordenadas.DataPropertyName = "Coordenadas";
-            this.Coordenadas.HeaderText = "Coordenadas";
-            this.Coordenadas.Name = "Coordenadas";
-            // 
-            // Telefono
-            // 
-            this.Telefono.DataPropertyName = "Telefono";
-            this.Telefono.HeaderText = "Telefono";
-            this.Telefono.Name = "Telefono";
-            // 
-            // Direccion
-            // 
-            this.Direccion.DataPropertyName = "Direccion";
-            this.Direccion.HeaderText = "Direccion";
-            this.Direccion.Name = "Direccion";
-            // 
             // ListaLibreria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::OlorALibro.Properties.Resources.backgroundDesktopAp;
             this.ClientSize = new System.Drawing.Size(417, 527);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridViewListaLib);

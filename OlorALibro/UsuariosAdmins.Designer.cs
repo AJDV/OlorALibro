@@ -248,13 +248,14 @@
             // UsuariosAdmins
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::OlorALibro.Properties.Resources.backgroundDesktopAp;
             this.ClientSize = new System.Drawing.Size(641, 295);
             this.Controls.Add(this.groupBoxAdmin);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.labelUsuariosAdmin);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "UsuariosAdmins";
