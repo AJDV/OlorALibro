@@ -113,6 +113,12 @@
     <Compile Include="FormEditar.Designer.cs">
       <DependentUpon>FormEditar.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormEstadisticas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEstadisticas.Designer.cs">
+      <DependentUpon>FormEstadisticas.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,6 +161,12 @@
     </Compile>
     <Compile Include="FormLibrerias.Designer.cs">
       <DependentUpon>FormLibrerias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListaActividades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListaActividades.Designer.cs">
+      <DependentUpon>ListaActividades.cs</DependentUpon>
     </Compile>
     <Compile Include="ListaLibreria.cs">
       <SubType>Form</SubType>
@@ -201,6 +213,9 @@
     <EmbeddedResource Include="FormEditar.resx">
       <DependentUpon>FormEditar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormEstadisticas.resx">
+      <DependentUpon>FormEstadisticas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormInfo.resx">
       <DependentUpon>FormInfo.cs</DependentUpon>
     </EmbeddedResource>
@@ -224,6 +239,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormLibrerias.resx">
       <DependentUpon>FormLibrerias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaActividades.resx">
+      <DependentUpon>ListaActividades.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListaLibreria.resx">
       <DependentUpon>ListaLibreria.cs</DependentUpon>

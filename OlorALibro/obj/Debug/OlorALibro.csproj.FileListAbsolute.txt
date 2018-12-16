@@ -130,3 +130,5 @@ C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\obj\Debug\OlorALibro.F
 C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\obj\Debug\OlorALibro.FormLinkGoogle.resources
 C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\obj\Debug\OlorALibro.FormLocalizacion.resources
 C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\obj\Debug\OlorALibro.FormNotificaciones.resources
+C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\obj\Debug\OlorALibro.FormEstadisticas.resources
+C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\obj\Debug\OlorALibro.ListaActividades.resources

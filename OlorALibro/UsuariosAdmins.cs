@@ -18,6 +18,8 @@ namespace OlorALibro
     {
         #region Properties
         private BindingList<UsuarioAdm> users;
+
+        public static string filePath = @"..\..\Json\AdminUsers\loginAdmin.json";
         #endregion
 
         #region Constructor
@@ -36,9 +38,9 @@ namespace OlorALibro
             textBox2.PasswordChar = '•';
             try
             {
-                if (File.Exists(@"..\..\Json\AdminUsers\loginAdmin.json"))
+                if (File.Exists(filePath))
                 {
-                    users = (JArray.Parse(File.ReadAllText(@"..\..\Json\AdminUsers\loginAdmin.json"))).ToObject<BindingList<UsuarioAdm>>();
+                    users = (JArray.Parse(File.ReadAllText(filePath))).ToObject<BindingList<UsuarioAdm>>();
                 }
                 else
                 {
@@ -79,7 +81,7 @@ namespace OlorALibro
                 if(MessageBox.Show("GUARDAR ?", "info", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
                 {
                     users.Add(new UsuarioAdm(checkBoxAdmin.Checked, textBox1.Text, textBox3.Text));
-                    JsonTextWriter jw = new JsonTextWriter(File.CreateText(@"..\..\Json\AdminUsers\loginAdmin.json"));
+                    JsonTextWriter jw = new JsonTextWriter(File.CreateText(filePath));
                     JToken.FromObject(users).WriteTo(jw);
                     jw.Close();
                     dataGridView1.DataSource = null;
@@ -158,7 +160,7 @@ namespace OlorALibro
                 if(MessageBox.Show("Seguro que quieres eliminar ?", "ADVERTENCIA", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
                 {
                     users.RemoveAt(dataGridView1.CurrentCell.RowIndex);
-                    JsonTextWriter jw = new JsonTextWriter(File.CreateText(@"..\..\Json\AdminUsers\loginAdmin.json"));
+                    JsonTextWriter jw = new JsonTextWriter(File.CreateText(filePath));
                     JToken.FromObject(users).WriteTo(jw);
                     jw.Close();
                     dataGridView1.DataSource = null;

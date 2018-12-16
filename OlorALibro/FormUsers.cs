@@ -12,9 +12,11 @@ namespace OlorALibro
     {
         #region Properties
         BindingList<Usuario> usuarios;
-        private const int PUNTOS_MAX = 100; // el limite a partir del cual el adminsitrador es notificado de que hay usuarios
+        public const int PUNTOS_MAX = 100; // el limite a partir del cual el adminsitrador es notificado de que hay usuarios
                                             // que tienen los puntos suficientes para alguna promo (por ejemplo)
         BindingList<Usuario> userNot;
+
+        public static string filePath = @"..\..\Json\AdminUsers\users.json";
 
         int numUsuarios = 0;
         #endregion

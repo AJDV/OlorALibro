@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -46,6 +48,25 @@ namespace OlorALibro.CRUD_users
                 this.Text = "Panel de admnistrador (" + usuario.ToUpper() + ") - No Admin";
                 menuGestion.Visible = false;
 
+            }
+
+            BindingList<Usuario> userNot = new BindingList<Usuario>();
+            BindingList<Usuario> usuarios = new BindingList<Usuario>();
+            JArray jArrayUsuarios = JArray.Parse(File.ReadAllText(@"../../Json/AdminUsers/users.json"));
+            usuarios = jArrayUsuarios.ToObject<BindingList<Usuario>>();
+
+            foreach (Usuario user in usuarios)
+            {
+                if (user.Puntos > FormUsers.PUNTOS_MAX)
+                {
+                    userNot.Add(user);
+                }
+            }
+            int numUsuarios = userNot.Count;
+
+            if (numUsuarios > 0)
+            {
+                labelNot.Text = numUsuarios.ToString();
             }
         }
         private void buttonUsers_Click(object sender, EventArgs e)
@@ -239,6 +260,36 @@ namespace OlorALibro.CRUD_users
             {
                 e.Cancel = true;
             }
+        }
+
+        private void estadísticasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormEstadisticas fe = new FormEstadisticas();
+            fe.ShowDialog();
+        }
+
+        private void labelNot_MouseHover(object sender, EventArgs e)
+        {
+            string notificiones;
+            if(int.Parse(labelNot.Text) > 0)
+            {
+                if(int.Parse(labelNot.Text) == 1)
+                {
+                    notificiones = "notificacion";
+                }
+                else
+                {
+                    notificiones = "notificaciones";
+                }
+
+                toolTipNot.Show($"Tienes {labelNot.Text} {notificiones}", labelNot);
+            }
+        }
+
+        private void actividadesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ListaActividades la = new ListaActividades();
+            la.ShowDialog();
         }
     }
 }

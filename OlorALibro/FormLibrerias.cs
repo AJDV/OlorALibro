@@ -261,8 +261,9 @@ namespace OlorALibro
             Libreria libreria = (Libreria)dataGridViewLibrerias.CurrentRow.DataBoundItem;
             int row = dataGridViewLibrerias.CurrentRow.Index;
             int selected = dataGridViewLibrerias.SelectedRows.Count;
-            if (selected == 1 && MessageBox.Show("Seguro que quieres eliminar lo seleccionado ? ", "ELIMINAR", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
+            if (selected == 1)
             {
+                if(MessageBox.Show("Seguro que quieres eliminar lo seleccionado ? ", "ELIMINAR", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
                 dataGridViewLibrerias.Rows.RemoveAt(row);
                 JsonTextWriter jw = new JsonTextWriter(File.CreateText(filePath));
                 JToken.FromObject(libs).WriteTo(jw);
