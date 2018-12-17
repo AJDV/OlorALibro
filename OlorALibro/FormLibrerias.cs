@@ -75,6 +75,7 @@ namespace OlorALibro
         //Grabamos el JSON en el activated
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
+            BindingList<Actividad> acts = new BindingList<Actividad>();
             //-------------
             int i = 0; // variable para verificar que el texto introducido es un numero
             float b = 0;
@@ -132,6 +133,11 @@ namespace OlorALibro
                             JsonTextWriter jw = new JsonTextWriter(File.CreateText(filePath));
                             JToken.FromObject(libs).WriteTo(jw);
                             jw.Close();
+
+                            JsonTextWriter jwA = new JsonTextWriter(File.CreateText(RutaActividades(textBoxNom.Text)));
+                            JToken.FromObject(acts).WriteTo(jwA);
+                            jwA.Close();
+
                             RefresacarLista(libs);
                             MessageBox.Show("Libreria guardada");
                             limpiezaBox();

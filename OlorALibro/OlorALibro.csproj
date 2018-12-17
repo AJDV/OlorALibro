@@ -101,6 +101,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Actividad.cs" />
+    <Compile Include="ActividadesUsuarios.cs" />
     <Compile Include="FormActividades.cs">
       <SubType>Form</SubType>
     </Compile>

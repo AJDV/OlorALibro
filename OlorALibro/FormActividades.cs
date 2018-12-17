@@ -85,6 +85,7 @@ namespace OlorALibro
                 {
                     LeerJson(filePathActiv);
                     acts.Add(new Actividad(nombrelib, textBoxNombre.Text, dateTimePickerFecha.Text, dateTimePickerHora.Text, textBoxDescripcion.Text));
+
                     EscribirJson(filePathActiv, acts);
                     MessageBox.Show("actividad registrada");
                 }

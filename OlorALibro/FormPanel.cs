@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,6 +22,12 @@ namespace OlorALibro.CRUD_users
         public bool admin {get; set; }
 
         public bool closing = false; // permite saber que tipo de cierre es, si mediante boton o X(cruz)
+
+        public const string filePathJsonAppActiv = @"..\..\JsonAndroid\Actividades.json";
+
+        public const string filePathJsonAppLibrerias = @"..\..\JsonAndroid\Librerias.json";
+
+        public const string filePathJsonAppUsuarios = @"..\..\JsonAndroid\Usuarios.json";
 
         int closed = 0;
         #endregion
@@ -234,6 +241,7 @@ namespace OlorALibro.CRUD_users
         {
             if (MessageBox.Show("seguro que quieres Salir?", "LOGOUT", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
             {
+                PasarEstructuraJsonAAndroid();
                 FormLogin f = new FormLogin();
                 f.Show();
                 closing = true;
@@ -252,6 +260,7 @@ namespace OlorALibro.CRUD_users
             
             if(closed == 0 &&!closing && MessageBox.Show("Salir de apliación", "SALIR", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
             {
+                PasarEstructuraJsonAAndroid();
                 closed++;
                 closing = true;
                 Application.Exit();                
@@ -260,6 +269,8 @@ namespace OlorALibro.CRUD_users
             {
                 e.Cancel = true;
             }
+
+
         }
 
         private void estadísticasToolStripMenuItem_Click(object sender, EventArgs e)
@@ -291,5 +302,85 @@ namespace OlorALibro.CRUD_users
             ListaActividades la = new ListaActividades();
             la.ShowDialog();
         }
+
+        #region Pasar Estructura de Json c# a Android
+        public static void EscribirJsonActividadesAJsonApp()
+        {
+            BindingList<Actividad> acts = new BindingList<Actividad>();
+            BindingList<ActividadesUsuarios> totalActs = new BindingList<ActividadesUsuarios>();
+            BindingList<Libreria> libs = new BindingList<Libreria>();
+
+            JArray jArrayLibrerias = JArray.Parse(File.ReadAllText(ListaLibreria.filePath));
+            libs = jArrayLibrerias.ToObject<BindingList<Libreria>>();
+
+            string[] lista = Directory.GetFiles(FormEstadisticas.filePathAct);
+            for (int i = 0; i < libs.Count(); i++)
+            {
+                JArray jArrayActividad = JArray.Parse(File.ReadAllText(libs[i].actividesRuta));
+                acts = jArrayActividad.ToObject<BindingList<Actividad>>();
+                foreach (Actividad act in acts)
+                {                    
+
+                    totalActs.Add(new ActividadesUsuarios(act, libs[i].Nombre));
+                }
+
+                try
+                {
+                    JsonTextWriter jw = new JsonTextWriter(File.CreateText(filePathJsonAppActiv));
+                    JToken.FromObject(totalActs).WriteTo(jw);
+                    jw.Close();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Error");
+                }
+            }
+        }
+
+        public static void EscribirJsonLibreriasAJsonApp()
+        {
+            BindingList<Libreria> libs = new BindingList<Libreria>();
+            JArray jArrayLibrerias = JArray.Parse(File.ReadAllText(ListaLibreria.filePath));
+            libs = jArrayLibrerias.ToObject<BindingList<Libreria>>();
+
+            try
+            {
+                JsonTextWriter jw = new JsonTextWriter(File.CreateText(filePathJsonAppLibrerias));
+                JToken.FromObject(libs).WriteTo(jw);
+                jw.Close();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error");
+            }
+        }
+
+        public static void EscribirJsonUsuariosAJsonApp()
+        {
+            BindingList<Usuario> users = new BindingList<Usuario>();
+            JArray jArrayLibrerias = JArray.Parse(File.ReadAllText(FormUsers.filePath));
+            users = jArrayLibrerias.ToObject<BindingList<Usuario>>();
+
+            try
+            {
+                JsonTextWriter jw = new JsonTextWriter(File.CreateText(filePathJsonAppUsuarios));
+                JToken.FromObject(users).WriteTo(jw);
+                jw.Close();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error");
+            }
+        }
+
+        public static void PasarEstructuraJsonAAndroid()
+        {
+            EscribirJsonUsuariosAJsonApp();
+            EscribirJsonLibreriasAJsonApp();
+            EscribirJsonActividadesAJsonApp();
+        }
+
+        #endregion
+
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OlorALibro
 {
-    public class Actividad 
+    public class Actividad : Object
     {
         public string id_act { get; set; }
         public string Nombre { get; set; }

@@ -1,1 +1,20 @@
-[{"admin":false,"User":"jonathan94","Contrasenia":"jonathan","Nombre":"Jonathan","Apellido":"Negredo","Correo":"jonathanegredo3@gmail.com","Puntos":10},{"admin":false,"User":"jonathan94","Contrasenia":"jonathan","Nombre":"Jonathan","Apellido":"Negredo","Correo":"jonathanegredo3@gmail.com","Puntos":456}]
+[  
+  {
+    "admin": false,
+    "User": "jonathan94",
+    "Contrasenia": "jonathan",
+    "Nombre": "Jonathan",
+    "Apellido": "Negredo",
+    "Correo": "jonathanegredo3@gmail.com",
+    "Puntos": 10
+  },
+  {
+    "admin": false,
+    "User": "jonathan94",
+    "Contrasenia": "jonathan",
+    "Nombre": "Jonathan",
+    "Apellido": "Negredo",
+    "Correo": "jonathanegredo3@gmail.com",
+    "Puntos": 456
+  }
+]

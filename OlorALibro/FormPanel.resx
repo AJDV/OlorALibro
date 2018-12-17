@@ -162,6 +162,17 @@
   <metadata name="menu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="salirToolStripMenuItem1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJ
+        TUUH4gwKCQonbSF7IgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAADASURBVDhP
+        xdI9DkFBFMXxV4iSXtiEHegsQaWwARoLsAQbUNuDRClWoBCNQqKS2AD+R+bK5M6NCIWT/Ip3Z868j7yK
+        nHD/0BZFoo1nLDDEIJlDa0V8ObeDRYdoVsSXPMvPB/RxRQ1tDSxRKZenA5U1n2ig+IKnNGAfU9bQ2hhF
+        wVNGiNaOCBdyPnWscEFXg6iUs+g19CQt6M7PshKVcpb//wdfH7BMNum6yAx73ODLYgfI6+eJ0kQPU2jz
+        IXmTqnoAKqWa4jTiLAUAAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="usuariosToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
@@ -255,17 +266,6 @@
         eSlWfc2onYCXidtwN+AGtDWUwLwZqb52fAWmqC+BTjtWpQvJGzgIY/UEXLJbkPvsXEiUN5nSlewbPIen
         lbwGO+UHyPdX8Uqm9vRSmrSn1/Iks1zkDVlfg/88l+vkZimdjhqcq4/imtfI4+KZ7StWOdo6p3PUdiOr
         lqXTs20TsZPZTsVnf3NMm3mF69ds9g8dXz/Q7Ifb1QAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="salirToolStripMenuItem1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJ
-        TUUH4gwKCQonbSF7IgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAADASURBVDhP
-        xdI9DkFBFMXxV4iSXtiEHegsQaWwARoLsAQbUNuDRClWoBCNQqKS2AD+R+bK5M6NCIWT/Ip3Z868j7yK
-        nHD/0BZFoo1nLDDEIJlDa0V8ObeDRYdoVsSXPMvPB/RxRQ1tDSxRKZenA5U1n2ig+IKnNGAfU9bQ2hhF
-        wVNGiNaOCBdyPnWscEFXg6iUs+g19CQt6M7PshKVcpb//wdfH7BMNum6yAx73ODLYgfI6+eJ0kQPU2jz
-        IXmTqnoAKqWa4jTiLAUAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="jugarToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
