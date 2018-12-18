@@ -13,6 +13,7 @@ namespace OlorALibro
         public string Descripcion { get; set; }
         public string Fecha { get; set; }
         public string Hora { get; set; }
+        public List<string> Usuarios { get; set; }
 
         public ActividadesUsuarios(Actividad activ, string nombreLib)
         {

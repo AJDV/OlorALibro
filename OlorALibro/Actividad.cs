@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace OlorALibro
 {
-    public class Actividad : Object
+    public class Actividad 
     {
         public string id_act { get; set; }
         public string Nombre { get; set; }
         public string Fecha { get; set; }
         public string Hora { get; set; }
         public string Descripcion { get; set; }
+        public List<string> usuarios { get; set; }
 
         public Actividad()
         {

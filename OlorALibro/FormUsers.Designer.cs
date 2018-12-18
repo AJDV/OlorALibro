@@ -59,6 +59,8 @@
             this.toolTipAdd = new System.Windows.Forms.ToolTip(this.components);
             this.buttonNotif = new System.Windows.Forms.Button();
             this.labelNot = new System.Windows.Forms.Label();
+            this.labelContrasenia = new System.Windows.Forms.Label();
+            this.textBoxContrasenia = new System.Windows.Forms.TextBox();
             this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsuarios)).BeginInit();
             this.groupBoxUser.SuspendLayout();
@@ -148,7 +150,7 @@
             this.dataGridViewUsuarios.ReadOnly = true;
             this.dataGridViewUsuarios.RowHeadersVisible = false;
             this.dataGridViewUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewUsuarios.Size = new System.Drawing.Size(674, 286);
+            this.dataGridViewUsuarios.Size = new System.Drawing.Size(674, 335);
             this.dataGridViewUsuarios.TabIndex = 3;
             this.dataGridViewUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewUsuarios_CellClick);
             // 
@@ -207,6 +209,8 @@
             // groupBoxUser
             // 
             this.groupBoxUser.BackColor = System.Drawing.Color.Transparent;
+            this.groupBoxUser.Controls.Add(this.labelContrasenia);
+            this.groupBoxUser.Controls.Add(this.textBoxContrasenia);
             this.groupBoxUser.Controls.Add(this.labelUserP);
             this.groupBoxUser.Controls.Add(this.label5);
             this.groupBoxUser.Controls.Add(this.label4);
@@ -221,7 +225,7 @@
             this.groupBoxUser.ForeColor = System.Drawing.Color.White;
             this.groupBoxUser.Location = new System.Drawing.Point(745, 102);
             this.groupBoxUser.Name = "groupBoxUser";
-            this.groupBoxUser.Size = new System.Drawing.Size(367, 283);
+            this.groupBoxUser.Size = new System.Drawing.Size(367, 332);
             this.groupBoxUser.TabIndex = 12;
             this.groupBoxUser.TabStop = false;
             // 
@@ -241,7 +245,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(34, 236);
+            this.label5.Location = new System.Drawing.Point(34, 283);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(109, 26);
             this.label5.TabIndex = 9;
@@ -293,7 +297,7 @@
             // 
             // textBoxPuntos
             // 
-            this.textBoxPuntos.Location = new System.Drawing.Point(154, 238);
+            this.textBoxPuntos.Location = new System.Drawing.Point(154, 285);
             this.textBoxPuntos.Name = "textBoxPuntos";
             this.textBoxPuntos.ReadOnly = true;
             this.textBoxPuntos.Size = new System.Drawing.Size(185, 26);
@@ -363,6 +367,26 @@
             this.labelNot.Size = new System.Drawing.Size(0, 36);
             this.labelNot.TabIndex = 14;
             // 
+            // labelContrasenia
+            // 
+            this.labelContrasenia.AutoSize = true;
+            this.labelContrasenia.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelContrasenia.ForeColor = System.Drawing.Color.White;
+            this.labelContrasenia.Location = new System.Drawing.Point(14, 240);
+            this.labelContrasenia.Name = "labelContrasenia";
+            this.labelContrasenia.Size = new System.Drawing.Size(134, 26);
+            this.labelContrasenia.TabIndex = 12;
+            this.labelContrasenia.Text = "Contraseña";
+            // 
+            // textBoxContrasenia
+            // 
+            this.textBoxContrasenia.Location = new System.Drawing.Point(154, 240);
+            this.textBoxContrasenia.Name = "textBoxContrasenia";
+            this.textBoxContrasenia.ReadOnly = true;
+            this.textBoxContrasenia.Size = new System.Drawing.Size(185, 26);
+            this.textBoxContrasenia.TabIndex = 11;
+            this.textBoxContrasenia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // usuarioBindingSource
             // 
             this.usuarioBindingSource.DataSource = typeof(OlorALibro.Usuario);
@@ -372,7 +396,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::OlorALibro.Properties.Resources.backgroundDesktopAp;
-            this.ClientSize = new System.Drawing.Size(1180, 408);
+            this.ClientSize = new System.Drawing.Size(1180, 448);
             this.Controls.Add(this.labelNot);
             this.Controls.Add(this.buttonNotif);
             this.Controls.Add(this.groupBoxUser);
@@ -386,6 +410,7 @@
             this.MaximizeBox = false;
             this.Name = "FormUsers";
             this.Text = "FormUsers";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormUsers_FormClosing);
             this.Load += new System.EventHandler(this.FormUsers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsuarios)).EndInit();
             this.groupBoxUser.ResumeLayout(false);
@@ -433,5 +458,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Admin;
         private System.Windows.Forms.DataGridViewTextBoxColumn Contrasenia;
         private System.Windows.Forms.DataGridViewTextBoxColumn User;
+        private System.Windows.Forms.Label labelContrasenia;
+        private System.Windows.Forms.TextBox textBoxContrasenia;
     }
 }

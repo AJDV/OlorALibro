@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 using System.Linq;
+using OlorALibro.CRUD_users;
 
 namespace OlorALibro
 {
@@ -16,7 +17,7 @@ namespace OlorALibro
                                             // que tienen los puntos suficientes para alguna promo (por ejemplo)
         BindingList<Usuario> userNot;
 
-        public static string filePath = @"..\..\Json\AdminUsers\users.json";
+        public static string filePath = @"..\..\Json\AdminUsers\users.json";        
 
         int numUsuarios = 0;
         #endregion
@@ -33,7 +34,7 @@ namespace OlorALibro
         private void FormUsers_Load(object sender, EventArgs e)
         {
             userNot = new BindingList<Usuario>();
-            JArray jArrayUsuarios = JArray.Parse(File.ReadAllText(@"../../Json/AdminUsers/users.json"));
+            JArray jArrayUsuarios = JArray.Parse(File.ReadAllText(@"../../JsonAndroid/users.json"));
             usuarios = jArrayUsuarios.ToObject<BindingList<Usuario>>();
             GridRefresh();
 
@@ -102,6 +103,7 @@ namespace OlorALibro
                 textBoxUsuario.Text = u.User;
                 textBoxApellido.Text = u.Apellido;
                 textBoxCorreo.Text = u.Correo;
+                textBoxContrasenia.Text = u.Contrasenia;
                 textBoxPuntos.Text = u.Puntos.ToString();
                 //--------
             }
@@ -181,6 +183,11 @@ namespace OlorALibro
         {
             FormNotificaciones fn = new FormNotificaciones(numUsuarios, PUNTOS_MAX);
             fn.Show();
-        }        
+        }
+
+        private void FormUsers_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            formPanel.EscribirJsonUsuariosAJsonApp();
+        }
     }
 }

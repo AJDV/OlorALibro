@@ -45,7 +45,10 @@
             // 
             // dataGridViewLista
             // 
+            this.dataGridViewLista.AllowUserToAddRows = false;
+            this.dataGridViewLista.AllowUserToDeleteRows = false;
             this.dataGridViewLista.AllowUserToOrderColumns = true;
+            this.dataGridViewLista.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewLista.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Nombre,
@@ -57,6 +60,7 @@
             this.dataGridViewLista.Dock = System.Windows.Forms.DockStyle.Left;
             this.dataGridViewLista.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewLista.Name = "dataGridViewLista";
+            this.dataGridViewLista.ReadOnly = true;
             this.dataGridViewLista.RowHeadersVisible = false;
             this.dataGridViewLista.RowTemplate.Height = 28;
             this.dataGridViewLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -69,12 +73,14 @@
             this.Nombre.DataPropertyName = "Nombre";
             this.Nombre.HeaderText = "Nombre";
             this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
             // 
             // Telefono
             // 
             this.Telefono.DataPropertyName = "Telefono";
             this.Telefono.HeaderText = "Telefono";
             this.Telefono.Name = "Telefono";
+            this.Telefono.ReadOnly = true;
             this.Telefono.Visible = false;
             // 
             // Direccion
@@ -82,12 +88,14 @@
             this.Direccion.DataPropertyName = "Direccion";
             this.Direccion.HeaderText = "Direccion";
             this.Direccion.Name = "Direccion";
+            this.Direccion.ReadOnly = true;
             // 
             // linqGoogleMaps
             // 
             this.linqGoogleMaps.DataPropertyName = "linqGoogleMaps";
             this.linqGoogleMaps.HeaderText = "linqGoogleMaps";
             this.linqGoogleMaps.Name = "linqGoogleMaps";
+            this.linqGoogleMaps.ReadOnly = true;
             this.linqGoogleMaps.Visible = false;
             // 
             // Apellido
@@ -95,12 +103,14 @@
             this.Apellido.DataPropertyName = "Apellido";
             this.Apellido.HeaderText = "Apellido";
             this.Apellido.Name = "Apellido";
+            this.Apellido.ReadOnly = true;
             this.Apellido.Visible = false;
             // 
             // Coordenadas
             // 
             this.Coordenadas.HeaderText = "Cordenadas";
             this.Coordenadas.Name = "Coordenadas";
+            this.Coordenadas.ReadOnly = true;
             this.Coordenadas.Visible = false;
             // 
             // webBrowser1

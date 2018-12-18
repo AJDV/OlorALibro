@@ -20,6 +20,8 @@ namespace OlorALibro
         public Libreria lib = new Libreria();
 
         public bool cambios = false;
+
+        public string nombreComprobar="";
      
 
         public FormEditar(Libreria lib)
@@ -32,6 +34,7 @@ namespace OlorALibro
         {
             string[] coord = lib.Coordenadas.Split(',');
             textBoxNom.Text = lib.Nombre;
+            nombreComprobar = lib.Nombre;
             textBoxDireccion.Text = lib.Direccion;
             textBoxTelefono.Text = lib.Telefono.ToString();
             textBoxCorreo.Text = lib.correo;
@@ -48,7 +51,7 @@ namespace OlorALibro
             {
                 MessageBox.Show("No hay cambios efectuados!");
             }
-            else if(!ComprobarNombre(textBoxNom.Text, LeerNombreDeLibrerias()))
+            else if(!ComprobarNombre(nombreComprobar, textBoxNom.Text, LeerNombreDeLibrerias()))
             {
                 MessageBox.Show("Este nombre ya existe");
                 textBoxNom.Clear();
@@ -109,8 +112,20 @@ namespace OlorALibro
                 textBoxLatitud.Text = "LATITUD";
             }
         }
-        public static bool ComprobarNombre(string nombre, List<string> nombres)
+        public static bool ComprobarNombre(string nombreComprobar, string nombre, List<string> nombres)
         {
+
+            int j = 0;
+            List<string> nombresAux = new List<string>();
+            while( j< nombres.Count)
+            {
+                if(nombres[j] == nombreComprobar)
+                {
+                    nombres.RemoveAt(j);
+                }
+                j++;
+            }
+            nombresAux = nombres;
             int i = 0;
             bool ok = true;
             string nomAux;
@@ -120,9 +135,9 @@ namespace OlorALibro
             }
             nombre = nombre.ToLower();
 
-            while(i< nombres.Count && ok)
+            while(i< nombresAux.Count && ok)
             {
-                nomAux = nombres[i].ToLower();
+                nomAux = nombresAux[i].ToLower();
 
                 if (nomAux.Contains(" "))
                 {

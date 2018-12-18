@@ -17,7 +17,7 @@ namespace OlorALibro
 
         public bool deleteUserBackgroundText = true;
 
-        public bool deletePasswordBackgroundText = true;
+        public bool deletePasswordBackgroundText = true;        
 
         List<Usuario> usuarios = new List<Usuario>();
 
@@ -124,5 +124,7 @@ namespace OlorALibro
         {
             labelIncorrecta.Visible = false;
         }
+
+       
     }
 }

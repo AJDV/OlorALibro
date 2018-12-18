@@ -27,7 +27,7 @@ namespace OlorALibro.CRUD_users
 
         public const string filePathJsonAppLibrerias = @"..\..\JsonAndroid\Librerias.json";
 
-        public const string filePathJsonAppUsuarios = @"..\..\JsonAndroid\Usuarios.json";
+        public const string filePathJsonAppUsuarios = @"..\..\JsonAndroid\users.json";
 
         int closed = 0;
         #endregion
@@ -59,7 +59,7 @@ namespace OlorALibro.CRUD_users
 
             BindingList<Usuario> userNot = new BindingList<Usuario>();
             BindingList<Usuario> usuarios = new BindingList<Usuario>();
-            JArray jArrayUsuarios = JArray.Parse(File.ReadAllText(@"../../Json/AdminUsers/users.json"));
+            JArray jArrayUsuarios = JArray.Parse(File.ReadAllText(@"../../JsonAndroid/users.json"));
             usuarios = jArrayUsuarios.ToObject<BindingList<Usuario>>();
 
             foreach (Usuario user in usuarios)
@@ -376,10 +376,8 @@ namespace OlorALibro.CRUD_users
         public static void PasarEstructuraJsonAAndroid()
         {
             EscribirJsonUsuariosAJsonApp();
-            EscribirJsonLibreriasAJsonApp();
-            EscribirJsonActividadesAJsonApp();
+            EscribirJsonLibreriasAJsonApp();            
         }
-
         #endregion
 
     }

@@ -86,9 +86,9 @@ namespace OlorALibro
             }
             else // en este punto se hacen todas las comprobaciones pertinentes para poder guardar los datos sin ningún problema
             {
-                if (textBoxNom.Text == "" || !FormEditar.ComprobarNombre(textBoxNom.Text, FormEditar.LeerNombreDeLibrerias()))
+                if (textBoxNom.Text == "" || !FormEditar.ComprobarNombre("", textBoxNom.Text, FormEditar.LeerNombreDeLibrerias()))
                 {
-                    if(!FormEditar.ComprobarNombre(textBoxNom.Text, FormEditar.LeerNombreDeLibrerias()))
+                    if(!FormEditar.ComprobarNombre("",textBoxNom.Text, FormEditar.LeerNombreDeLibrerias()))
                     {
                         MessageBox.Show("Este Nombre ya existe");
                         textBoxNom.Clear();
