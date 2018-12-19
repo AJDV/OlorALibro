@@ -32,11 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLibrerias));
             this.dataGridViewLibrerias = new System.Windows.Forms.DataGridView();
-            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.direccionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefonoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.linqWeb = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.libreriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxNom = new System.Windows.Forms.TextBox();
@@ -49,11 +45,7 @@
             this.buttonEliminarActividad = new System.Windows.Forms.Button();
             this.buttonEditarActividad = new System.Windows.Forms.Button();
             this.dataGridViewActividades = new System.Windows.Forms.DataGridView();
-            this.nombreDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.actividadBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonAnadir = new System.Windows.Forms.Button();
             this.textBoxAltitud = new System.Windows.Forms.TextBox();
             this.textBoxLatitud = new System.Windows.Forms.TextBox();
@@ -67,17 +59,27 @@
             this.label7 = new System.Windows.Forms.Label();
             this.toolTipAddLink = new System.Windows.Forms.ToolTip(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.buttonSearch = new System.Windows.Forms.Button();
+            this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.buttonEliminar = new System.Windows.Forms.Button();
             this.buttonEditar = new System.Windows.Forms.Button();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.direccionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefonoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.libreriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nombreDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.actividadBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLibrerias)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.libreriaBindingSource)).BeginInit();
             this.groupBoxActividades.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewActividades)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.actividadBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.libreriaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.actividadBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewLibrerias
@@ -94,7 +96,7 @@
             this.telefonoDataGridViewTextBoxColumn,
             this.linqWeb});
             this.dataGridViewLibrerias.DataSource = this.libreriaBindingSource;
-            this.dataGridViewLibrerias.Location = new System.Drawing.Point(9, 284);
+            this.dataGridViewLibrerias.Location = new System.Drawing.Point(10, 315);
             this.dataGridViewLibrerias.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridViewLibrerias.Name = "dataGridViewLibrerias";
             this.dataGridViewLibrerias.ReadOnly = true;
@@ -106,28 +108,6 @@
             this.dataGridViewLibrerias.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewLibrerias_CellClick);
             this.dataGridViewLibrerias.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewLibrerias_CellContentClick);
             // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // direccionDataGridViewTextBoxColumn
-            // 
-            this.direccionDataGridViewTextBoxColumn.DataPropertyName = "Direccion";
-            this.direccionDataGridViewTextBoxColumn.HeaderText = "Direccion";
-            this.direccionDataGridViewTextBoxColumn.Name = "direccionDataGridViewTextBoxColumn";
-            this.direccionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.direccionDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // telefonoDataGridViewTextBoxColumn
-            // 
-            this.telefonoDataGridViewTextBoxColumn.DataPropertyName = "Telefono";
-            this.telefonoDataGridViewTextBoxColumn.HeaderText = "Telefono";
-            this.telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
-            this.telefonoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // linqWeb
             // 
             this.linqWeb.DataPropertyName = "linkWeb";
@@ -135,10 +115,6 @@
             this.linqWeb.Name = "linqWeb";
             this.linqWeb.ReadOnly = true;
             this.linqWeb.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // libreriaBindingSource
-            // 
-            this.libreriaBindingSource.DataSource = typeof(OlorALibro.Libreria);
             // 
             // label1
             // 
@@ -210,7 +186,7 @@
             this.buttonGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonGuardar.ForeColor = System.Drawing.Color.White;
-            this.buttonGuardar.Location = new System.Drawing.Point(89, 231);
+            this.buttonGuardar.Location = new System.Drawing.Point(89, 233);
             this.buttonGuardar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonGuardar.Name = "buttonGuardar";
             this.buttonGuardar.Size = new System.Drawing.Size(97, 32);
@@ -232,7 +208,7 @@
             this.groupBoxActividades.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBoxActividades.Name = "groupBoxActividades";
             this.groupBoxActividades.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBoxActividades.Size = new System.Drawing.Size(428, 499);
+            this.groupBoxActividades.Size = new System.Drawing.Size(428, 528);
             this.groupBoxActividades.TabIndex = 12;
             this.groupBoxActividades.TabStop = false;
             // 
@@ -256,7 +232,7 @@
             this.buttonEliminarActividad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonEliminarActividad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonEliminarActividad.ForeColor = System.Drawing.Color.White;
-            this.buttonEliminarActividad.Location = new System.Drawing.Point(162, 42);
+            this.buttonEliminarActividad.Location = new System.Drawing.Point(162, 62);
             this.buttonEliminarActividad.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonEliminarActividad.Name = "buttonEliminarActividad";
             this.buttonEliminarActividad.Size = new System.Drawing.Size(113, 35);
@@ -276,7 +252,7 @@
             this.buttonEditarActividad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonEditarActividad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonEditarActividad.ForeColor = System.Drawing.Color.White;
-            this.buttonEditarActividad.Location = new System.Drawing.Point(307, 41);
+            this.buttonEditarActividad.Location = new System.Drawing.Point(307, 61);
             this.buttonEditarActividad.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonEditarActividad.Name = "buttonEditarActividad";
             this.buttonEditarActividad.Size = new System.Drawing.Size(113, 36);
@@ -308,7 +284,7 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewActividades.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewActividades.Location = new System.Drawing.Point(11, 109);
+            this.dataGridViewActividades.Location = new System.Drawing.Point(9, 138);
             this.dataGridViewActividades.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridViewActividades.Name = "dataGridViewActividades";
             this.dataGridViewActividades.ReadOnly = true;
@@ -320,37 +296,12 @@
             this.dataGridViewActividades.TabIndex = 13;
             this.dataGridViewActividades.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewActividades_CellDoubleClick);
             // 
-            // nombreDataGridViewTextBoxColumn1
-            // 
-            this.nombreDataGridViewTextBoxColumn1.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn1.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn1.Name = "nombreDataGridViewTextBoxColumn1";
-            this.nombreDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // fechaDataGridViewTextBoxColumn
-            // 
-            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
-            this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
-            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
-            this.fechaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // hora
             // 
             this.hora.DataPropertyName = "Hora";
             this.hora.HeaderText = "Hora";
             this.hora.Name = "hora";
             this.hora.ReadOnly = true;
-            // 
-            // descripcionDataGridViewTextBoxColumn
-            // 
-            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
-            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // actividadBindingSource
-            // 
-            this.actividadBindingSource.DataSource = typeof(OlorALibro.Actividad);
             // 
             // buttonAnadir
             // 
@@ -361,7 +312,7 @@
             this.buttonAnadir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAnadir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAnadir.ForeColor = System.Drawing.Color.White;
-            this.buttonAnadir.Location = new System.Drawing.Point(8, 42);
+            this.buttonAnadir.Location = new System.Drawing.Point(8, 62);
             this.buttonAnadir.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonAnadir.Name = "buttonAnadir";
             this.buttonAnadir.Size = new System.Drawing.Size(119, 35);
@@ -486,6 +437,8 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.buttonSearch);
+            this.groupBox1.Controls.Add(this.textBoxSearch);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.buttonAdd);
@@ -503,9 +456,34 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(19, 25);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(566, 499);
+            this.groupBox1.Size = new System.Drawing.Size(566, 528);
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
+            // 
+            // buttonSearch
+            // 
+            this.buttonSearch.BackColor = System.Drawing.Color.Transparent;
+            this.buttonSearch.BackgroundImage = global::OlorALibro.Properties.Resources.magnifyingglass;
+            this.buttonSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonSearch.FlatAppearance.BorderSize = 0;
+            this.buttonSearch.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Orange;
+            this.buttonSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;
+            this.buttonSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSearch.Location = new System.Drawing.Point(23, 274);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Size = new System.Drawing.Size(44, 36);
+            this.buttonSearch.TabIndex = 25;
+            this.buttonSearch.UseVisualStyleBackColor = false;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
+            // 
+            // textBoxSearch
+            // 
+            this.textBoxSearch.Location = new System.Drawing.Point(67, 279);
+            this.textBoxSearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxSearch.Name = "textBoxSearch";
+            this.textBoxSearch.Size = new System.Drawing.Size(286, 26);
+            this.textBoxSearch.TabIndex = 25;
+            this.textBoxSearch.TextChanged += new System.EventHandler(this.textBoxSearch_TextChanged);
             // 
             // label8
             // 
@@ -541,7 +519,7 @@
             this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAdd.ForeColor = System.Drawing.Color.White;
-            this.buttonAdd.Location = new System.Drawing.Point(9, 457);
+            this.buttonAdd.Location = new System.Drawing.Point(9, 488);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(141, 30);
             this.buttonAdd.TabIndex = 20;
@@ -558,7 +536,7 @@
             this.buttonEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonEliminar.ForeColor = System.Drawing.Color.White;
-            this.buttonEliminar.Location = new System.Drawing.Point(213, 457);
+            this.buttonEliminar.Location = new System.Drawing.Point(213, 488);
             this.buttonEliminar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonEliminar.Name = "buttonEliminar";
             this.buttonEliminar.Size = new System.Drawing.Size(140, 30);
@@ -576,7 +554,7 @@
             this.buttonEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonEditar.ForeColor = System.Drawing.Color.White;
-            this.buttonEditar.Location = new System.Drawing.Point(418, 457);
+            this.buttonEditar.Location = new System.Drawing.Point(418, 488);
             this.buttonEditar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonEditar.Name = "buttonEditar";
             this.buttonEditar.Size = new System.Drawing.Size(140, 30);
@@ -585,13 +563,64 @@
             this.buttonEditar.UseVisualStyleBackColor = false;
             this.buttonEditar.Click += new System.EventHandler(this.buttonEditar_Click);
             // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // direccionDataGridViewTextBoxColumn
+            // 
+            this.direccionDataGridViewTextBoxColumn.DataPropertyName = "Direccion";
+            this.direccionDataGridViewTextBoxColumn.HeaderText = "Direccion";
+            this.direccionDataGridViewTextBoxColumn.Name = "direccionDataGridViewTextBoxColumn";
+            this.direccionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.direccionDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // telefonoDataGridViewTextBoxColumn
+            // 
+            this.telefonoDataGridViewTextBoxColumn.DataPropertyName = "Telefono";
+            this.telefonoDataGridViewTextBoxColumn.HeaderText = "Telefono";
+            this.telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
+            this.telefonoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // libreriaBindingSource
+            // 
+            this.libreriaBindingSource.DataSource = typeof(OlorALibro.Libreria);
+            // 
+            // nombreDataGridViewTextBoxColumn1
+            // 
+            this.nombreDataGridViewTextBoxColumn1.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn1.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn1.Name = "nombreDataGridViewTextBoxColumn1";
+            this.nombreDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // fechaDataGridViewTextBoxColumn
+            // 
+            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
+            this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
+            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
+            this.fechaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // descripcionDataGridViewTextBoxColumn
+            // 
+            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
+            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // actividadBindingSource
+            // 
+            this.actividadBindingSource.DataSource = typeof(OlorALibro.Actividad);
+            // 
             // FormLibrerias
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackgroundImage = global::OlorALibro.Properties.Resources.backgroundDesktopAp;
-            this.ClientSize = new System.Drawing.Size(1032, 529);
+            this.ClientSize = new System.Drawing.Size(1032, 567);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.buttonLink);
             this.Controls.Add(this.textBoxLatitud);
@@ -612,13 +641,13 @@
             this.Load += new System.EventHandler(this.Librerias_Load);
             this.Click += new System.EventHandler(this.FormLibrerias_Click);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLibrerias)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.libreriaBindingSource)).EndInit();
             this.groupBoxActividades.ResumeLayout(false);
             this.groupBoxActividades.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewActividades)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.actividadBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.libreriaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.actividadBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -667,5 +696,7 @@
         private System.Windows.Forms.Button buttonEliminar;
         private System.Windows.Forms.Button buttonEditar;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button buttonSearch;
+        private System.Windows.Forms.TextBox textBoxSearch;
     }
 }

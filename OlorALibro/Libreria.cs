@@ -12,7 +12,7 @@ namespace OlorALibro
         public string Nombre { get; set; }
         public string Direccion { get; set; }
         public int Telefono { get; set; }
-        public string correo { get; set; }
+        public string Correo { get; set; }
         public string Coordenadas { get; set; }
         public string linkWeb { get; set; }
         public string actividesRuta { get; set; }
@@ -28,7 +28,7 @@ namespace OlorALibro
             Nombre = nombre;
             Direccion = direccion;
             Telefono = tel;
-            correo = corr;
+            Correo = corr;
             Coordenadas = coord;
             linkWeb = link;
             actividesRuta = actRuta;

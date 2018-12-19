@@ -309,6 +309,7 @@
     <None Include="Resources\link.png" />
     <None Include="Resources\download.png" />
     <Content Include="Resources\global.png" />
+    <None Include="Resources\magnifyingglass.png" />
     <Content Include="Resources\maps_and_flags.png" />
     <None Include="Resources\notificationsbutton.png" />
     <Content Include="Webp.net-resizeimage.ico" />

@@ -56,7 +56,7 @@ namespace OlorALibro
             if (File.Exists(filePath))
             {
                 JArray jArrayLibrerias = JArray.Parse(File.ReadAllText(filePath));
-                libs = jArrayLibrerias.ToObject<BindingList<Libreria>>();       
+                libs = jArrayLibrerias.ToObject<BindingList<Libreria>>();
             }
             else
             {
@@ -88,7 +88,7 @@ namespace OlorALibro
             {
                 if (textBoxNom.Text == "" || !FormEditar.ComprobarNombre("", textBoxNom.Text, FormEditar.LeerNombreDeLibrerias()))
                 {
-                    if(!FormEditar.ComprobarNombre("",textBoxNom.Text, FormEditar.LeerNombreDeLibrerias()))
+                    if (!FormEditar.ComprobarNombre("", textBoxNom.Text, FormEditar.LeerNombreDeLibrerias()))
                     {
                         MessageBox.Show("Este Nombre ya existe");
                         textBoxNom.Clear();
@@ -123,11 +123,11 @@ namespace OlorALibro
                     {
                         try
                         {
-                            if(libs.Count == 0)
+                            if (libs.Count == 0)
                             {
                                 libs = new BindingList<Libreria>();
                             }
-                            libs.Add(new Libreria(textBoxNom.Text, textBoxDireccio.Text, int.Parse(textBoxTelefon.Text), textBoxCorreo.Text, $"{textBoxAltitud.Text},{textBoxLatitud.Text}", linkWeb, RutaActividades(textBoxNom.Text))); 
+                            libs.Add(new Libreria(textBoxNom.Text, textBoxDireccio.Text, int.Parse(textBoxTelefon.Text), textBoxCorreo.Text, $"{textBoxAltitud.Text},{textBoxLatitud.Text}", linkWeb, RutaActividades(textBoxNom.Text)));
                             //añadimos un objeto con sus propiedades
 
                             JsonTextWriter jw = new JsonTextWriter(File.CreateText(filePath));
@@ -161,7 +161,7 @@ namespace OlorALibro
             {
                 dataGridViewActividades.DataSource = LeerJson(((Libreria)dataGridViewLibrerias.CurrentRow.DataBoundItem).actividesRuta);
             }
-            if(dataGridViewActividades.Rows.Count > 0)
+            if (dataGridViewActividades.Rows.Count > 0)
             {
                 labelActExist.Visible = false;
             }
@@ -170,12 +170,12 @@ namespace OlorALibro
         //Añadir una nueva actividad
         private void buttonAnadir_Click(object sender, EventArgs e)
         {
-            if(dataGridViewLibrerias.SelectedRows.Count >0)
+            if (dataGridViewLibrerias.SelectedRows.Count > 0)
             {
                 acts = new BindingList<Actividad>();
                 offActivitie = true;
                 l = (Libreria)dataGridViewLibrerias.CurrentRow.DataBoundItem;
-                FormActividades f = new FormActividades(l.actividesRuta,false, l.Nombre);
+                FormActividades f = new FormActividades(l.actividesRuta, false, l.Nombre);
                 f.ShowDialog();
 
                 dataGridViewActividades.DataSource = LeerJson(((Libreria)dataGridViewLibrerias.CurrentRow.DataBoundItem).actividesRuta);
@@ -223,16 +223,16 @@ namespace OlorALibro
             offActivitie = true;
             l = (Libreria)dataGridViewLibrerias.CurrentRow.DataBoundItem;
             acts = new BindingList<Actividad>();
-            if(dataGridViewLibrerias.SelectedRows.Count == 1)
+            if (dataGridViewLibrerias.SelectedRows.Count == 1)
             {
-                if(dataGridViewActividades.Rows.Count > 0)
+                if (dataGridViewActividades.Rows.Count > 0)
                 {
-                    if(dataGridViewActividades.SelectedRows.Count > 0 )
+                    if (dataGridViewActividades.SelectedRows.Count > 0)
                     {
-                        if(MessageBox.Show("Elimar Actividad ? ", "ELIMINAR", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
+                        if (MessageBox.Show("Elimar Actividad ? ", "ELIMINAR", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
                         {
                             DataGridViewSelectedRowCollection rows = dataGridViewActividades.SelectedRows;
-                            foreach(DataGridViewRow row in rows)
+                            foreach (DataGridViewRow row in rows)
                             {
                                 JArray jArrayLibrerias = JArray.Parse(File.ReadAllText(l.actividesRuta));
                                 acts = jArrayLibrerias.ToObject<BindingList<Actividad>>();
@@ -246,7 +246,7 @@ namespace OlorALibro
                         }
 
                     }
-                    else if(dataGridViewActividades.SelectedRows.Count == 0)
+                    else if (dataGridViewActividades.SelectedRows.Count == 0)
                     {
                         MessageBox.Show("Selecciona una Actividad");
                     }
@@ -269,8 +269,8 @@ namespace OlorALibro
             int selected = dataGridViewLibrerias.SelectedRows.Count;
             if (selected == 1)
             {
-                if(MessageBox.Show("Seguro que quieres eliminar lo seleccionado ? ", "ELIMINAR", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
-                dataGridViewLibrerias.Rows.RemoveAt(row);
+                if (MessageBox.Show("Seguro que quieres eliminar lo seleccionado ? ", "ELIMINAR", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
+                    dataGridViewLibrerias.Rows.RemoveAt(row);
                 JsonTextWriter jw = new JsonTextWriter(File.CreateText(filePath));
                 JToken.FromObject(libs).WriteTo(jw);
                 jw.Close();
@@ -316,7 +316,7 @@ namespace OlorALibro
             {
                 MessageBox.Show("selecciona alguna librería");
             }
-            
+
         }
 
         //Editar una actividad al hacer doble click sobre la row
@@ -370,15 +370,15 @@ namespace OlorALibro
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-           
-            
-                isAdding = true; // hace saber que estamos en modo add
-                dataGridViewLibrerias.ClearSelection();
-                limpiezaBox();
-                DesactivarActivarEdicion(false);
-                textBoxNom.Focus();
-                buttonAdd.BackColor = Color.Transparent;
-            
+
+
+            isAdding = true; // hace saber que estamos en modo add
+            dataGridViewLibrerias.ClearSelection();
+            limpiezaBox();
+            DesactivarActivarEdicion(false);
+            textBoxNom.Focus();
+            buttonAdd.BackColor = Color.Transparent;
+
         }
 
         private void buttonAdd_MouseHover(object sender, EventArgs e)
@@ -421,7 +421,7 @@ namespace OlorALibro
             string[] coord = unaLibreria.Coordenadas.Split(','); //para separar las diferentes coordenadas
             textBoxNom.Text = unaLibreria.Nombre;
             textBoxTelefon.Text = unaLibreria.Telefono.ToString();
-            textBoxCorreo.Text = unaLibreria.correo;
+            textBoxCorreo.Text = unaLibreria.Correo;
             textBoxDireccio.Text = unaLibreria.Direccion;
             textBoxAltitud.Text = coord[0];
             textBoxLatitud.Text = coord[1];
@@ -468,7 +468,7 @@ namespace OlorALibro
             DesactivarActivarEdicion(true);
 
             BindingList<Actividad> actividades = ObtenerActividades(lib);
-            
+
             DimensionDeColumnas(dataGridViewActividades);
         }
 
@@ -477,7 +477,7 @@ namespace OlorALibro
         public static string RutaActividades(string nombreLib)
         {
             string ruta;
-            if(nombreLib.Contains(" "))
+            if (nombreLib.Contains(" "))
             {
                 ruta = $"{filePathAct}{nombreLib.Replace(" ", string.Empty)}.json";
             }
@@ -485,7 +485,7 @@ namespace OlorALibro
             {
                 ruta = $"{filePathAct}{nombreLib}.json";
             }
-            return ruta ;
+            return ruta;
         }
 
         public BindingList<Actividad> ObtenerActividades(Libreria libreria)
@@ -497,7 +497,7 @@ namespace OlorALibro
                     acts = new BindingList<Actividad>();
                     JArray jArrayLibrerias = JArray.Parse(File.ReadAllText(libreria.actividesRuta));
                     acts = jArrayLibrerias.ToObject<BindingList<Actividad>>();
-                    if(acts.Count == 0 || acts == null)
+                    if (acts.Count == 0 || acts == null)
                     {
                         dataGridViewActividades.DataSource = null;
                         dataGridViewActividades.Rows.Clear();
@@ -508,7 +508,7 @@ namespace OlorALibro
                         labelActExist.Visible = false;
                         dataGridViewActividades.DataSource = acts;
                     }
-                    hasActivities = true; 
+                    hasActivities = true;
                 }
                 else
                 {
@@ -517,7 +517,7 @@ namespace OlorALibro
                     labelActExist.Visible = true;
                 }
             }
-            catch(Exception)
+            catch (Exception)
             {
                 MessageBox.Show("Error de lectura");
             }
@@ -551,7 +551,7 @@ namespace OlorALibro
 
             dataGridViewActividades.DataSource = null;
             dataGridViewActividades.DataSource = l.Actividades;
-        } 
+        }
         //----------------------------
         public void RefresacarLista(BindingList<Libreria> listaObjeto)
         {
@@ -561,7 +561,7 @@ namespace OlorALibro
             if (!offActivitie)
             {
                 DataGridViewSelectedRowCollection rows = dataGridViewLibrerias.SelectedRows;
-                foreach(DataGridViewRow row in rows)
+                foreach (DataGridViewRow row in rows)
                 {
                     row.Selected = false;
                 }
@@ -583,13 +583,13 @@ namespace OlorALibro
             {
                 co.Width = (dataGridViewLibrerias.Size.Width / col.Count) - 1;
             }
-           
-        }        
+
+        }
 
         public void ClearSelectionGrid(DataGridView dataGrid)
         {
             DataGridViewSelectedRowCollection rows = dataGrid.SelectedRows;
-            foreach(DataGridViewRow row in rows)
+            foreach (DataGridViewRow row in rows)
             {
                 row.Selected = false;
             }
@@ -624,7 +624,7 @@ namespace OlorALibro
         public bool CamposVacios()
         {
             bool ok = true;
-            if(textBoxNom.Text != "" || textBoxTelefon.Text != "" || textBoxDireccio.Text != "" || textBoxCorreo.Text != "" || (textBoxAltitud.Text != ""  && textBoxAltitud.Text != "ALTITUD")|| (textBoxLatitud.Text != "" && textBoxLatitud.Text != "LATITUD"))
+            if (textBoxNom.Text != "" || textBoxTelefon.Text != "" || textBoxDireccio.Text != "" || textBoxCorreo.Text != "" || (textBoxAltitud.Text != "" && textBoxAltitud.Text != "ALTITUD") || (textBoxLatitud.Text != "" && textBoxLatitud.Text != "LATITUD"))
             {
                 ok = false;
             }
@@ -670,5 +670,34 @@ namespace OlorALibro
 
         }
 
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+            BindingList<Libreria> listaBusc = new BindingList<Libreria>();
+            DataGridViewRowCollection rows = dataGridViewLibrerias.Rows;
+            foreach (DataGridViewRow row in rows)
+            {
+                Libreria lib = (Libreria)row.DataBoundItem;
+                if (lib.Nombre.Contains(textBoxSearch.Text))
+                {
+                    listaBusc.Add(lib);
+                }
+            }
+            dataGridViewLibrerias.DataSource = null;
+            dataGridViewLibrerias.DataSource = listaBusc;
+        }
+
+        private void textBoxSearch_TextChanged(object sender, EventArgs e)
+        {
+            
+           if(textBoxSearch.Text == "")
+            {
+                BindingList<Libreria> libreria;
+                JArray jArrayLibrerias = JArray.Parse(File.ReadAllText(filePath));
+                libreria = jArrayLibrerias.ToObject<BindingList<Libreria>>();
+
+                dataGridViewLibrerias.DataSource = null;
+                dataGridViewLibrerias.DataSource = libreria;
+            }
+        }
     }
 }

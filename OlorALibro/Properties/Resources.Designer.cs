@@ -283,6 +283,16 @@ namespace OlorALibro.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap magnifyingglass {
+            get {
+                object obj = ResourceManager.GetObject("magnifyingglass", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap maps_and_flags {
             get {
                 object obj = ResourceManager.GetObject("maps-and-flags", resourceCulture);
