@@ -375,7 +375,7 @@ namespace OlorALibro.CRUD_users
 
         public static void PasarEstructuraJsonAAndroid()
         {
-            EscribirJsonUsuariosAJsonApp();
+            EscribirJsonActividadesAJsonApp();
             EscribirJsonLibreriasAJsonApp();            
         }
         #endregion

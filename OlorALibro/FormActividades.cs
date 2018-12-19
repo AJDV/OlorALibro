@@ -84,7 +84,7 @@ namespace OlorALibro
                 if (ValidarCampos())
                 {
                     LeerJson(filePathActiv);
-                    acts.Add(new Actividad(nombrelib, textBoxNombre.Text, dateTimePickerFecha.Text, dateTimePickerHora.Text, textBoxDescripcion.Text));
+                    acts.Add(new Actividad(nombrelib, textBoxNombre.Text, dateTimePickerFecha.Text, dateTimePickerHora.Text, textBoxDescripcion.Text, null));
 
                     EscribirJson(filePathActiv, acts);
                     MessageBox.Show("actividad registrada");
@@ -95,7 +95,7 @@ namespace OlorALibro
                 if (ValidarCampos())
                 {
                     LeerJson(filePathActiv);
-                    acts[posicion] = new Actividad(nombrelib, textBoxNombre.Text, dateTimePickerFecha.Text, dateTimePickerHora.Text, textBoxDescripcion.Text);
+                    acts[posicion] = new Actividad(nombrelib, textBoxNombre.Text, dateTimePickerFecha.Text, dateTimePickerHora.Text, textBoxDescripcion.Text, null);
                     EscribirJson(filePathActiv, acts);
                     MessageBox.Show("ActividadAtualizada");
                 }

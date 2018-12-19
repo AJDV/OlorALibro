@@ -53,8 +53,7 @@
     <StartupObject />
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>
-    </ApplicationIcon>
+    <ApplicationIcon>output-onlinepngtools.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -297,6 +296,7 @@
     <None Include="Resources\plus-sign-in-a-black-circle.png" />
     <None Include="Resources\remove-user32.png" />
     <None Include="Resources\multiple-users-silhouette.png" />
+    <Content Include="output-onlinepngtools.ico" />
     <Content Include="Resources\3853168234_8a2452a929_b1_copy1aa22_copy_2b.jpg" />
     <None Include="Resources\amazon.png" />
     <None Include="Resources\google.png" />
