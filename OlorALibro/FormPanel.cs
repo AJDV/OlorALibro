@@ -12,27 +12,98 @@ namespace OlorALibro.CRUD_users
 {
     public partial class formPanel : Form
     {
-        static string usuario;
+        #region Propiedades
+        public string usuario;
 
-        public formPanel()
+        public bool admin;
+        #endregion
+
+        #region Constructor
+        public formPanel(string usuario, bool admin)
         {
+            this.usuario = usuario;
+            this.admin = admin;
             InitializeComponent();
         }
-
-        public static void setUser(string user)
-        {
-            usuario = user;
-        }
+        #endregion
 
         private void formPanel_Load(object sender, EventArgs e)
-        {
-            labelUser.Text = usuario;
+        {            
+            if (admin)
+            {
+                this.Text = "Panel de admnistrador (" + usuario.ToUpper()+") - Admin";
+            }
+            else
+            {
+                this.Text = "Panel de admnistrador (" + usuario.ToUpper() + ") - No Admin";
+                menuGestion.Visible = false;
+
+            }
         }
 
+
+        #region Accesos
         private void buttonUsers_Click(object sender, EventArgs e)
+        {
+            accesoFormUsuarios();
+        }
+
+        private void buttonLibreria_Click(object sender, EventArgs e)
+        {
+            accesoFormLibrerias();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            accesoFormUsuarios();
+        }
+
+        private void pictureUsuarios_MouseHover(object sender, EventArgs e)
+        {
+            Cursor = Cursors.Hand;
+        }
+
+        private void pictureUsuarios_MouseLeave(object sender, EventArgs e)
+        {
+            Cursor = Cursors.Default;
+        }
+
+        private void pictureUsuarios_MouseHover_1(object sender, EventArgs e)
+        {
+            Cursor = Cursors.Hand;
+        }
+
+        private void pictureUsuarios_MouseLeave_1(object sender, EventArgs e)
+        {
+            Cursor = Cursors.Default;
+        }
+
+        private void pictureLibrerias_Click(object sender, EventArgs e)
+        {
+            accesoFormLibrerias();
+        }
+
+        private void accesoFormLibrerias()
+        {
+            FormLibrerias l = new FormLibrerias();
+            l.ShowDialog();
+        }
+
+        private void accesoFormUsuarios()
         {
             FormUsers a = new FormUsers();
             a.ShowDialog();
+        }
+        #endregion
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.Show("JUEGO", button1);
         }
     }
 }

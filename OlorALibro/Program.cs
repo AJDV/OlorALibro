@@ -22,7 +22,7 @@ namespace OlorALibro
             {
                 if (login.ShowDialog() == DialogResult.OK)
                 {
-                    Application.Run(new formPanel());
+                   Application.Run(new formPanel(login.usuario, login.admin));
                 }
             }
         }

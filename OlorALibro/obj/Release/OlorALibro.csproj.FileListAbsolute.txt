@@ -1,0 +1,47 @@
+E:\OlorALibro\OlorALibro\bin\Release\OlorALibro.exe.config
+E:\OlorALibro\OlorALibro\bin\Release\OlorALibro.exe
+E:\OlorALibro\OlorALibro\bin\Release\OlorALibro.pdb
+E:\OlorALibro\OlorALibro\bin\Release\Newtonsoft.Json.dll
+E:\OlorALibro\OlorALibro\bin\Release\Newtonsoft.Json.xml
+E:\OlorALibro\OlorALibro\obj\Release\OlorALibro.FormEditar.resources
+E:\OlorALibro\OlorALibro\obj\Release\OlorALibro.CRUD_users.formPanel.resources
+E:\OlorALibro\OlorALibro\obj\Release\OlorALibro.FormLogin.resources
+E:\OlorALibro\OlorALibro\obj\Release\OlorALibro.FormUsers.resources
+E:\OlorALibro\OlorALibro\obj\Release\OlorALibro.FormLibrerias.resources
+E:\OlorALibro\OlorALibro\obj\Release\OlorALibro.Properties.Resources.resources
+E:\OlorALibro\OlorALibro\obj\Release\OlorALibro.csproj.GenerateResource.Cache
+E:\OlorALibro\OlorALibro\obj\Release\OlorALibro.exe
+E:\OlorALibro\OlorALibro\obj\Release\OlorALibro.pdb
+F:\aaaVictor Para\victorgit\OlorALibro\OlorALibro\bin\Release\OlorALibro.exe.config
+F:\aaaVictor Para\victorgit\OlorALibro\OlorALibro\obj\Release\OlorALibro.exe
+F:\aaaVictor Para\victorgit\OlorALibro\OlorALibro\obj\Release\OlorALibro.pdb
+F:\aaaVictor Para\victorgit\OlorALibro\OlorALibro\obj\Release\OlorALibro.csprojResolveAssemblyReference.cache
+F:\aaaVictor Para\victorgit\OlorALibro\OlorALibro\obj\Release\OlorALibro.FormEditar.resources
+F:\aaaVictor Para\victorgit\OlorALibro\OlorALibro\obj\Release\OlorALibro.CRUD_users.formPanel.resources
+F:\aaaVictor Para\victorgit\OlorALibro\OlorALibro\obj\Release\OlorALibro.FormLogin.resources
+F:\aaaVictor Para\victorgit\OlorALibro\OlorALibro\obj\Release\OlorALibro.FormUsers.resources
+F:\aaaVictor Para\victorgit\OlorALibro\OlorALibro\obj\Release\OlorALibro.FormLibrerias.resources
+F:\aaaVictor Para\victorgit\OlorALibro\OlorALibro\obj\Release\OlorALibro.Properties.Resources.resources
+F:\aaaVictor Para\victorgit\OlorALibro\OlorALibro\obj\Release\OlorALibro.csproj.GenerateResource.Cache
+F:\aaaVictor Para\victorgit\OlorALibro\OlorALibro\bin\Release\OlorALibro.exe
+F:\aaaVictor Para\victorgit\OlorALibro\OlorALibro\bin\Release\OlorALibro.pdb
+F:\aaaVictor Para\victorgit\OlorALibro\OlorALibro\bin\Release\Newtonsoft.Json.dll
+F:\aaaVictor Para\victorgit\OlorALibro\OlorALibro\bin\Release\Newtonsoft.Json.xml
+C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\bin\Release\OlorALibro.exe.config
+C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\bin\Release\OlorALibro.exe
+C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\bin\Release\OlorALibro.pdb
+C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\bin\Release\Newtonsoft.Json.dll
+C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\bin\Release\Newtonsoft.Json.xml
+C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\obj\Release\OlorALibro.csprojAssemblyReference.cache
+C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\obj\Release\OlorALibro.FormActividades.resources
+C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\obj\Release\OlorALibro.FormEditar.resources
+C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\obj\Release\OlorALibro.CRUD_users.formPanel.resources
+C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\obj\Release\OlorALibro.FormLogin.resources
+C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\obj\Release\OlorALibro.FormUsers.resources
+C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\obj\Release\OlorALibro.FormLibrerias.resources
+C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\obj\Release\OlorALibro.Properties.Resources.resources
+C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\obj\Release\OlorALibro.csproj.GenerateResource.cache
+C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\obj\Release\OlorALibro.csproj.CoreCompileInputs.cache
+C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\obj\Release\OlorALibro.csproj.CopyComplete
+C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\obj\Release\OlorALibro.exe
+C:\Users\Jonathan\Source\Repos\AJDV\OlorALibro\OlorALibro\obj\Release\OlorALibro.pdb

@@ -28,117 +28,114 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.labelLogin = new System.Windows.Forms.Label();
-            this.labelLoginUserLabel = new System.Windows.Forms.Label();
-            this.labelLoginPasswordLabel = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             this.textBoxLoginUserText = new System.Windows.Forms.TextBox();
             this.textBoxLoginPasswordText = new System.Windows.Forms.TextBox();
             this.buttonLogin = new System.Windows.Forms.Button();
             this.labelIncorrecta = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // labelLogin
-            // 
-            this.labelLogin.BackColor = System.Drawing.Color.Transparent;
-            this.labelLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.labelLogin.Location = new System.Drawing.Point(91, 25);
-            this.labelLogin.Name = "labelLogin";
-            this.labelLogin.Size = new System.Drawing.Size(194, 39);
-            this.labelLogin.TabIndex = 0;
-            this.labelLogin.Text = "Olor a Libro";
-            this.labelLogin.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // labelLoginUserLabel
-            // 
-            this.labelLoginUserLabel.AutoSize = true;
-            this.labelLoginUserLabel.BackColor = System.Drawing.Color.Transparent;
-            this.labelLoginUserLabel.Location = new System.Drawing.Point(26, 85);
-            this.labelLoginUserLabel.Name = "labelLoginUserLabel";
-            this.labelLoginUserLabel.Size = new System.Drawing.Size(29, 13);
-            this.labelLoginUserLabel.TabIndex = 1;
-            this.labelLoginUserLabel.Text = "User";
-            // 
-            // labelLoginPasswordLabel
-            // 
-            this.labelLoginPasswordLabel.AutoSize = true;
-            this.labelLoginPasswordLabel.BackColor = System.Drawing.Color.Transparent;
-            this.labelLoginPasswordLabel.Location = new System.Drawing.Point(26, 111);
-            this.labelLoginPasswordLabel.Name = "labelLoginPasswordLabel";
-            this.labelLoginPasswordLabel.Size = new System.Drawing.Size(53, 13);
-            this.labelLoginPasswordLabel.TabIndex = 2;
-            this.labelLoginPasswordLabel.Text = "Password";
             // 
             // textBoxLoginUserText
             // 
-            this.textBoxLoginUserText.Location = new System.Drawing.Point(88, 82);
+            this.textBoxLoginUserText.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.textBoxLoginUserText.Location = new System.Drawing.Point(268, 91);
+            this.textBoxLoginUserText.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxLoginUserText.Name = "textBoxLoginUserText";
-            this.textBoxLoginUserText.Size = new System.Drawing.Size(254, 20);
+            this.textBoxLoginUserText.Size = new System.Drawing.Size(222, 20);
             this.textBoxLoginUserText.TabIndex = 1;
+            this.textBoxLoginUserText.Text = "User";
+            this.textBoxLoginUserText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxLoginUserText.TextChanged += new System.EventHandler(this.textBoxLoginUserText_TextChanged);
             // 
             // textBoxLoginPasswordText
             // 
-            this.textBoxLoginPasswordText.Location = new System.Drawing.Point(88, 108);
+            this.textBoxLoginPasswordText.AcceptsTab = true;
+            this.textBoxLoginPasswordText.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.textBoxLoginPasswordText.Location = new System.Drawing.Point(268, 148);
+            this.textBoxLoginPasswordText.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxLoginPasswordText.Name = "textBoxLoginPasswordText";
-            this.textBoxLoginPasswordText.PasswordChar = '•';
-            this.textBoxLoginPasswordText.Size = new System.Drawing.Size(254, 20);
+            this.textBoxLoginPasswordText.Size = new System.Drawing.Size(222, 20);
             this.textBoxLoginPasswordText.TabIndex = 2;
+            this.textBoxLoginPasswordText.Text = "Password";
+            this.textBoxLoginPasswordText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxLoginPasswordText.TextChanged += new System.EventHandler(this.textBoxLoginPasswordText_TextChanged);
             // 
             // buttonLogin
             // 
-            this.buttonLogin.Location = new System.Drawing.Point(267, 134);
+            this.buttonLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.buttonLogin.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.buttonLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLogin.Location = new System.Drawing.Point(338, 207);
+            this.buttonLogin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonLogin.Name = "buttonLogin";
-            this.buttonLogin.Size = new System.Drawing.Size(75, 23);
+            this.buttonLogin.Size = new System.Drawing.Size(101, 35);
             this.buttonLogin.TabIndex = 3;
             this.buttonLogin.Text = "Login";
-            this.buttonLogin.UseVisualStyleBackColor = true;
+            this.buttonLogin.UseVisualStyleBackColor = false;
             this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
             // 
             // labelIncorrecta
             // 
             this.labelIncorrecta.AutoSize = true;
+            this.labelIncorrecta.BackColor = System.Drawing.Color.Transparent;
             this.labelIncorrecta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelIncorrecta.ForeColor = System.Drawing.Color.Red;
-            this.labelIncorrecta.Location = new System.Drawing.Point(29, 143);
+            this.labelIncorrecta.Location = new System.Drawing.Point(282, 273);
+            this.labelIncorrecta.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelIncorrecta.Name = "labelIncorrecta";
             this.labelIncorrecta.Size = new System.Drawing.Size(148, 15);
             this.labelIncorrecta.TabIndex = 4;
             this.labelIncorrecta.Text = "Contraseña Incorrecta";
             this.labelIncorrecta.Visible = false;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::OlorALibro.Properties.Resources.rsz_output_onlinepngtools_1;
+            this.pictureBox1.Location = new System.Drawing.Point(-31, 28);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(277, 267);
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
             // FormLogin
             // 
             this.AcceptButton = this.buttonLogin;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(369, 174);
+            this.BackgroundImage = global::OlorALibro.Properties.Resources.rsz_3853168234_8a2452a929_b1_copy1aa22_copy_2b;
+            this.ClientSize = new System.Drawing.Size(502, 380);
             this.Controls.Add(this.labelIncorrecta);
             this.Controls.Add(this.buttonLogin);
             this.Controls.Add(this.textBoxLoginPasswordText);
             this.Controls.Add(this.textBoxLoginUserText);
-            this.Controls.Add(this.labelLoginPasswordLabel);
-            this.Controls.Add(this.labelLoginUserLabel);
-            this.Controls.Add(this.labelLogin);
+            this.Controls.Add(this.pictureBox1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Olor A Libro";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormLogin_FormClosing);
             this.Load += new System.EventHandler(this.FormLogin_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label labelLogin;
-        private System.Windows.Forms.Label labelLoginUserLabel;
-        private System.Windows.Forms.Label labelLoginPasswordLabel;
         private System.Windows.Forms.TextBox textBoxLoginUserText;
         private System.Windows.Forms.TextBox textBoxLoginPasswordText;
         private System.Windows.Forms.Button buttonLogin;
         private System.Windows.Forms.Label labelIncorrecta;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
