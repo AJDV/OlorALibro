@@ -1,25 +1,10 @@
 ﻿[
   {
-    "admin": true,
-
-    "user": "admin1",
-    "contrasenia": "admin1"
-
+    "User" :"admin1",
+    "Contrasenia" : "admin1"
   },
   {
-    "admin": true,
-    "user": "admin2",
-    "contrasenia": "admin2"
-  },
-  {
-    "admin": true,
-    "user": "jonathan",
-    "contrasenia": "jonathan"
-  },
-  {
-    "admin": false,
-    "user": "jona",
-    "contrasenia": "jona"
+    "User" :"admin2",
+    "Contrasenia" : "admin2"
   }
-
 ]

@@ -2,22 +2,19 @@
 using System;
 using System.IO;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using OlorALibro.CRUD_users;
 
 namespace OlorALibro
 {
     public partial class FormLogin : Form
     {
-        public string usuario; //esta propiedad sirve para ser enviada al FormPanel e indicar el usuario
-
-        public bool admin; // esta propiedad sirve para saber si el usuario puede tener los permisos para gestionar los usuarios administradores
-
-        public bool deleteUserBackgroundText = true;
-
-        public bool deletePasswordBackgroundText = true;
-
         List<Usuario> usuarios = new List<Usuario>();
 
         public FormLogin()
@@ -27,11 +24,10 @@ namespace OlorALibro
 
         private void FormLogin_Load(object sender, EventArgs e)
         {
-            textBoxLoginUserText.Focus();
-            if (File.Exists(@"..\..\Json\AdminUsers\loginAdmin.json"))
+            if (File.Exists(@"E:\ABP\OlorALibro\OlorALibro\CRUD users\loginAdmin.json"))
             {
-                JArray jArrayUsers = JArray.Parse(File.ReadAllText(@"..\..\Json\AdminUsers\loginAdmin.json"));
-                usuarios = jArrayUsers.ToObject<List<Usuario>>();
+                JArray jArrayPelis = JArray.Parse(File.ReadAllText(@"E:\ABP\OlorALibro\OlorALibro\CRUD users\loginAdmin.json"));
+                usuarios = jArrayPelis.ToObject<List<Usuario>>();
             }
             else
             {
@@ -40,12 +36,11 @@ namespace OlorALibro
             }
         }
 
-      
         private void buttonLogin_Click(object sender, EventArgs e)
         {
             bool login = false;
             int contador = 0;
-            while (!login &&   contador <= (usuarios.Count() - 1))
+            while (!login && (usuarios.Count() - 1) >= contador)
             {
                 if (textBoxLoginUserText.Text.ToLower() == usuarios[contador].User && textBoxLoginPasswordText.Text == usuarios[contador].Contrasenia)
                 {
@@ -60,8 +55,7 @@ namespace OlorALibro
             {
                 labelIncorrecta.Visible = false;
                 MessageBox.Show("Bienvenido, " + usuarios[contador].User + "!", "Login Correcto!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.usuario = usuarios[contador].User;
-                this.admin = usuarios[contador].admin;
+
                 this.DialogResult = System.Windows.Forms.DialogResult.OK;
             }
             else
@@ -70,31 +64,9 @@ namespace OlorALibro
             }
         }
 
-        private void textBoxLoginUserText_TextChanged(object sender, EventArgs e)
+        private void FormLogin_FormClosing(object sender, FormClosingEventArgs e)
         {
-            labelIncorrecta.Visible = false;
-            if (deleteUserBackgroundText)
-            {
-                
-                textBoxLoginUserText.Text = "";
-                deleteUserBackgroundText = false;
-            }
-            textBoxLoginUserText.TextAlign = HorizontalAlignment.Left;
-            textBoxLoginUserText.ForeColor = Color.Black;                    
-        }
-
-        private void textBoxLoginPasswordText_TextChanged(object sender, EventArgs e)
-        {
-            labelIncorrecta.Visible = false;
-            if (deletePasswordBackgroundText)
-            {
-                textBoxLoginPasswordText.Text = "";
-                deletePasswordBackgroundText = false;
-            }
-            textBoxLoginPasswordText.TextAlign = HorizontalAlignment.Left;
-            textBoxLoginPasswordText.ForeColor = Color.Black;
-            textBoxLoginPasswordText.PasswordChar = '•';
-
+            formPanel.setUser(textBoxLoginUserText.Text.ToUpper());
         }
     }
 }
