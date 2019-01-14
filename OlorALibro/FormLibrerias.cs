@@ -16,7 +16,7 @@ namespace OlorALibro
     public partial class FormLibrerias : Form
     {
         #region Properties
-        public const string filePath = @"..\..\Json\ListaDeLibrerías\Librerias.json";
+        public const string filePath = "..\\..\\Json\\ListaDeLibrerías\\Librerias.json";
 
         public const string filePathAct = "..\\..\\Json\\ListaDeLibrerías\\ActivDeLibrerias\\Act_";
 
